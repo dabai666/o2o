@@ -1,0 +1,237 @@
+<?php foreach($data['sellers'] as $item): ?>
+    <?php if($item['isBussiness']): ?>
+    <li <?php if($item['isDelivery'] == 0): ?>style="background:#f3f3f3;"<?php endif; ?> class="c-bgfff <?php if(!$item['isBussiness']): ?> x-rest <?php endif; ?> each" >
+        <?php
+            if($item['countGoods'] > 0 && $item['countService'] == 0){
+            $url = u('Goods/index',['id'=>$item['id'],'type'=>1,'urltype'=>1]);
+            }elseif($item['countGoods'] == 0 && $item['countService'] > 0){
+            $url = u('Goods/index',['id'=>$item['id'],'type'=>2,'urltype'=>1]);
+            }else{
+            $url = u('Seller/detail',['id'=>$item['id'],'urltype'=>1]);
+            }
+        ?>
+        <a href="<?php echo e($url); ?>" class="item-link item-content pageloading" data-no-cache="true">
+            <div class="item-media">
+                <img src="<?php echo e(formatImage($item['logo'],100,100)); ?>" onerror='this.src="<?php echo e(asset("wap/community/newclient/images/no.jpg")); ?>"' width="73">
+            </div>
+            <div class="item-inner">
+                <div class="item-title-row f16">
+                    <div class="item-title c-black <?php if(!$item['isBussiness']): ?>y-w80  <?php endif; ?>" style="white-space: normal;">
+                        <p><?php echo e($item['name']); ?>
+
+                            <?php foreach($item['sellerAuthIcon'] as $val): ?>
+                                <img src="<?php echo e($val['icon']['icon']); ?>" class="ml5 va-3" width="16">
+                            <?php endforeach; ?>
+                        </p>
+                    </div>
+                    <?php if(!$item['isBussiness']): ?>
+                        <div class="item-after rest f12">休息中</div>
+                    <?php else: ?>
+                        <div class="item-after rest f12" style="color: #E73E27;border: 1px solid #E73E27;height: .9rem;line-height: .9rem;padding: 0 .2rem;border-radius: .2rem;">营业中</div>
+                    <?php endif; ?>
+                </div>
+                <div class="item-title-row f12 c-gray mt5 mb5">
+                    <div class="item-title">
+                        <div class="y-starcont">
+                            <div class="c-gray4 y-star">
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                            </div>
+                            <div class="c-red f12 y-startwo" style="width:<?php echo e($item['score'] * 20); ?>%;">
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                            </div>
+                        </div>
+                        <?php if($item['orderCount'] > 0): ?>
+                            <span class="c-gray f12">已售<?php echo e($item['orderCount']); ?></span>
+                        <?php else: ?>
+                            <span class="c-gray f12"></span>
+                        <?php endif; ?>
+                    </div>
+                    <span class="item-after">
+                        <i class="icon iconfont c-gray2 f18">&#xe60d;</i>
+                        <span class="compute-distance" data-map-point-x="<?php echo e($item['mapPoint']['x']); ?>" data-map-point-y="<?php echo e($item['mapPoint']['y']); ?>"></span>
+                    </span>
+                </div>
+                <!-- <div class="item-subtitle c-gray">
+                    <span class="mr10"><?php echo $item['freight']; ?></span>
+                </div> -->
+                <div class="item-subtitle f12">
+                    起送<span class="c-red mr5">￥<?php echo e($item['serviceFee']); ?></span>
+                    <span class="mr5">|</span>
+                    配送<span class="c-red">￥<?php echo e($item['deliveryFee']); ?></span>
+                    <?php if($item['isAvoidFee'] == 1): ?>
+                        <span class="c-gray">(满<?php echo e($item['avoidFee']); ?>免)</span>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </a>
+        <ul class="y-mjyh">
+            <?php $first = true; ?>
+            <?php if(!empty($item['activity']['full'])): ?>
+                <li class="pr15">
+                    <p class="f12 c-gray">
+                        <img src="<?php echo e(asset('wap/community/newclient/images/ico/jian.png')); ?>" width="16" class="vat mr5">
+                        <span class="y-indexmaxw">
+                        在线支付
+                        <?php foreach($item['activity']['full'] as $key => $value): ?>
+                            <?php if($first): ?>
+                                <?php $first = false; ?>
+                                满<?php echo e(number_format($value['fullMoney'], 2)); ?>减<?php echo e(number_format($value['cutMoney'], 2)); ?>元
+                            <?php else: ?>
+                                ,满<?php echo e(number_format($value['fullMoney'], 2)); ?>减<?php echo e(number_format($value['cutMoney'], 2)); ?>元
+                            <?php endif; ?>
+                        <?php endforeach; ?>
+                        </span>
+                    </p>
+                </li>
+            <?php endif; ?>
+            <?php if(count($item['activity']['special']) > 0): ?>
+                <li>
+                    <p class="f12 c-gray">
+                        <img src="<?php echo e(asset('wap/community/newclient/images/ico/tei.png')); ?>" width="16" class="va-3 mr5">
+                        商家特价优惠
+                    </p>
+                </li>
+            <?php endif; ?>
+            <?php if(!empty($item['activity']['new'])): ?>
+                <li>
+                    <p class="f12 c-gray">
+                        <img src="<?php echo e(asset('wap/community/newclient/images/ico/xin.png')); ?>" width="16" class="va-3 mr5">
+                        新用户在线支付立减<?php echo e(number_format($item['activity']['new']['cutMoney'], 2)); ?>元
+                    </p>
+                </li>
+                <?php endif; ?>
+                        <!-- 未展开 -->
+                <i class="icon iconfont f12 c-gray y-unfold none y-i1">&#xe601;</i>
+                <!-- 已展开 -->
+                <i class="icon iconfont f12 c-gray y-unfold none">&#xe603;</i>
+        </ul>
+    </li>
+    <?php endif; ?>
+<?php endforeach; ?>
+
+<?php foreach($data['sellers'] as $item): ?>
+    <?php if(!$item['isBussiness']): ?>
+    <li <?php if($item['isDelivery'] == 0): ?>style="background:#f3f3f3;"<?php endif; ?> class="c-bgfff <?php if(!$item['isBussiness']): ?> x-rest <?php endif; ?> each" >
+        <?php
+            if($item['countGoods'] > 0 && $item['countService'] == 0){
+            $url = u('Goods/index',['id'=>$item['id'],'type'=>1,'urltype'=>1]);
+            }elseif($item['countGoods'] == 0 && $item['countService'] > 0){
+            $url = u('Goods/index',['id'=>$item['id'],'type'=>2,'urltype'=>1]);
+            }else{
+            $url = u('Seller/detail',['id'=>$item['id'],'urltype'=>1]);
+            }
+        ?>
+        <a href="<?php echo e($url); ?>" class="item-link item-content pageloading" data-no-cache="true">
+            <div class="item-media">
+                <img src="<?php echo e(formatImage($item['logo'],100,100)); ?>" onerror='this.src="<?php echo e(asset("wap/community/newclient/images/no.jpg")); ?>"' width="73">
+            </div>
+            <div class="item-inner">
+                <div class="item-title-row f16">
+                    <div class="item-title c-black <?php if(!$item['isBussiness']): ?>y-w80  <?php endif; ?>" style="white-space: normal;">
+                        <p><?php echo e($item['name']); ?>
+
+                            <?php foreach($item['sellerAuthIcon'] as $val): ?>
+                                <img src="<?php echo e($val['icon']['icon']); ?>" class="ml5 va-3" width="16">
+                            <?php endforeach; ?>
+                        </p>
+                    </div>
+                    <?php if(!$item['isBussiness']): ?>
+                        <div class="item-after rest f12">休息中</div>
+                    <?php else: ?>
+                        <div class="item-after rest f12" style="background: #E73E27;color:#fff;border: 1px solid #E73E27;height: .9rem;line-height: .9rem;padding: 0 .2rem;border-radius: .2rem;">营业中</div>
+                    <?php endif; ?>
+                </div>
+                <div class="item-title-row f12 c-gray mt5 mb5">
+                    <div class="item-title">
+                        <div class="y-starcont">
+                            <div class="c-gray4 y-star">
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                            </div>
+                            <div class="c-red f12 y-startwo" style="width:<?php echo e($item['score'] * 20); ?>%;">
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                                <i class="icon iconfont vat mr2 f12">&#xe654;</i>
+                            </div>
+                        </div>
+                        <?php if($item['orderCount'] > 0): ?>
+                            <span class="c-gray f12">已售<?php echo e($item['orderCount']); ?></span>
+                        <?php else: ?>
+                            <span class="c-gray f12"></span>
+                        <?php endif; ?>
+                    </div>
+                    <span class="item-after">
+                        <i class="icon iconfont c-gray2 f18">&#xe60d;</i>
+                        <span class="compute-distance" data-map-point-x="<?php echo e($item['mapPoint']['x']); ?>" data-map-point-y="<?php echo e($item['mapPoint']['y']); ?>"></span>
+                    </span>
+                </div>
+            <!-- <div class="item-subtitle c-gray">
+                    <span class="mr10"><?php echo $item['freight']; ?></span>
+                </div> -->
+                <div class="item-subtitle f12">
+                    起送<span class="c-red mr5">￥<?php echo e($item['serviceFee']); ?></span>
+                    <span class="mr5">|</span>
+                    配送<span class="c-red">￥<?php echo e($item['deliveryFee']); ?></span>
+                    <?php if($item['isAvoidFee'] == 1): ?>
+                        <span class="c-gray">(满<?php echo e($item['avoidFee']); ?>免)</span>
+                    <?php endif; ?>
+                </div>
+            </div>
+        </a>
+        <ul class="y-mjyh">
+            <?php $first = true; ?>
+            <?php if(!empty($item['activity']['full'])): ?>
+                <li class="pr15">
+                    <p class="f12 c-gray">
+                        <img src="<?php echo e(asset('wap/community/newclient/images/ico/jian.png')); ?>" width="16" class="vat mr5">
+                        <span class="y-indexmaxw">
+                        在线支付
+                            <?php foreach($item['activity']['full'] as $key => $value): ?>
+                                <?php if($first): ?>
+                                    <?php $first = false; ?>
+                                    满<?php echo e(number_format($value['fullMoney'], 2)); ?>减<?php echo e(number_format($value['cutMoney'], 2)); ?>元
+                                <?php else: ?>
+                                    ,满<?php echo e(number_format($value['fullMoney'], 2)); ?>减<?php echo e(number_format($value['cutMoney'], 2)); ?>元
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </span>
+                    </p>
+                </li>
+            <?php endif; ?>
+            <?php if(count($item['activity']['special']) > 0): ?>
+                <li>
+                    <p class="f12 c-gray">
+                        <img src="<?php echo e(asset('wap/community/newclient/images/ico/tei.png')); ?>" width="16" class="va-3 mr5">
+                        商家特价优惠
+                    </p>
+                </li>
+            <?php endif; ?>
+            <?php if(!empty($item['activity']['new'])): ?>
+                <li>
+                    <p class="f12 c-gray">
+                        <img src="<?php echo e(asset('wap/community/newclient/images/ico/xin.png')); ?>" width="16" class="va-3 mr5">
+                        新用户在线支付立减<?php echo e(number_format($item['activity']['new']['cutMoney'], 2)); ?>元
+                    </p>
+                </li>
+        <?php endif; ?>
+        <!-- 未展开 -->
+            <i class="icon iconfont f12 c-gray y-unfold none y-i1">&#xe601;</i>
+            <!-- 已展开 -->
+            <i class="icon iconfont f12 c-gray y-unfold none">&#xe603;</i>
+        </ul>
+    </li>
+    <?php endif; ?>
+<?php endforeach; ?>

@@ -1,0 +1,928 @@
+<?php $__env->startSection('title'); ?><?php echo e($title); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('css'); ?>
+    <style>
+        .modal.show_img_x  {
+            width:inherit;
+            left: 38%;
+        }
+        .service-deal {
+            z-index: 99999 !important;
+        }
+        .y-addimg{width: 100%;box-sizing: border-box;padding-left: .5rem;margin-bottom: .5rem;}
+        .y-addimg li{width: 22%;box-sizing: border-box;float: left;text-align: center;margin-right: 3%;color: #54abee;position: relative;max-height: 6.2rem;}
+        .y-addimg li label{width: 100%;height: 100%;display: block;border-radius: 5px;overflow: hidden;}
+        .y-addimg li p{position: absolute;top: 0;left: 0;z-index: 10;width: 100%;text-align: center;background: #f1f1f1;}
+        .y-addimg li img{width: 100%;vertical-align: top;}
+        .y-addimg li .delete{position: absolute;top: -10px;right: -10px;}
+        input,div {font-size: 14px !important;}
+
+        .add_goods_specifications1,.add_goods_specifications2 {
+            background: #f7f7f7;
+            border-top: 1px solid #eaeaea;
+            border-bottom: 1px solid #eaeaea;
+            line-height: 2rem;
+            padding: 0 .85rem;
+            margin-bottom: .75rem;
+            margin-top: -.75rem
+        }
+
+        .add_goods_specifications1 i {
+            color: #55d020;
+            font-size: 1.2rem
+        }
+
+        .add_goods_specifications1 p {
+            color: #ff2c4c;
+            font-size: .8rem;
+            padding-left: .85rem
+        }
+        .add_goods_specifications2 i {
+            color: #55d020;
+            font-size: 1.2rem
+        }
+
+        .add_goods_specifications2 p {
+            color: #ff2c4c;
+            font-size: .8rem;
+            padding-left: .85rem
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_top'); ?>
+    <header class="bar bar-nav">
+        <a class="button button-link button-nav pull-left" href="#" onclick="JumpURL('<?php echo e($nav_back_url); ?>','<?php echo e($css); ?>',2)" data-transition='slide-out'>
+            <span class="icon iconfont">&#xe64c;</span>
+        </a>
+        <span class="button button-link button-nav f_r" onclick="$.goodssave(<?php echo e(Input::get("tradeId")); ?>,<?php echo e(Input::get("type")); ?>)">
+            完成
+        </span>
+        <h1 class="title"><?php echo e($title); ?></h1>
+    </header>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('distance'); ?>id="service-add" <?php $__env->stopSection(); ?>
+<?php if($data && $nopre != "nopre"): ?>
+<?php $__env->startSection('preview'); ?>
+    <div class="flex service-deal">
+        <div class="flex-2 tc">
+            <?php if($data['status'] == 1): ?>
+                <i class="icon iconfont">&#xe67e;</i>
+                <span class="focus-color-f" id="opgoods" onclick="$.opgoods(2,<?php echo e($data['id']); ?>,<?php echo e($args['tradeId']); ?>)">下架</span>
+            <?php else: ?>
+                <i class="icon iconfont" id="opgoods_iconfont">&#xe67f;</i>
+                <span class="focus-color-f" id="opgoods" onclick="$.opgoods(1,<?php echo e($data['id']); ?>,<?php echo e($args['tradeId']); ?>)" >上架</span>
+            <?php endif; ?>
+        </div>
+        <div class="flex-2 tc">
+            <a href="#" onclick="JumpURL('<?php echo e(u('Seller/preview',['id'=>$data['id'],'type'=>$args['type'],'tradeId'=>$args['tradeId']])); ?>','#seller_preview_view',2)">
+                <i class="icon iconfont">&#xe680;</i>
+                <span>预览</span>
+            </a>
+        </div>
+        <?php if($data['type'] == 1): ?>
+            <div class="flex-2 tc" onclick="$.opgoods(3,<?php echo e($data['id']); ?>,<?php echo e($args['tradeId']); ?>)">
+                <?php else: ?>
+                    <div class="flex-2 tc" onclick="$.opgoods(4,<?php echo e($data['id']); ?>,<?php echo e($args['tradeId']); ?>)">
+                        <?php endif; ?>
+                        <i class="icon iconfont">&#xe61e;</i>
+                        <span>删除</span>
+                    </div>
+            </div>
+            <?php $__env->stopSection(); ?>
+        <?php endif; ?>
+        <?php $__env->startSection('content'); ?>
+            <form action="javascript:;" id="goods-form">
+                <div id="preview" <?php if($data): ?>style="height: 200px;" <?php endif; ?>>
+                    <div class="content-block-title m10">商品图片(第一张为封面，最多4张)</div>
+                    <ul class="y-addimg clearfix">
+
+                        <?php $img = $data['images'] != "" ? $data['images']:$showData['imgs']; ?>
+
+                        <?php if($data): ?>
+                            <?php
+                            $img = array_filter($img);
+                            $count = count($img);
+                            if($count < 4){
+                                $mustcount = 4 -$count;
+                            }else{
+                                $mustcount = 0;
+                            }
+                            ?>
+                            <?php foreach($img as $k=>$v): ?>
+                                <li id="li_<?php echo e($k); ?>">
+                                    <label id="imglabel-<?php echo e($k); ?>" for="image-form-<?php echo e($k); ?>">
+                                        <img data-num="<?php echo e($k); ?>" class="image_upload" src="<?php echo e(formatImage($v,640,640)); ?>">
+                                    </label>
+                                    <i class="delete tc" data-id="<?php echo e($k); ?>"><i class="icon iconfont f20">&#xe605;</i></i>
+                                    <input type="text" name="imgs[]" id="upimage_<?php echo e($k); ?>" value="<?php echo e($v); ?>" style="display:none">
+                                </li>
+                            <?php endforeach; ?>
+                            <?php if($mustcount > 0): ?>
+                                <?php for($i=0; $i<$mustcount; $i++): ?>
+                                    <li id="li_<?php echo e($i+$count); ?>">
+                                        <label id="imglabel-<?php echo e($i+$count); ?>" for="image-form-<?php echo e($i+$count); ?>">
+                                            <img data-num="<?php echo e($i+$count); ?>" class="image_upload"  src="<?php echo e(asset('wap/community/newclient/images/addpic.png')); ?>">
+                                        </label>
+                                        <i class="delete tc none" data-id="<?php echo e($i+$count); ?>"><i class="icon iconfont f20">&#xe605;</i></i>
+                                        <input type="text" name="imgs[]" id="upimage_<?php echo e($i+$count); ?>" style="display:none">
+                                    </li>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <?php if($img != ""): ?>
+                                <?php
+                                $img = array_filter($img);
+                                $count = count($img);
+                                if($count < 4){
+                                    $mustcount = 4 -$count;
+                                }else{
+                                    $mustcount = 0;
+                                }
+                                ?>
+                                <?php foreach($img as $k=>$v): ?>
+                                    <li id="li_<?php echo e($k); ?>">
+                                        <label id="imglabel-<?php echo e($k); ?>" for="image-form-<?php echo e($k); ?>">
+                                            <img data-num="<?php echo e($k); ?>" class="image_upload" src="<?php echo e(formatImage($v,640,640)); ?>">
+                                        </label>
+                                        <i class="delete tc" data-id="<?php echo e($k); ?>"><i class="icon iconfont f20">&#xe605;</i></i>
+                                        <input type="text" name="imgs[]" id="upimage_<?php echo e($k); ?>" value="<?php echo e($v); ?>" style="display:none">
+                                        <input id="image-form-<?php echo e($k); ?>" type="file" accept="image/*" style="display:none" />
+                                    </li>
+                                <?php endforeach; ?>
+                                <?php if($mustcount > 0): ?>
+                                    <?php for($i=0; $i<$mustcount; $i++): ?>
+                                        <li id="li_<?php echo e($i+$count); ?>">
+                                            <label id="imglabel-<?php echo e($i+$count); ?>" for="image-form-<?php echo e($i+$count); ?>">
+                                                <img data-num="<?php echo e($i+$count); ?>" class="image_upload" src="<?php echo e(asset('wap/community/newclient/images/addpic.png')); ?>">
+                                            </label>
+                                            <i class="delete tc none" data-id="<?php echo e($i+$count); ?>"><i class="icon iconfont f20">&#xe605;</i></i>
+                                            <input type="text" name="imgs[]" id="upimage_<?php echo e($i+$count); ?>" style="display:none">
+                                        </li>
+                                    <?php endfor; ?>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <?php for($i=0; $i<=3; $i++): ?>
+                                    <li id="li_<?php echo e($i); ?>">
+                                        <label id="imglabel-<?php echo e($i); ?>" for="image-form-<?php echo e($i); ?>">
+                                            <img data-num="<?php echo e($i); ?>" class="image_upload" src="<?php echo e(asset('wap/community/newclient/images/addpic.png')); ?>">
+                                        </label>
+                                        <i class="delete tc none" data-id="<?php echo e($i); ?>"><i class="icon iconfont f20">&#xe605;</i></i>
+                                        <input type="text" name="imgs[]" id="upimage_<?php echo e($i); ?>" style="display:none">
+                                    </li>
+                                <?php endfor; ?>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <input type="hidden" name="type" value="<?php echo e(isset($data['type']) ? $data['type'] : $args['type']); ?>"/>
+                <input type="hidden" value="<?php echo e(isset($data['cateId']) ? $data['cateId'] : $args['tradeId']); ?>" name="tradeId" />
+                <input type="hidden" value="<?php echo e((int)$data['id']); ?>" name="id" />
+                <input type="hidden" value="<?php echo e(isset($data['systemGoodsId']) ? $data['systemGoodsId'] : 0); ?>" name="systemGoodsId" />
+                <?php if($args['type'] == 1): ?>
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">商品名称:</div>
+                                        <div class="item-input">
+                                            <input type="text" class="f14" placeholder="必填" name="name" id="name" value="<?php echo e(isset($data['name']) ? $data['name'] : $showData['name']); ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <a onclick="JumpURL('<?php echo u('Seller/getShopBrand'); ?>')">
+                                    <div class="item-content">
+                                        <div class="item-inner">
+                                            <div class="item-title label">品牌:</div>
+                                            <div class="item-input">
+                                                <input type="text" class="f14" placeholder="请选择商品品牌" name="brand" id="brand" readonly="readonly" value="<?php if($args['brandName'] && $data['shopBrand']['name']): ?> <?php if($args['brandName']): ?> <?php echo e($args['brandName']); ?> <?php else: ?> <?php echo e($data['shopBrand']['name']); ?><?php endif; ?> <?php endif; ?>">
+                                                <input type="hidden" name="brandId" value="<?php if($args['brandId']): ?> <?php echo e($args['brandId']); ?> <?php else: ?> <?php echo e(isset($data['shopBrand']['id']) ? $data['shopBrand']['id'] : 0); ?><?php endif; ?>">
+                                            </div>
+                                            <div><i class="icon iconfont">&#xe64b;</i></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">商品编码:</div>
+                                        <div class="item-input">
+                                            <input type="text" class="f14" <?php if($data): ?> readonly="readonly" <?php endif; ?> placeholder="请输入1-16位商品编码" name="goodsSn" id="goodsSn" maxlength="16" onKeyUp="value=value.replace(/[\W]/g,'')" value="<?php if($data): ?><?php echo e(isset($data['goodsSn']) ? $data['goodsSn'] : "无"); ?><?php else: ?><?php echo e($showData['goodsSn']); ?><?php endif; ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="y-spbq" <?php if($data == ""): ?> onclick="$.showData()" <?php else: ?> <?php if($data['systemGoodsId'] ==  0 || $data['systemGoodsId'] ==  "" ): ?> onclick="JumpURL('<?php echo u('Seller/getTagLists',['nav_back_url'=>$nav_back_url]); ?>','<?php echo e($css); ?>',2)" <?php else: ?>  onclick="$.showSystemMsg()"  <?php endif; ?> <?php endif; ?>>
+                        <span>商品标签:</span>
+                <span class="fr">
+                     <?php if($tag): ?>
+                        <span id="systemTagList"><?php echo e(isset($tag['pid']['name']) ? $tag['pid']['name'] : '未选择'); ?></span> - <span id="systemTag"><?php echo e(isset($tag['name']) ? $tag['name'] : '未选择'); ?></span>
+                        <input type="hidden" name="systemTagListPid" id="systemTagListPid" value="<?php echo e(isset($tag['pid']['id']) ? $tag['pid']['id'] : 0); ?>">
+                        <input type="hidden" name="systemTagListId" id="systemTagListId" value="<?php echo e(isset($tag['id']) ? $tag['id'] : 0); ?>">
+                    <?php else: ?>
+                        <span id="systemTagList">请选择分类</span>
+                    <?php endif; ?>
+                    <i class="icon iconfont">&#xe64b;</i>
+                </span>
+                    </div>
+                    <div id="yz_goods_extend" class="list-block add-b <?php if($data): ?> <?php if($data['norms']): ?>add-block <?php endif; ?> <?php endif; ?> show_norms <?php if($showData['norms']): ?>add-block <?php endif; ?>">
+                        <?php if($data): ?>
+                            <?php if($data['norms']): ?>
+                                <?php foreach( $data['norms'] as $k=> $v): ?>
+                                    <div  id="del<?php echo e($v['id']); ?>" >
+                                        <div class="delete-but" onclick ="$.deletebut2(<?php echo e($v['id']); ?>)" style="margin-top:42px;">
+                                            <i class="icon iconfont right-ico">&#xe619;</i>
+                                        </div>
+                                        <ul class="goods-editer-b s-goods-editer-b">
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
+                                                        <div class="item-input">
+                                                            <input type="hidden" placeholder="" name="norms[<?php echo e($k); ?>][id]" id="id" value="<?php echo e($v['id']); ?>">
+                                                            <input type="text" class="f14" placeholder="尺寸，颜色，大小等" name="norms[<?php echo e($k); ?>][name]" id="norms" value="<?php echo e($v['name']); ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="请输入金额（元）"  name="norms[<?php echo e($k); ?>][price]" id="price" value="<?php echo e($v['price']); ?>">
+                                                        </div>
+                                                        <span class="unit">元</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">促&nbsp;销&nbsp;价&nbsp;:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="请输入金额（元）"  name="norms[<?php echo e($k); ?>][sale_price]" id="sale_price" value="<?php echo e($v['salePrice']); ?>">
+                                                        </div>
+                                                        <span class="unit">元</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="请输入重量（千克）" name="norms[<?php echo e($k); ?>][weight]" id="weight" value="<?php echo e($v['weight']); ?>">
+                                                        </div>
+                                                        <span class="unit">千克</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" name="norms[<?php echo e($k); ?>][stock]" placeholder="必须是数字"  id="stock" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" value="<?php echo e($v['stock']); ?>">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <ul class="goods-editer-b h-goods-editer-b">
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入金额（元）"  name="price" id="price" value="<?php echo e($data['price']); ?>">
+                                                </div>
+                                                <span class="unit">元</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">促 &nbsp;销&nbsp;价&nbsp;:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入金额（元）"  name="sale_price" id="sale_price" value="<?php echo e($data['salePrice']); ?>">
+                                                </div>
+                                                <span class="unit">元</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入重量（千克）" name="weight" id="weight" value="<?php echo e($data['weight']); ?>">
+                                                </div>
+                                                <span class="unit">千克</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14"  placeholder="必须是数字"   value="<?php echo e($data['stock']); ?>" name="stock" id="stock" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <?php if($showData['norms']): ?>
+                                <?php foreach( $showData['norms'] as $k=> $v): ?>
+                                    <div  id="del<?php echo e($k + 200); ?>" >
+                                        <div class="delete-but" onclick ="$.deletebut2(<?php echo e($k + 200); ?>)">
+                                            <i class="icon iconfont right-ico">&#xe619;</i>
+                                        </div>
+                                        <ul class="goods-editer-b s-goods-editer-b">
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">型&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;号:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="尺寸，颜色，大小等" name="norms[<?php echo e($k + 200); ?>][name]" id="norms" value="<?php echo e($v['name']); ?>">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="请输入金额（元）"  name="norms[<?php echo e($k + 200); ?>][price]" id="price" value="<?php echo e($v['price']); ?>">
+                                                        </div>
+                                                        <span class="unit">元</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">促&nbsp;销&nbsp;价&nbsp;:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="请输入金额（元）"  name="norms[<?php echo e($k + 200); ?>][sale_price]" id="sale_price" value="<?php echo e($v['sale_price']); ?>">
+                                                        </div>
+                                                        <span class="unit">元</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" placeholder="请输入重量（千克）" name="norms[<?php echo e($k + 200); ?>][weight]" id="weight" value="<?php echo e($v['weight']); ?>">
+                                                        </div>
+                                                        <span class="unit">千克</span>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div class="item-content">
+                                                    <div class="item-inner">
+                                                        <div class="item-title label">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存:</div>
+                                                        <div class="item-input">
+                                                            <input type="text" class="f14" name="norms[<?php echo e($k + 200); ?>][stock]" placeholder="必须是数字"  id="stock" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" value="<?php echo e($v['stock']); ?>">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                <?php endforeach; ?>
+                            <?php else: ?>
+                                <ul class="goods-editer-b h-goods-editer-b">
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入金额（元）"  name="price" id="price" value="<?php echo e($showData['price']); ?>">
+                                                </div>
+                                                <span class="unit">元</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">促&nbsp;销&nbsp;价&nbsp;:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入金额（元）"  name="sale_price" id="sale_price" value="<?php echo e($showData['sale_price']); ?>">
+                                                </div>
+                                                <span class="unit">元</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">加&nbsp;工&nbsp;费&nbsp;:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入金额（元）"  name="process_money" id="process_money" value="<?php echo e($showData['processMoney']); ?>">
+                                                </div>
+                                                <span class="unit">元</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</div>
+                                                <div class="item-input">
+                                                    <input type="text" class="f14" placeholder="请输入重量（千克）" name="weight" id="weight" value="<?php echo e($showData['weight']); ?>">
+                                                </div>
+                                                <span class="unit">千克</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="item-content">
+                                            <div class="item-inner">
+                                                <div class="item-title label">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存:</div>
+                                                <div class="item-input">
+                                                    <input type="text"class="f14"  placeholder="必须是数字"   value="<?php echo e($showData['stock']); ?>" name="stock" id="stock" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="list-block add-block" id="yz_goods_processing_charges">
+                        <?php if($data['goodsProcessingCharges']): ?>
+                            <?php foreach($data['goodsProcessingCharges'] as $k => $v): ?>
+                                <div id="del<?php echo e($k + 200); ?>" >
+                                    <div class="delete-but"   onclick="$.deletebut1(<?php echo e($k + 200); ?>)" style="margin-top:-30px;">
+                                        <i class="icon iconfont right-ico">&#xe619;</i>
+                                    </div>
+                                    <ul class="goods-editer-b" id="del<?php echo e($k + 200); ?>">
+                                        <input type="hidden" placeholder="" name="goodsProcessingCharges[<?php echo e($k + 200); ?>][id]" value="<?php echo e($v['id']); ?>">
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-title label">加工形式:</div>
+                                                    <div class="item-input">
+                                                        <input type="text" placeholder="请输入加工形式" name="goodsProcessingCharges[<?php echo e($k + 200); ?>][name]" id="norms" value="<?php echo e($v['name']); ?>">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="item-content">
+                                                <div class="item-inner">
+                                                    <div class="item-title label">加工费用:</div>
+                                                    <div class="item-input">
+                                                        <input type="text" placeholder="请输入金额（元）"  name="goodsProcessingCharges[<?php echo e($k + 200); ?>][price]" id="price" value="<?php echo e($v['price']); ?>">
+                                                    </div>
+                                                    <span class="unit">元</span>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            <?php endforeach; ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="add_goods_specifications1 w_b">
+                        <i class="icon iconfont">&#xe618;</i>
+                        <p class="w_b_f_1 f14">添加加工规格</p>
+                    </div>
+                    <div class="add_goods_specifications2 w_b">
+                        <i class="icon iconfont">&#xe618;</i>
+                        <p class="w_b_f_1 f14">添加商品规格</p>
+                    </div>
+                    <div class="list-block" style="margin-bottom:0;">
+                        <div class="item-title label y-spadd" style="width:98%;">
+                            <p class="content-block-title m10 f14">描述:</p>
+                            <div style="width:100%;height:200px;">
+                                <script id="editor" name="brief" type="text/plain"><?php echo isset($data['brief']) ? $data['brief'] : $showData['brief']; ?></script>
+                            </div>
+                        </div>
+                    </div>
+                <?php else: ?>
+                    <div class="list-block">
+                        <ul>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">服务名称:</div>
+                                        <div class="item-input">
+                                            <input type="text" placeholder="必填" name="name" value="<?php echo e(isset($data['name']) ? $data['name'] : $showData['name']); ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="y-spbq" <?php if($data == ""): ?> onclick="$.showData()" <?php else: ?> <?php if($data['systemGoodsId'] ==  0 || $data['systemGoodsId'] ==  "" ): ?> onclick="JumpURL('<?php echo u('Seller/getTagLists',['nav_back_url'=>$nav_back_url]); ?>','<?php echo e($css); ?>',2)" <?php else: ?>  onclick="$.showSystemMsg()"  <?php endif; ?> <?php endif; ?>>
+                        <span>商品标签:</span>
+                <span class="fr">
+                    <?php if($tag): ?>
+                        <span id="systemTagList"><?php echo e(isset($tag['pid']['name']) ? $tag['pid']['name'] : '未选择'); ?></span> - <span id="systemTag"><?php echo e(isset($tag['name']) ? $tag['name'] : '未选择'); ?></span>
+                    <?php else: ?>
+                        <span id="systemTagList">请选择分类</span>
+                    <?php endif; ?>
+
+                    <i class="icon iconfont">&#xe64b;</i>
+                </span>
+                        <input type="hidden" name="systemTagListPid" id="systemTagListPid" value="<?php echo e(isset($tag['pid']['id']) ? $tag['pid']['id'] : 0); ?>">
+                        <input type="hidden" name="systemTagListId" id="systemTagListId" value="<?php echo e(isset($tag['id']) ? $tag['id'] : 0); ?>">
+                    </div>
+                    <div class="list-block">
+                        <ul>
+                            <!-- Text inputs -->
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格:</div>
+                                        <div class="item-input">
+                                            <input type="text" placeholder="请输入价格" name="price" value="<?php echo e(isset($data['price']) ? $data['price'] : $showData['price']); ?>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label">时&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;长:</div>
+                                        <div class="item-input">
+                                            <input type="text" placeholder="请输入时长" name="duration" value="<?php echo e(isset($data['duration']) ? $data['duration'] : $showData['price']); ?>" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')">
+                                        </div>
+                                        <span class="unit" >分钟</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li onclick="showStaffIframe();">
+                                <div class="item-content">
+                                    <a href="#">
+                                        <div class="item-inner">
+                                            <div class="item-title label">服务人员:</div>
+                                            <div class="item-input">
+                                                <input type="text" name="staffName" readonly="readonly" placeholder="请选择" value="<?php echo e(isset($data['allStaffName']) ? $data['allStaffName'] : $showData['allStaffName']); ?>"><!--禁止输入-->
+                                                <input type="hidden" name="staffId" value="<?php echo e(isset($data['allStaffId']) ? $data['allStaffId'] : $showData['allStaffId']); ?> "/>
+                                            </div>
+                                            <span class="icon iconfont unit">&#xe64b;</span>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="list-block" style="margin-bottom:0;">
+                        <ul>
+                            <li class="align-top">
+                                <div class="item-content">
+                                    <div class="item-inner">
+                                        <div class="item-title label y-spadd" style="width:98%;">
+                                            <p>描述:</p>
+                                            <div style="width:100%;height:200px;">
+                                                <script id="editor" name="brief" type="text/plain"><?php echo isset($data['brief']) ? $data['brief'] : $showData['brief']; ?></script>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                <?php endif; ?>
+            </form>
+            <div class="all-add"></div>
+        <?php $__env->stopSection(); ?>
+        <?php $__env->startSection("$js"); ?>
+            <script type="text/tpl" id="show_norms1">
+                 <div id="del{idshow}" >
+                    <div class="delete-but"   onclick="$.deletebut1({idshow})" style="margin-top:-30px;">
+                        <i class="icon iconfont right-ico">&#xe619;</i>
+                    </div>
+                    <ul class="goods-editer-b" id="del{idshow}">
+                        <input type="hidden" placeholder="" name="goodsProcessingCharges[{idshow}][id]">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">加工形式:</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入加工形式" name="goodsProcessingCharges[{idshow}][name]" id="norms">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">加工费用:</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入金额（元）"  name="goodsProcessingCharges[{idshow}][price]" id="price">
+                                    </div>
+                                    <span class="unit">元</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </script>
+            <script type="text/tpl" id="show_norms2">
+                 <div id="del{idshow}">
+                    <div class="delete-but"   onclick="$.deletebut2({idshow})" style="margin-top:42px;">
+                        <i class="icon iconfont right-ico">&#xe619;</i>
+                    </div>
+                    <ul class="goods-editer-b s-goods-editer-b" id="del{idshow}">
+                        <input type="hidden" placeholder="" name="norms[{idshow}][id]">
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">型号:</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="尺寸，颜色，大小等" name="norms[{idshow}][name]" id="norms">
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">原价:</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入金额（元）"  name="norms[{idshow}][price]" id="price">
+                                    </div>
+                                    <span class="unit">元</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">折扣价:</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入金额（元）"  name="norms[{idshow}][sale_price]" id="sale_price">
+                                    </div>
+                                    <span class="unit">元</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">重量:</div>
+                                    <div class="item-input">
+                                        <input type="text" placeholder="请输入重量（千克）"  name="norms[{idshow}][weight]" id="weight">
+                                    </div>
+                                    <span class="unit">元</span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item-content">
+                                <div class="item-inner">
+                                    <div class="item-title label">库存:</div>
+                                    <div class="item-input">
+                                        <input type="text" name="norms[{idshow}][stock]" placeholder="必须是数字"  id="stock" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </script>
+            <script type="text/tpl" id="hide_norms2">
+                <ul class="goods-editer-b h-goods-editer-b">
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">单&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;价:</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="请输入金额（元）"  name="price" id="price">
+                                </div>
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">促销价&nbsp;&nbsp;&nbsp;:</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="请输入金额（元）"  name="sale_price" id="sale_price">
+                                </div>
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">重&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;量:</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="请输入重量（千克）"  name="weight" id="weight">
+                                </div>
+                                <span class="unit">元</span>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="item-content">
+                            <div class="item-inner">
+                                <div class="item-title label">库&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;存:</div>
+                                <div class="item-input">
+                                    <input type="text" placeholder="必须是数字"  name="stock" id="stock" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" >
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </script>
+            <script type="text/javascript">
+                $(".add_goods_specifications2").unbind('click');
+                $(".add_goods_specifications2").bind('click',function(){
+                    $("#yz_goods_extend").append($(" #show_norms2").html().replace(/\{idshow\}/g,idshow));
+                    $(".page-current .add-b").addClass("add-block");
+                    $(".page-current .add_goods_specifications2").css({"margin-top":"0.75rem"});
+                    if($(".page-current .s-goods-editer-b").length != 0){
+                        if($(".page-current .h-goods-editer-b").length != 0){
+                            $(".page-current .h-goods-editer-b").remove();
+                        }
+                    }
+                    idshow ++;
+                });
+                $(".add_goods_specifications1").unbind('click');
+                $('.add_goods_specifications1').bind('click',function () {
+                    $("#yz_goods_processing_charges").append($(" #show_norms1").html().replace(/\{idshow\}/g,idshow));
+//                    $(".page-current .add-b").addClass("add-block");
+                    $(".page-current .add_goods_specifications1").css({"margin-top":"0.75rem"});
+                    /*if($(".page-current .s-goods-editer-b").length != 0){
+                        if($(".page-current .h-goods-editer-b").length != 0){
+                            $(".page-current .h-goods-editer-b").remove();
+                        }
+                    }*/
+                    idshow ++;
+                });
+                $.deletebut2 = function(delid){
+                    $(".page-current #del"+delid).remove();
+                    if($(".page-current .s-goods-editer-b").length == 0){
+                        $("#yz_goods_extend").removeClass("add-block").append($("#hide_norms2").html());
+                    }
+                }
+                $.deletebut1 = function(delid){
+                    $(".page-current #del"+delid).remove();
+                }
+            </script>
+            <script type="text/javascript">
+                var ue = UE.getEditor('editor',{
+                    toolbars:[['Undo', 'Redo']]
+                });
+                $(document).on('click','.image_upload', function () {
+                    var thisObj = $(this);
+                    $(this).fanweImage({
+                        width:320,
+                        height:320,
+                        callback:function(url, target) {
+                            thisObj.get(0).src = url;
+                            $("#upimage_"+thisObj.data('num')).val(url);
+                            $("#imglabel-"+thisObj.data('num')).siblings(".delete").removeClass("none");
+                        }
+                    });
+                });
+                $.showData = function(){
+                    var query = $("#<?php echo e($id_action.$ajaxurl_page); ?> #goods-form").serialize();
+
+                    $.ajax({
+                        url: "<?php echo e(u('Seller/showData')); ?>",
+                        dataType: "json",
+                        data:query,
+                        type: "POST",
+                        success: function(ajaxobj){
+                            JumpURL("<?php echo u('Seller/getTagLists',['nav_back_url'=>$nav_back_url]); ?>",'<?php echo e($css); ?>',2);
+                        }
+                    });
+                }
+
+                //评价页面照片删除
+                $(document).off("touchend",".delete");
+                $(document).on("touchend",".delete",function(){
+                    $(this).parents("li").find("img").attr("src", "<?php echo e(asset('wap/community/client/images/addpic.png')); ?>");
+                    $(this).addClass("none");
+                    $("#upimage_" + $(this).data('id')).val("");
+                    return false;
+                });
+
+
+                $.showSystemMsg = function (){
+                    $.toast("平台商品禁止修改标签");
+                }
+                var winH = $(".page-group").height(),conth = $(window).height();
+                $("input").live("click",function(){
+                    if($.device['os'] == 'ios'){
+                    }else{
+                        $(".content").scrollTop($(this).offset().top+$(".content").scrollTop()-50);
+                    }
+                });
+                $(window).resize(function(){
+                    if(conth == $(window).height()){
+                        $("textarea,input").blur();
+                    }
+                });
+                $("textarea,input").blur(function(){
+                    $(".content").css("padding-bottom",0);
+                    winH = $(".page-group").height();
+                });
+                ue.ready(function() {
+                    UE.getEditor('editor').setHeight(168);
+                    var interalTimer = setInterval(function(){
+                        if(ue.isFocus()){
+                            $(".y-spadd div").eq(0).css({"bottom":"0","position":"fixed","z-index":16,"width":"100%","height":"70%","background":"#ffffff"});
+                        }else{
+                            $(".y-spadd div").eq(0).css({"position":"static"});
+                        }
+                    },300)
+
+//            $(UE.getEditor('editor').iframe.contentWindow.document).keydown(function(event){
+//                 if(event.keyCode == ""){
+//                     $(".y-spadd div").eq(0).css({"position":"static"});
+//                 }
+//            });
+                });
+
+                //分销模式
+                $(document).off('click','.passage_name');
+                $(document).on('click','.passage_name', function () {
+                    var buttons1 = [
+                        {
+                            text: '分销通道',
+                            label: true
+                        },
+                            <?php foreach($passageId as $key => $value): ?>
+                            {
+                            text: "<?php echo e($value['name']); ?>",
+                            bold: true,
+                            color: 'danger',
+                            onClick: function() {
+                                $(".passage_id").val("<?php echo e($value['id']); ?>");
+                                $(".passage_name").val("<?php echo e($value['name']); ?>");
+                            }
+                        },
+                        <?php endforeach; ?>
+                      ];
+                    var buttons2 = [
+                        {
+                            text: '取消',
+                            bg: 'danger'
+                        }
+                    ];
+                    var groups = [buttons1, buttons2];
+                    $.actions(groups);
+                });
+
+                //分销模式
+                $(document).off('click','.scheme_name');
+                $(document).on('click','.scheme_name', function () {
+                    var buttons1 = [
+                        {
+                            text: '分销方案',
+                            label: true
+                        },
+                            <?php foreach($schemeId as $key => $value): ?>
+                            {
+                            text: "<?php echo e($value['name']); ?>",
+                            bold: true,
+                            color: 'danger',
+                            onClick: function() {
+                                $(".scheme_id").val("<?php echo e($value['id']); ?>");
+                                $(".scheme_name").val("<?php echo e($value['name']); ?>");
+                            }
+                        },
+                        <?php endforeach; ?>
+                      ];
+                    var buttons2 = [
+                        {
+                            text: '取消',
+                            bg: 'danger'
+                        }
+                    ];
+                    var groups = [buttons1, buttons2];
+                    $.actions(groups);
+                });
+            </script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_nav'); ?><?php $__env->stopSection(); ?>
+<?php echo $__env->make('staff.default._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

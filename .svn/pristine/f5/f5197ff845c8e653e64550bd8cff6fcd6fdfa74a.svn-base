@@ -1,0 +1,35 @@
+<?php $__env->startSection('title'); ?><?php echo e($title); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_top'); ?>
+    <header class="bar bar-nav">
+        <a class="button button-link button-nav pull-left "href="#" onclick="JumpURL('<?php echo e(u('Seller/index')); ?>','#seller_index_view',2)" data-transition='slide-out'>
+            <span class="icon iconfont">&#xe64c;</span>
+        </a>
+        <a href="#" onclick="JumpURL('<?php echo e(u('Seller/goodsadd',['type' => 1])); ?>','#seller_goodsadd_view',2)" class="button button-link button-nav f_r" data-popup=".popup-about">
+            添加分类
+        </a>
+        <h1 class="title">商品管理</h1>
+    </header>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentcss'); ?>infinite-scroll infinite-scroll-bottom <?php $__env->stopSection(); ?>
+<?php $__env->startSection('distance'); ?>data-distance="20" <?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <div class="management-editor plr085 clearfix">
+        <span class="f_l">商品分类列表</span>
+        <span href="#" class=" f_r focus-color-f" id="goods_editor-but">编辑</span>
+    </div>
+    <?php if($goods): ?>
+    <ul class="management-ul fine-bor-top list-container lists_item_ajax">
+        <?php echo $__env->make('staff.default.seller.goods_item', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </ul>
+    <?php else: ?>
+        <div class="x-null tc">
+            <i class="icon iconfont">&#xe60c;</i>
+            <p>很抱歉，暂无商品分类</p>
+        </div>
+    <?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('staff.default._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

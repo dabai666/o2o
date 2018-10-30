@@ -1,0 +1,76 @@
+<?php $__env->startSection('title'); ?><?php echo e($title); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_top'); ?>
+    <header class="bar bar-nav">
+        <h1 class='title'><?php echo e($title); ?></h1>
+    </header>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('show_refresh'); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div class="content p-0-085 login-register">
+        <ul>
+            <li class="w_b">
+                <span class="icon iconfont">&#xe650;</span>
+                <input type="text" id="cellphone" maxlength="11" placeholder="请输入手机号码" class="w_b_f_1"/>
+            </li>
+            <li class="w_b">
+                <span class="icon iconfont">&#xe652;</span>
+                <input type="password" id="password" placeholder="请输入密码" class="w_b_f_1"/>
+            </li>
+        </ul>
+        <div class="clearfix">
+            <a href="#" onclick="JumpURL('<?php echo e(u('Staff/repwd',['code'=>3])); ?>','#staff_repwd_view',2)" class="f_r  focus-color-f  f075  lh095 mt090 ">忘记密码？</a>
+        </div>
+        <input class="ui-button_login_register mt090" type="submit"  id="login" value="登录">
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection($js); ?>
+<script type="text/javascript">
+    $(function(){
+        $(document).on("click","#login",function(){
+            var mobile = $("#cellphone").val();
+            var pwd = $("#password").val();
+            var reg = /^1\d{10}$/;
+            if(!reg.test(mobile)){
+                $.toast("请输入正确的手机号码");
+                return false;
+            }
+            var data = {
+                mobile:mobile,
+                pwd:pwd
+            };
+            if(data.pwd == '' ){
+                $.toast("请输入密码");
+                return false;
+            }
+            $.showIndicator();
+            $.post("<?php echo e(u('Staff/dologin')); ?>",data,function(res){
+                if(res.code == 0){
+                    <?php /*var url = "<?php echo e(u('Mine/index')); ?>";*/ ?>
+                    <?php /*JumpURL(url,'#mine_index_view',2);*/ ?>
+                    $.regPushDevice(res.data.id,"<?php echo e(u('Mine/index')); ?>",'2',res.data.role);
+					//location.href = "<?php echo e(u('Mine/index')); ?>";
+                }else{
+                    $.toast(res.msg);
+                }
+            $.hideIndicator();
+            },"json");
+        });
+    });
+
+    function js_apns(devive,token){
+        var data = new Object();
+        data.devive = devive;
+        data.apns = token;
+        data.id = FANWE.PUSH_REG_ID;
+        data.role = FANWE.ROLE;
+
+        $.post("<?php echo u('Staff/regpush'); ?>", data, function(result){
+            JumpURL("<?php echo e(u('Mine/index')); ?>",'#mine_index_view',1);
+        });
+    }
+</script>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_nav'); ?><?php $__env->stopSection(); ?>
+<?php echo $__env->make('staff.default._layouts.base_login', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

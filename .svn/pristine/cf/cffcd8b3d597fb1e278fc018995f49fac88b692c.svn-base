@@ -1,0 +1,36 @@
+<?php foreach($data as $item): ?>
+    <li class="col-50">
+        <div class="card m0">
+            <div class="card-header p0" onclick="$.href('<?php echo e(u('Goods/detail',['goodsId'=>$item['goods_id']])); ?>')">
+                <img class="card-cover" src="<?php echo e(formatImage($item['images'],320,320,2)); ?>" alt="">
+            </div>
+            <div class="card-content">
+                <div class="card-content-inner">
+                    <div class="list-block media-list m0">
+                        <ul>
+                            <li>
+                                <a href="#" class="item-link item-content pl0">
+                                    <div class="item-inner">
+                                        <div class="item-subtitle f13" onclick="$.href('<?php echo e(u('Goods/detail',['goodsId'=>$item['goods_id']])); ?>')"><?php echo e($item['goods_name']); ?></div>
+                                        <div class="item-title-row">
+                                            <div class="item-title c-red">￥<span class="f18"><?php echo e($item['price']); ?></span></div>
+                                            <div class="item-after c-gray f12"><?php echo e($item['sales_volume']); ?>人付款</div>
+                                        </div>
+                                        <?php /*<div class="item-title-row f12  c-bgpale y-m-10">*/ ?>
+                                        <?php /*<div class="item-title c-gray">返利￥<span>2.69</span></div>*/ ?>
+                                        <?php /*<div class="item-after c-gray">201人分享</div>*/ ?>
+                                        <?php /*</div>*/ ?>
+                                        <div class="item-title-row f12  c-bgpale y-m-10">
+                                            <div class="item-title c-orange y-width50"><?php if($item['storeType'] == 0): ?>周边店<?php else: ?>全国店<?php endif; ?><img src="<?php echo e(asset('images/y15.png')); ?>" class="va-1 ml2" width="12"></div>
+                                            <div class="item-after c-gray">来自:<?php echo e($item['province']['name']); ?><?php echo e($item['city']['name']); ?></div>
+                                        </div>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </li>
+<?php endforeach; ?>

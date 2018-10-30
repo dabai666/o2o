@@ -1,0 +1,153 @@
+<?php $__env->startSection('css'); ?>
+    <style>
+        .m-tab table tbody td{}
+        .y-tcmain{padding:1.5rem;}
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('right_content'); ?>
+	
+		<div id="checkList" class="">
+                    <div class="u-ssct clearfix">
+                    <?php $search_args = Input::all(); ?>
+                    <form id="yzForm" class="" name="yzForm" method="post" action="http://admin.test.com/City/index" target="_self">
+                        <div class="search-row clearfix">
+                      <div id="provinceId-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 所在地区:
+		            </span>
+		            <div class="f-boxr">
+		                  <script type="text/javascript" src="http://admin.test.com/upload/opencity.js"></script><select id="provinceId" name="provinceId" data-val="<?php echo e($search_args['provinceId']); ?>" data-showtip="1" data-city="cityId" class="sle province_city" style="width:auto; display:inline-block;"></select><select id="cityId" name="cityId" data-val="<?php echo e($search_args['cityId']); ?>" data-area="areaId" class="sle" style="width:auto; display:inline-block;"></select><select id="areaId" name="areaId" data-val="<?php echo e($search_args['areaId']); ?>" class="sle" style="width:auto; display:inline-block;"></select><script type="text/javascript">jQuery(function($){$.RegionBind("provinceId");});</script>
+		            </div>
+		        </div>
+					<div id="cityName-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 城市名称:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="cityName" id="cityName"  class="u-ipttext" value="<?php echo e($search_args['cityName']); ?>" />
+		            </div>
+		        </div>
+					<button type="submit" class="btn mr5">
+                        搜索
+                    </button>
+                </div>
+                    </form>
+                </div>
+			<div class="list-btns">
+                      <a href="<?php echo e(u('City/create')); ?>" target="_self" class="btn mr5">
+                        添加城市
+                    </a>
+				<a href="javascript:;" target="_self" class="btn mr5" onclick="$.RemoveList(this)">
+                        删除
+                    </a>
+                <a href="javascript:;" target="_self" class="btn mr5" onclick="openCity();">
+                        一键开通
+                    </a>
+                </div>
+			<div class="m-tab">
+                      <table id="checkListTable" class="">
+                        <thead><td style="width:20px; text-align:center;">
+                            <input type="checkbox" onclick="$.TableCheckHandler(this)">
+                        </td><td class="" width="30" order="id" code="id"><span>编号</span></td>
+					<td class="" width="180" order="name" code="name"><span>城市名称</span></td>
+					<td class="" order="firstChar" code="firstChar"><span>城市首字母</span></td>
+					<td class="" order="sort" code="sort"><span>排序</span></td>
+					<td class="" width="80" order="" code=""><span>默认城市</span></td>
+					<td style="text-align:center;white-space:nowrap;" width="30"><span>操作</span></td>
+                    </thead><tbody>
+                        <?php foreach($list as $list_index => $list_item): ?>
+                        <?php 
+                            $list_item_css = $list_index % 2 == 0 ? " tr-even" : " tr-odd"; 
+                            $list_item_pk  = $list_item["id"];
+                        ?>
+                        <tr class="tr-<?php echo e($list_item_pk); ?><?php echo e($list_item_css); ?>" key="<?php echo e($list_item_pk); ?>" primary="id"><td style="width:20px; text-align:center;">
+                            <input type="checkbox" name="key" value="<?php echo e($list_item_pk); ?>" <?php if($list_item["checkedDisabled"] == 1): ?> disabled <?php endif; ?> />
+                        </td><td class="" code="id"><?php echo e($list_item['id']); ?></td>
+					<td class="" code="name"><?php if($list_item['level'] == 1): ?>
+                            <p><?php echo e($list_item['name']); ?></p>
+                        <?php elseif(in_array($list_item['pid'],$zx)): ?>
+                            <p>&nbsp;&nbsp;<?php echo e($list_item['cityname']); ?>|<?php echo e($list_item['name']); ?></p>
+                        <?php elseif($list_item['level'] == 2): ?>
+                            <p>&nbsp;&nbsp;<?php echo e($list_item['provincename']); ?>|<?php echo e($list_item['name']); ?></p>
+                        <?php elseif($list_item['level'] == 3): ?>
+                            <p>&nbsp;&nbsp;<?php echo e($list_item['provincename']); ?>|<?php echo e($list_item['cityname']); ?>|<?php echo e($list_item['name']); ?></p>
+                        <?php endif; ?></td>
+					<td class="" code="firstChar"><?php echo e($list_item['firstChar']); ?></td>
+					<td class="" code="sort"><?php echo e($list_item['sort']); ?></td>
+					<td class="" code=""><?php if($list_item['isDefault']==true): ?>
+						是
+						<?php else: ?>
+                            <?php if($list_item['level'] < 3): ?>
+                                <?php if(!in_array($list_item['pid'],$zx)): ?>
+                                    <?php if($list_item['level'] ==1): ?>
+                                        <?php if(in_array($list_item['id'],$zx)): ?>
+                                            <a href="javascript:;" class=" blu" onclick="isdefault(<?php echo e($list_item['id']); ?>)" data-pk="<?php echo e($list_item['id']); ?>" target="_self">设为默认</a>
+                                        <?php endif; ?>
+                                    <?php else: ?>
+                                        <a href="javascript:;" class=" blu" onclick="isdefault(<?php echo e($list_item['id']); ?>)" data-pk="<?php echo e($list_item['id']); ?>" target="_self">设为默认</a>
+                                    <?php endif; ?>
+                                <?php endif; ?>
+                            <?php else: ?>
+                            <?php endif; ?>
+						<?php endif; ?></td>
+					<td class=""><!-- <?php if($list_item['canDelete'] == 1): ?> -->
+						<a href="javascript:;" class=" red"  onclick="$.RemoveItem(this, '<?php echo e(u(CONTROLLER_NAME."/destroy",["id" => $list_item["id"]])); ?>', '你确定要删除该数据吗？',<?php echo e($list_item["id"]); ?>)" data-pk="<?php echo e($list_item["id"]); ?>" target="_self">删除</a>
+						<!-- <?php else: ?> -->
+						<a href="javascript:;" class=""  onclick="javascript:;" style="color:#ccc;cursor:default" data-pk="<?php echo e($list_item["id"]); ?>" target="_self">删除</a>
+						<script type="text/javascript">
+	                        $(".tr-"+<?php echo e($list_item['id']); ?>+" input[name='key']").prop('disabled','disabled');
+	                    </script>
+	                    <!-- <?php endif; ?> --></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+                    </table>
+                </div><?php echo $__env->make('admin._layouts.pager', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+	
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('js'); ?>
+<script type="text/javascript">
+	function isdefault (id) {
+		$.post("<?php echo e(u('City/isdefault')); ?>",{'id':id},function(result){
+			window.location.reload();
+		});
+	}
+
+    function openCity() {
+        var dialog = $.zydialogs.open("<div class='y-tcmain'>您确定开通所有城市么？</div>", {
+            boxid:'SET_GROUP_WEEBOX',
+            width:300,
+            title:'提醒',
+            showClose:true,
+            showButton:true,
+            showOk:true,
+            showCancel:true,
+            okBtnName:"确定",
+            cancelBtnName: '取消',
+            contentType:'content',
+            onOk: function(){
+                dialog.setLoading();
+                $.post("<?php echo e(u('City/open')); ?>",function(result){
+                    dialog.setLoading(false);
+                    if(result.status == true){
+                        window.location.reload();
+                    }else{
+                        $.ShowAlert(result.msg);
+                        $.zydialogs.close("SET_GROUP_WEEBOX");
+                    }
+                },'json');
+            },
+            onCancel:function(){
+                $.zydialogs.close("SET_GROUP_WEEBOX");
+            }
+        });
+    }
+
+
+</script>
+
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

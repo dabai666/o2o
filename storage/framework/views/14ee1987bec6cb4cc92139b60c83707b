@@ -1,0 +1,53 @@
+<nav class="bar bar-tab"> 
+<link rel="stylesheet" href="<?php echo e(asset('wap/community/newclient/index_iconfont/iconfont.css')); ?>?<?php echo e(TPL_VERSION); ?>">
+    <?php
+        $keyVal = -1;
+        $nowUrl = CONTROLLER_NAME.'/'.ACTION_NAME;
+        foreach($indexnav as $k=>$v) {
+            $indexnav[$k]['isActive'] = 0;
+            $url = Lang::get('api_system.index_link.'.$v['type']);
+            $navType = Lang::get('api_system.index_nav.'.$v['type']);
+            if($nowUrl == $url) {
+                $keyVal = $k;
+            } elseif ($nav == $navType && $keyVal == -1) {
+                $keyVal = $k;
+            }
+        }
+        if($keyVal != -1) {
+            $indexnav[$keyVal]['isActive'] = 1;
+        }
+    ?>
+
+    <?php foreach($indexnav as $key => $i_nav): ?>
+        <?php if($i_nav['type'] == 11 && !IS_OPEN_FX): ?>
+            <?php
+                continue;
+            ?>
+        <?php endif; ?>
+    <a class="tab-item  <?php if($i_nav['isActive'] == 1): ?> active <?php endif; ?> pageloading" href="<?php echo e(u(Lang::get('api_system.index_link.'.$i_nav['type']))); ?>" data-no-cache="true">
+        <?php
+        $current_icon = explode(',', $i_nav['icon']);
+        ?>
+        <span class="icon iconfont"> 
+            <?php if($i_nav['isActive'] == 1): ?>
+                <?php echo $current_icon[0].';'; ?> 
+            <?php else: ?> 
+                <?php echo $current_icon[1].';'; ?> 
+            <?php endif; ?>
+            <?php if(Lang::get('api_system.index_nav.'.$i_nav['type']) == 'mine'): ?>
+               <?php /*<span class="x-dot f12"><?php echo e((int)$counts['newMsgCount'] > 99? '99+' : (int)$counts['newMsgCount']); ?></span>*/ ?>
+            <?php endif; ?>
+            <?php if(Lang::get('api_system.index_nav.'.$i_nav['type']) == 'forum' && (int)$counts['systemCount'] > 0 ): ?>
+                <span class="x-dot f12"><?php echo e((int)$counts['systemCount'] > 99? '99+' : (int)$counts['systemCount']); ?></span>
+            <?php endif; ?>
+            <?php if(Lang::get('api_system.index_nav.'.$i_nav['type']) == 'msg' && ((int)$counts['systemCount'] > 0 || (int)$counts['newMsgCount'])): ?>
+                <span class="y-redc"></span>
+            <?php endif; ?>
+            <?php if(Lang::get('api_system.index_nav.'.$i_nav['type']) == 'goodscart' && (int)$counts['cartGoodsCount'] > 0): ?>
+                    <span class="x-dot f12" id="tpGoodsCart"><?php echo e((int)$counts['cartGoodsCount'] > 99 ? '99+' : (int)$counts['cartGoodsCount']); ?></span>
+            <?php endif; ?>
+        </span>
+        <span class="tab-label"><?php echo e($i_nav['name']); ?></span>
+    </a>
+    <?php endforeach; ?>  
+</nav>

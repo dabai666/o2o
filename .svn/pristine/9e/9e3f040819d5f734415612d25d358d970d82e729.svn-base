@@ -1,0 +1,42 @@
+9999999999a:124:{s:7:"aboutus";s:84:"<p>
+	<br />
+</p>
+<p>
+	<span style="color:#666666;"></span> 
+</p>
+<span></span>";s:12:"access_token";s:138:"awYMnsXkocjlMn9p-1QNIPbw1zMyIwBb4rrDTA0LCQwLl9hjP7O8rzGE7I2IkPlIjDiDD4egojeVTPDPn5lmQuTyAHLuhnMSK0NprRh-nc-BmbYhZfPGRKDTIBRVZ4AlYZHdCDAIJR";s:20:"access_token_expired";s:10:"1482797988";s:10:"admin_logo";s:69:"http://image.jikesoft.com/images/2016/12/27/201612271426245802538.jpg";s:10:"admin_name";s:9:"社区o2o";s:9:"admin_tpl";s:0:"";s:8:"app_logo";s:0:"";s:12:"app_opendoor";s:1:"0";s:9:"auto_time";s:2:"60";s:26:"buyer_android_app_down_url";s:0:"";s:25:"buyer_android_app_version";s:3:"1.0";s:30:"buyer_android_app_version_code";s:1:"1";s:26:"buyer_android_upgrade_info";s:22:"安卓APP升级了哦!";s:18:"buyer_app_down_url";s:0:"";s:17:"buyer_app_version";s:3:"1.0";s:22:"buyer_app_version_code";s:3:"1.0";s:19:"buyer_force_upgrade";s:1:"0";s:16:"buyer_index_show";s:1:"0";s:17:"buyer_push_appkey";s:0:"";s:24:"buyer_push_master_secret";s:0:"";s:17:"buyer_service_tel";s:0:"";s:19:"buyer_share_content";s:122:"我在使用%1$sApp，可以在上面预约商品送货上门和预约上门服务，邀请你来试试。下载地址%2$s";s:18:"buyer_upgrade_info";s:22:"苹果APP升级了哦!";s:13:"cash_integral";s:2:"50";s:13:"cost_integral";s:3:"100";s:23:"coupon_exchange_explain";s:18:"<p>
+	<br />
+</p>";s:24:"coupon_return_alert_time";s:1:"1";s:10:"disclaimer";s:216:"<p>
+	<br />
+</p>
+<span style="line-height: 30px; font-family: 微软雅黑,;" microsoft="" yahei?,="" tahoma,="" srial,="" helvetica,="" sans-serif;font-size:13px;background-color:#ffffff;?=""><span></span></span>";s:16:"download_address";s:0:"";s:19:"fx_exchange_percent";s:3:"100";s:13:"fx_user_check";s:3:"100";s:12:"integral_off";s:1:"0";s:18:"integral_open_type";s:1:"2";s:15:"integral_remark";s:38:"<p>
+	<br />
+</p>
+<p>
+	<br />
+</p>";s:17:"is_refund_balance";s:1:"1";s:12:"jsapi_ticket";s:86:"sM4AOVdWfPE4DxkXGEs8VOkDQ778csmKoAmg1ge4He2aqmqIXuJrEJURlZlKdwFb8P7oveY3gfILmZpr-wJnyQ";s:20:"jsapi_ticket_expired";s:10:"1482797988";s:9:"key_words";s:93:"你妹,呵呵,法轮功,萨达姆，习近平，操你妈，滚犊子，奥多姆，卡戴珊";s:19:"limit_cash_integral";s:2:"50";s:20:"limit_posts_integral";s:2:"50";s:20:"limit_reply_integral";s:3:"100";s:8:"live_key";s:0:"";s:15:"money_cycle_day";s:1:"1";s:15:"order_track_key";s:0:"";s:11:"posts_check";s:1:"1";s:14:"posts_integral";s:2:"50";s:21:"public_address_number";s:0:"";s:10:"qq_map_key";s:35:"2N2BZ-KKZA4-ZG4UB-XAOJU-HX2ZE-HYB4O";s:12:"reg_integral";s:2:"50";s:14:"reply_integral";s:2:"50";s:15:"seller_about_us";s:12:"关于我们";s:27:"seller_android_app_down_url";s:77:"http://gdown.baidu.com/data/wisegame/733dbbbb81e6ebfc/jieriduanxinzhufu_2.apk";s:26:"seller_android_app_version";s:3:"1.0";s:27:"seller_android_upgrade_info";s:21:"安卓APP升级了哦";s:19:"seller_app_down_url";s:77:"http://gdown.baidu.com/data/wisegame/733dbbbb81e6ebfc/jieriduanxinzhufu_2.apk";s:18:"seller_app_version";s:3:"1.0";s:20:"seller_force_upgrade";s:1:"0";s:18:"seller_push_appkey";s:24:"fcba66635dfa2fcb78198dea";s:25:"seller_push_master_secret";s:24:"4c001821fddf8982d95c97b9";s:11:"seller_reg1";s:0:"";s:11:"seller_reg2";s:0:"";s:11:"seller_reg3";s:36:"<p class="MsoNormal">
+	<br />
+</p>";s:11:"seller_reg4";s:36:"<p class="MsoNormal">
+	<br />
+</p>";s:11:"seller_reg5";s:36:"<p class="MsoNormal">
+	<br />
+</p>";s:18:"seller_service_tel";s:12:"023-67898579";s:17:"seller_site_title";s:30:"易赞上门服务卖家系统";s:19:"seller_upgrade_info";s:21:"苹果APP升级了哦";s:19:"seller_withdraw_day";s:1:"0";s:13:"sign_integral";s:2:"10";s:9:"site_desc";s:9:"社区o2o";s:12:"site_keyword";s:72:"农村、电商、代购、代销、生活服务，社区、上门服务";s:9:"site_name";s:15:"方维社区o2o";s:10:"site_title";s:9:"社区o2o";s:12:"sms_password";s:0:"";s:7:"sms_url";s:25:"http://sms.fanwe.com/post";s:13:"sms_user_name";s:0:"";s:14:"sms_valid_time";s:2:"60";s:14:"staff_about_us";s:0:"";s:26:"staff_android_app_down_url";s:0:"";s:25:"staff_android_app_version";s:3:"1.0";s:30:"staff_android_app_version_code";s:1:"1";s:26:"staff_android_upgrade_info";s:22:"安卓APP升级了哦!";s:18:"staff_app_down_url";s:0:"";s:17:"staff_app_version";s:3:"1.0";s:22:"staff_app_version_code";s:3:"1.0";s:15:"staff_bank_info";s:85:"<span><br />
+</span><strong><span style="background-color:#E56600;"></span></strong>";s:17:"staff_deduct_type";s:1:"2";s:18:"staff_deduct_value";s:1:"1";s:16:"staff_disclaimer";s:0:"";s:19:"staff_force_upgrade";s:1:"0";s:18:"staff_order_notice";s:0:"";s:17:"staff_push_appkey";s:0:"";s:24:"staff_push_master_secret";s:0:"";s:13:"staff_service";s:0:"";s:17:"staff_service_tel";s:0:"";s:19:"staff_settled_image";s:0:"";s:18:"staff_upgrade_info";s:22:"苹果APP升级了哦!";s:12:"system_admin";s:5:"admin";s:26:"system_buyer_order_confirm";s:1:"1";s:30:"system_buyer_order_confirm_all";s:1:"1";s:16:"system_order_fee";s:1:"2";s:17:"system_order_pass";s:4:"3600";s:21:"system_order_pass_all";s:5:"86400";s:24:"system_order_self_motion";s:1:"2";s:27:"system_seller_order_confirm";s:2:"60";s:15:"system_send_fee";s:1:"0";s:21:"system_send_staff_fee";s:4:"0.00";s:24:"system_staff_change_hour";s:1:"1";s:10:"vcode_type";s:1:"0";s:12:"wap_about_us";s:84:"<p>
+	<br />
+</p>
+<p>
+	<span style="color:#666666;"></span> 
+</p>
+<span></span>";s:14:"wap_disclaimer";s:6:"<br />";s:8:"wap_help";s:0:"";s:12:"wap_integral";s:0:"";s:21:"wap_lookopen_district";s:6:"<br />";s:16:"wap_order_notice";s:163:"<span> 
+<p>
+	<span style="color:#999999;line-height:1.5;"><span></span></span> 
+</p>
+<h4 style="font-family:Simsun;font-size:medium;">
+	<br />
+</h4>
+</span>";s:13:"wap_promotion";s:0:"";s:20:"wap_refund_agreement";s:6:"<br />";s:11:"wap_service";s:6:"<br />";s:15:"wap_service_tel";s:0:"";s:16:"wap_service_time";s:0:"";s:20:"wap_terrace_referral";s:69:"<p>
+	<br />
+</p>
+<p>
+	<span style="color:#666666;"></span> 
+</p>";s:7:"wap_tpl";s:9:"community";s:17:"watermark_clarity";s:0:"";s:14:"watermark_logo";s:0:"";}

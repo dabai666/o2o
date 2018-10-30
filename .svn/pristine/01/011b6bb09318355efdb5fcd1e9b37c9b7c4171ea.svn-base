@@ -1,0 +1,7 @@
+<ul>
+    <?php if($brandList): ?>
+        <?php foreach($brandList as $k => $v): ?>
+            <li><input type="button" value="<?php echo e($v['name']); ?>" data-brand-id="<?php echo e($v['id']); ?>" class="button123 brand <?php if(isset($option['brandId']) && ($option['brandId'] == $v['id'])): ?> a1 <?php endif; ?>"></li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>

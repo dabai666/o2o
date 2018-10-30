@@ -1,0 +1,25 @@
+<?php foreach($list as $v): ?>
+    <div class="card y-card y-address y-address<?php echo e($v['id']); ?> yz-address <?php if($v['isDefault']): ?> active <?php endif; ?>  <?php if($v['isCanServer'] != 1 && Input::get('sellerId') > 0): ?>y-opacity <?php endif; ?>" data-id="<?php echo e($v['id']); ?>">
+        <?php if($v['isCanServer'] != 1 && Input::get('sellerId') > 0): ?>
+        <div class="y-judgmentaddr"><img src="<?php echo e(asset('wap/community/newclient/images/y26.png')); ?>"></div>
+        <?php endif; ?>
+
+        <div class="card-content">
+            <div class="card-content-inner"   <?php if($v['isCanServer'] != 1 && Input::get('sellerId') > 0): ?> data-id="0"  <?php else: ?> data-id="<?php echo e($v['id']); ?> <?php endif; ?>">
+                <p class="clearfix"><span><?php echo e($v['name']); ?></span><span class="fr"><?php echo e($v['mobile']); ?></span></p>
+                <p class="mt5"><?php echo e($v['province']['name']); ?> <?php echo e($v['city']['name']); ?> <?php echo e($v['address']); ?></p>
+            </div>
+        </div>
+            <?php if($v['isCanServer'] != 1 && Input::get('sellerId') > 0): ?>
+
+            <?php else: ?>
+            <div class="card-footer c-gray2 f12">
+                <div><i class="icon iconfont mr5 f20 vat c-red y-addron x-setDuf">&#xe612;</i><?php if($v['isDefault']): ?> 默认 <?php else: ?> 设为默认 <?php endif; ?></div>
+                <div>
+                    <span class="mr10 urlte pageloading"><i class="icon iconfont mr5 f18 vat">&#xe63c;</i>编辑</span>
+                    <span class="y-del"><i class="icon iconfont mr5 f18 vat">&#xe630;</i>删除</span>
+                </div>
+            </div>
+           <?php endif; ?>
+    </div>
+<?php endforeach; ?>

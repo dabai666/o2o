@@ -1,0 +1,394 @@
+<?php $__env->startSection('css'); ?>
+    <style>
+        .div-ul-li ul li{
+            /*以上三行实现自适应start*/
+            width: 25%;/*设置宽度*/
+            text-align: center;/*设置对齐方式*/
+            float:left;/*设置浮动未left*/
+            /*以上三行实现自适应end*/
+            list-style-type:none;/*去掉li的消圆点*/
+            display: inline;/*设置成横向排列*/
+            margin-top: 10px;
+        }
+        .button123 {
+            /*border: solid 2px #ddd;*/
+            /*border: solid 1px #0bbe06;*/
+            background: #f3efee;
+            /*border-radius: 9px;*/
+            font-size: 14px;
+            padding: 2px 8px;
+            margin: 0;
+            display: inline-block;
+            line-height: 20px;
+            transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s
+        }
+        .a{
+            background: #e4e2e3;
+        }
+        .b{
+            background: #f2efee;
+        }
+        .a1{
+            color: red;
+        }
+    </style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_top'); ?>
+    <header class="bar bar-nav">
+        <div class="searchbar x-tsearch y-search">
+            <div class="search-input pr dib"  style="width: 100%">
+                <input type="search" id='search' placeholder='搜索附近商品或门店' onclick="$.href('<?php echo e(u('Seller/search')); ?>')" readonly/>
+            </div>
+            <!-- <a class="button button-fill button-primary c-bg">搜索</a> -->
+        </div>
+    </header>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php
+    $one = $two = true;
+    ?>
+    <?php echo $__env->make('wap.community._layouts.bottom', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="content tagpage " id=''>
+        <?php if($cityIsService == 0): ?>
+                <!-- 未开通物业提示 -->
+        <div class="x-null pa w100 tc">
+            <img src="<?php echo e(asset('wap/community/newclient/images/nothing.png')); ?>" width="108">
+            <p class="f12 c-gray mt10">附近没有发现其他门店，我们正在努力覆盖中</p>
+            <a class="f14 c-white x-btn mt15" href="<?php echo e(u('Index/addressmap')); ?>">切换地址</a>
+        </div>
+        <?php else: ?>
+            <div class="x-sjfltab x-goodstab clearfix">
+                <div class="buttons-tab fl pr">
+                    <?php foreach($data as $key => $value): ?>
+                        <?php if($value['id'] > 0): ?>
+                            <a data-firstLevel="<?php echo e($value['id']); ?>" class="tab-link button firstLevel <?php if($key == 0): ?> active <?php endif; ?>"><?php echo e($value['name']); ?></a>
+                            <?php if($value['secondLevel']): ?>
+                                <ul class="secondLevel <?php if($key != 0): ?> none <?php endif; ?>" id="firstLevel_id_<?php echo e($value['id']); ?>">
+                                    <?php foreach($value['secondLevel'] as $k => $v): ?>
+                                        <li class="tab-link button secondLevelOne" data-secondLevel="<?php echo e($v['id']); ?>" style="font-size: 11px;height: 35px;margin-top: -5px;"><?php echo e($v['name']); ?></li>
+                                    <?php endforeach; ?>
+                                </ul>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                    <input type="hidden" id="firstLevelId" value="<?php echo e(isset($data[0]['id']) ? $data[0]['id'] : -1); ?>">
+                    <input type="hidden" id="secondLevelId" value="-1">
+                </div>
+                <div class="tabs c-bgfff fl y-tabs">
+                    <div class="tab active">
+                        <div style="display: flex;width: 100%;height: 40px;" >
+                            <div style="width: 50%;text-align: center;" class="flage a" data-flage="1">
+                                <span  style="font-size: 15px;">
+                                    <div style="height: 10px;"></div>
+                                    <input style="width: 100%;" type="radio" value="1" class="none" name="flage">
+                                    商品品牌
+                                </span>
+                            </div>
+                            <div style="width: 50%;text-align: center;" class="flage b" data-flage="2">
+                                <span  style="font-size: 15px;">
+                                    <div style="height: 10px;"></div>
+                                    <input style="width: 100%;" type="radio" value="2" class="none"  name="flage">
+                                    按名称筛选
+                                </span>
+                            </div>
+                            <input  value="1" class="none" id="flage">
+                        </div>
+
+                        <div style="max-height: 150px;margin-bottom: 10px;">
+                            <div class="div-ul-li" style="max-height:140px;overflow:auto;" id="brand">
+                                <ul id="brandListIdArr">
+                                    <!-- <li><input type="button" value="11" data-brand-id="10" class="button123 brand a1"></li>-->
+                                    <?php if(isset($brandList) && $brandList): ?>
+                                        <?php foreach($brandList as $k => $v): ?>
+                                            <li><input type="button" value="<?php echo e($v['name']); ?>" data-brand-id="<?php echo e($v['id']); ?>" class="button123 brand <?php if($k == 0): ?> a1 <?php endif; ?>"></li>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                            <div class="div-ul-li none" style="max-height:140px;overflow:auto;" id="classify">
+                                <ul id="classifyListIdArr">
+                                    <?php if(isset($classifyList) && $classifyList): ?>
+                                        <?php foreach($classifyList as $k => $v): ?>
+                                            <li ><input type="button" value="<?php echo e($v['name']); ?>" data-classify-id="<?php echo e($v['id']); ?>" class="button123 classify" ></li>
+                                        <?php endforeach; ?>
+                                    <?php endif; ?>
+                                </ul>
+                            </div>
+                            <input id="brandId" type="hidden" value="-1">
+                            <input id="classifyId" type="hidden" value="-1">
+                        </div>
+                        <hr style="border:1px solid lightgrey;"/>
+                        <div id="bb" style="display: flex;width: 100%;height: 40px;">
+                            <div style="width: 49.3%;text-align: center;margin-top: 10px;color: #bababa;" id="cancel">清&nbsp;空</div>
+                            <div style="width: 0.4%;color:#e3e3e3;text-align: center;margin-top: 10px; "></div>
+                            <div style="width: 49.3%;text-align: center;margin-top: 10px;color: #fe415b" id="confirm">确&nbsp;定</div>
+                        </div>
+                        <hr style="border:1px solid lightgrey;"/>
+                        <div>
+                            <div class="infinite-scroll infinite-scroll-bottom pull-to-refresh-content" data-ptr-distance="55" data-distance="50" id="">
+                                <div class="pull-to-refresh-layer none">
+                                    <div class="preloader"></div>
+                                    <div class="pull-to-refresh-arrow"></div>
+                                </div>
+                                    <div class="card-container" id="wdddmain">
+                                        <?php if($lists): ?>
+                                            <?php foreach($lists as $k => $v): ?>
+                                                <div>
+
+                                                    <a href="<?php echo e(u('Goods/detail')); ?>?goodsId=<?php echo e($v['id']); ?>">
+                                                        <div style="clear: both;float: left;margin-left: 10px;margin-top: 10px;">
+                                                            <div style="display: flex;">
+                                                                <div>
+                                                                    <img src="<?php echo e($v['image']); ?>" style="width: 60px;height: 60px;">
+                                                                </div>
+                                                                <div style="margin-left: 20px;margin-top: 5px;">
+                                                                    <p><?php echo e($v['name']); ?></p>
+                                                                    <p>￥<?php echo e($v['salePrice']); ?></p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div style="float: right;margin-top: 30px;margin-right: 20px;"><i class="icon iconfont vat ml5">&#xe602;</i></div>
+                                                        <hr style="clear:both;border:1px solid lightgrey;"/>
+                                                    </a>
+                                                </div>
+                                            <?php endforeach; ?>
+                                            <div class="pa w100 tc allEnd none">
+                                                <p class="f12 c-gray mt5 mb5">数据加载完毕</p>
+                                            </div>
+                                        <?php else: ?>
+                                            <div class="x-null pa w100 tc">
+                                                <p class="f12 c-gray mt10">很抱歉！没有找到内容！</p>
+                                            </div>
+                                        <?php endif; ?>
+                                    </div>
+                                            <!-- 加载提示符 -->
+                                    <div class="infinite-scroll-preloader none">
+                                        <div class="preloader"></div>
+                                    </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+    </div>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection($js); ?>
+    <script>
+        $(function(){
+            //头部导航
+            $('.flage').bind('click',function(){
+                $('.flage').removeClass('a');
+                $('.flage').removeClass('b');
+                $('.flage').addClass('b');
+                $(this).removeClass('a');
+                $(this).removeClass('b');
+                $(this).addClass('a');
+
+               /* $('.flage').removeClass('a');
+                $('.flage').removeClass('b');*/
+                var flage = $(this).attr('data-flage');
+                if(flage == 2) {
+                    $("#brand").addClass('none');
+                    $("#classify").removeClass('none');
+                   /* $(this).addClass('b');
+                    $("#classify").addClass('a');*/
+                }else{
+                    $("#classify").addClass('none');
+                    $("#brand").removeClass('none');
+                   /* $("#brand").addClass('a');
+                    $("#classify").addClass('b');*/
+                }
+                $("#flage").val(flage);
+            });
+            //确定
+            $("#confirm").bind('click',function(){
+                var data = new Object;
+                data.page = 1;
+                var flage = $("#flage").val();
+                var firstLevelId = $("#firstLevelId").val();
+                var secondLevelId = $("#secondLevelId").val();
+                data.firstLevelId = firstLevelId;
+                data.secondLevelId = secondLevelId;
+                if(flage == 1){
+                    var brandIdArr=new Array();
+                    var i = 0;
+                    $("#brandListIdArr li").each(function(){
+                        if($(this).find('input').hasClass('a1')){
+                            brandIdArr[i] = $(this).find('input').attr('data-brand-id');
+                            i++;
+                        }
+                    });
+                    data.brandId = brandIdArr;
+                }else{
+                    var classifyId = $("#classifyId").val();
+                    data.classifyId = classifyId;
+                }
+//                return false;
+                getList(data,false);
+            });
+            function getList(data,flage){
+                if(flage){
+                    getBrand(data);
+                    getClassify(data);
+                }
+                $.post("<?php echo e(u('Tag/getList')); ?>", data, function(result){
+                    groupLoading = false;
+                    result  = $.trim(result);
+                    if (result != "") {
+                        groupPageIndex = 2;
+                    }
+                    $('#wdddmain').html(result);
+                    $(".pull-to-refresh-layer").addClass('none');
+                    $.pullToRefreshDone('.pull-to-refresh-content');
+                });
+            }
+            function getBrand(data){
+                $.post("<?php echo e(u('Tag/getBrand')); ?>", data, function(result){
+                    result  = $.trim(result);
+                    $('#brand').html(result);
+                });
+            }
+            function getClassify(data){
+//                var data = new Object;
+                $.post("<?php echo e(u('Tag/getClassify')); ?>", data, function(result){
+                    result  = $.trim(result);
+                    $('#classify').html(result);
+                });
+            }
+            function start(){
+                var data = new Object;
+                data.page = 1;
+                var flage = $("#flage").val();
+                var firstLevelId = $("#firstLevelId").val();
+                var secondLevelId = $("#secondLevelId").val();
+                data.firstLevelId = firstLevelId;
+                data.secondLevelId = secondLevelId;
+                getList(data,true);
+            }
+            //取消
+            $("#cancel").bind('click',function(){
+                start();
+            });
+            //左导航
+            $(".firstLevel").bind('click',function(){
+                $('.firstLevel').removeClass('active');
+                $(this).addClass('active');
+                $(".secondLevel").addClass('none');
+                var firstLevelId = $(this).attr('data-firstLevel');
+                $("#firstLevel_id_"+firstLevelId).removeClass('none');
+                $("#firstLevelId").val(firstLevelId);
+                $("#secondLevelId").val('-1');
+                start();
+            });
+            $(".secondLevelOne").bind('click',function(){
+                $('.secondLevelOne').removeClass('active');
+                $(this).addClass('active');
+                var secondLevelId = $(this).attr('data-secondLevel');
+                $("#secondLevelId").val(secondLevelId);
+                start();
+            });
+            //分类
+            $("#classify").on("click","input", function() {
+                $('.classify').removeClass('a1');
+                $(this).addClass('a1');
+                var classifyId = $(this).attr('data-classify-id');
+                $('#classifyId').val(classifyId);
+            });
+            $("#brand").on("click","input", function() {
+                if($(this).hasClass("a1")){
+                    $(this).removeClass('a1');
+                }else{
+                    $(this).addClass('a1');
+                }
+            });
+            // 加载开始
+            // 上拉加载
+            var groupLoading = false;
+            var groupPageIndex = 2;
+            var nopost = 0;
+            $(document).off('infinite', '.infinite-scroll-bottom');
+            $(document).on('infinite', '.infinite-scroll-bottom', function() {
+                if(nopost == 1){
+                    return false;
+                }
+                // 如果正在加载，则退出
+                if (groupLoading) {
+                    return false;
+                }
+                //隐藏加载完毕显示
+                $(".allEnd").addClass('none');
+
+                groupLoading = true;
+
+                $('.infinite-scroll-preloader').removeClass('none');
+                $.pullToRefreshDone('.pull-to-refresh-content');
+
+                var data = new Object;
+                data.page = groupPageIndex;
+                var flage = $("#flage").val();
+                var firstLevelId = $("#firstLevelId").val();
+                var secondLevelId = $("#secondLevelId").val();
+                data.firstLevelId = firstLevelId;
+                data.secondLevelId = secondLevelId;
+
+                $.post("<?php echo e(u('Tag/getList')); ?>", data, function(result){
+                    groupLoading = false;
+                    $('.infinite-scroll-preloader').addClass('none');
+                    result  = $.trim(result);
+                    if (result != '') {
+                        groupPageIndex++;
+                        $('#wdddmain').append(result);
+                        $.refreshScroller();
+                    }else{
+                        $(".allEnd").removeClass('none');
+                        nopost = 1;
+                    }
+                });
+            });
+            //下拉刷新
+            $(document).off('refresh', '.pull-to-refresh-content');
+            $(document).on('refresh', '.pull-to-refresh-content',function(e) {
+                // 如果正在加载，则退出
+                if (groupLoading) {
+                    return false;
+                }
+                $(".pull-to-refresh-layer").removeClass('none');
+                groupLoading = true;
+                var data = new Object;
+                data.page = groupPageIndex;
+                var flage = $("#flage").val();
+                var firstLevelId = $("#firstLevelId").val();
+                var secondLevelId = $("#secondLevelId").val();
+                data.firstLevelId = firstLevelId;
+                data.secondLevelId = secondLevelId;
+
+                $.post("<?php echo e(u('Tag/getList')); ?>", data, function(result){
+                    groupLoading = false;
+                    result  = $.trim(result);
+                    if (result != "") {
+                        groupPageIndex = 2;
+                    }
+                    $('#wdddmain').html(result);
+                    $(".pull-to-refresh-layer").addClass('none');
+                    $.pullToRefreshDone('.pull-to-refresh-content');
+                });
+            });
+//            start();
+        })
+    </script>
+    <script>
+        $(function(){
+            var height = $(".bar-nav").height();
+            height += $(".bar-tab").height();
+            $(".x-goodstab .tab").css("height",$(window).height()-height);
+            // $(".x-goodstab .buttons-tab").css("height",$(window).height()-height);
+            $(".x-goodstab .buttons-tab").css({"height":$(window).height()-height,"overflow": "scroll"});
+        })
+        $(".tagpage").css({"bottom":0,"overflow": "hidden"});
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('wap.community._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

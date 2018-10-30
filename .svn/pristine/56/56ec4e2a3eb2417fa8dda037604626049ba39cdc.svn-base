@@ -1,0 +1,476 @@
+<?php $__env->startSection('css'); ?>
+<style type="text/css">
+	#searchSeller{margin-left: 5px;}
+	#mobile{width: 100px;}
+	.setprice{width: 60px;margin: 0px 5px;}
+	.allprice{margin-left: 20px; color: #999;}
+	.ts,.ts3{color: #999;margin-left: 5px;vertical-align:middle;}
+	#cateSave{display: none;}
+	.page_2,.page_3{display: none;}
+	.m-spboxlst li{margin-bottom: 0px;}
+	#tags_goods-form-item .f-boxr {width:550px;} 
+	#cateSave{display: none;}
+	.page_2,.page_3{display: none;}
+	.m-spboxlst li{margin-bottom: 0px;}
+	#tags_goods-form-item .f-boxr {width:550px;}
+	.f-boxr .btn{background: #efefef; border-color: #dfdfdf; width: 100px; color: #555;}
+	.x-gebox{border: 1px solid #ddd; padding: 5px 20px;}
+	.x-gebox .u-ipttext{width: 100px; margin-right: 10px;}
+	.closege{width: 20px; height: 20px; background: url("<?php echo e(asset('wap/community/client/images/ico/close.png')); ?>"); background-size: 100% 100%; display: inline-block; cursor: pointer; vertical-align: middle; margin-top: -2px;}
+</style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('right_content'); ?>
+	
+		<div class="m-spboxlst " style="">
+					<form id="yz_form" name="yz_form" class="validate-form ajax-form" method="post" action="http://admin.wai9.fanwe.net/Service/<?php echo e($systemgoodssave ? $systemgoodssave : 'serviceSave'); ?>" enctype="application/x-www-form-urlencoded" target="_self">
+						<input type="hidden" name="type" value="<?php echo e($systemgoodssave ? 1 : $args['type']); ?>" />
+			<input type="hidden" name="sellerId" value="<?php echo e($args['sellerId']); ?>" />
+            <div id="name-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品标题:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="name" id="name"  class="u-ipttext" value="<?php echo e($data['name']); ?>" />
+		            </div>
+		        </div>
+            <div id="goodsSn-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品编码:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php if(!$data): ?>
+                    <INPUT class="u-ipttext" maxlength="16" size="16" name=goodsSn id="goodsSn" onKeyUp="value=value.replace(/[\W]/g,'')">
+                    <span>(请输入1-16位字母和数字组合的编码)</span>
+                <?php else: ?>
+                    <?php if($systemgoodssave): ?>
+                        <INPUT class="u-ipttext" maxlength="16" size="16" name=goodsSn id="goodsSn" onKeyUp="value=value.replace(/[\W]/g,'')">
+                        <span>(请输入1-16位字母和数字组合的编码)</span>
+                    <?php else: ?>
+                        <?php echo e(isset($data['goodsSn']) ? $data['goodsSn'] : "无"); ?>
+
+                    <?php endif; ?>
+                <?php endif; ?>
+		            </div>
+		        </div>
+            <div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品分类:
+		            </span>
+		            <div class="f-boxr">
+		                  <select  id="cateId" name="cateId" class="sle  " ><?php $select_options = $cate; ?><?php $selecteds = is_array($data['cate']['id']) ? $data['cate']['id'] : [$data['cate']['id']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+		            </div>
+		        </div>
+			<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品标签:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php if($systemgoodssave != "" || $data['systemGoodsId'] > 0): ?>
+                    <select disabled='disabled' id="systemTagListPid" name="systemTagListPid" class="sle  " ><?php $select_options = $systemTagListPid; ?><?php $selecteds = is_array($data['systemTagListPid']) ? $data['systemTagListPid'] : [$data['systemTagListPid']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+                    <select disabled='disabled' id="systemTagListId" name="systemTagListId" class="sle   <?php if(count($systemTagListId) == 1): ?> none <?php endif; ?>" ><?php $select_options = $systemTagListId; ?><?php $selecteds = is_array($data['systemTagListId']) ? $data['systemTagListId'] : [$data['systemTagListId']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+                    <input type="hidden"  name="systemTagListPid" value="<?php echo e($data['systemTagListPid']); ?>"/>
+                    <input type="hidden"  name="systemTagListId" value="<?php echo e($data['systemTagListId']); ?>"/>
+                <?php else: ?>
+                    <select  id="systemTagListPid" name="systemTagListPid" class="sle  " ><?php $select_options = $systemTagListPid; ?><?php $selecteds = is_array($data['systemTagListPid']) ? $data['systemTagListPid'] : [$data['systemTagListPid']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+                    <select  id="systemTagListId" name="systemTagListId" class="sle   <?php if(count($systemTagListId) == 1): ?> none <?php endif; ?>" ><?php $select_options = $systemTagListId; ?><?php $selecteds = is_array($data['systemTagListId']) ? $data['systemTagListId'] : [$data['systemTagListId']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+                <?php endif; ?>
+		            </div>
+		        </div>
+			<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品品牌:
+		            </span>
+		            <div class="f-boxr">
+		                  <select  id="brandId" name="brandId" class="sle  " ><?php $select_options = $brand; ?><?php $selecteds = is_array($data['brandId']) ? $data['brandId'] : [$data['brandId']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+		            </div>
+		        </div>
+			<div id="originalPrice-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品原价:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="originalPrice" id="originalPrice"  class="u-ipttext" value="<?php echo e($data['originalPrice']); ?>" />&nbsp;<span style="color: #ff0000">(* 必填)</span>
+		            </div>
+		        </div>
+			<div id="salePrice-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 促销价格:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="salePrice" id="salePrice"  class="u-ipttext" value="<?php echo e($data['salePrice']); ?>" />
+		            </div>
+		        </div>
+			<div id="stock-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品库存:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="stock" id="stock"  class="u-ipttext" value="<?php if(isset($data['stock'])):?><?php echo e($data['stock']); ?><?php else: ?>0<?php endif; ?>" />
+		            </div>
+		        </div>
+			<div id="norms-form-item1" class="u-fitem clearfix">
+					            <span class="f-tt">
+					                 加工规格:
+					            </span>
+				<div class="f-boxr">
+					<button type="button" class="btn addge add_norms1">添加规格</button>
+				</div>
+			</div>
+			<div id="norms-form-item" class="u-fitem clearfix x-addge" style="margin-top: -20px;">
+				<span class="f-tt">&nbsp;</span>
+				<div class="f-boxr norms_panel1">
+					<?php foreach($data['goodsProcessingCharges'] as $item): ?>
+						<div class="x-gebox">
+							<input type="hidden" name="_id1[]" value="<?php echo e($item['id']); ?>" >
+							加工形式：<input type="text" name="_name1[]" value="<?php echo e($item['name']); ?>" class="u-ipttext" />
+							价格：<input type="text" name="_price1[]" value="<?php echo e($item['price']); ?>" class="u-ipttext" />元
+							<i class="closege1"></i>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+			<div id="weight-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品重量:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="weight" id="weight"  class="u-ipttext" value="<?php if(isset($data['weight'])):?><?php echo e($data['weight']); ?><?php else: ?>0<?php endif; ?>" />
+		            </div>
+		        </div>
+			<!--yz:fitem name="totalStock" attr="readonly" label="总库存" val="0"></yz:fitem-->
+			<div id="norms-form-item" class="u-fitem clearfix">
+	            <span class="f-tt">
+	                 规格型号:
+	            </span>
+	            <div class="f-boxr">
+	                <button type="button" class="btn addge add_norms">添加规格</button>
+	            </div>
+	        </div>
+	        <div id="norms-form-item" class="u-fitem clearfix x-addge">
+	            <span class="f-tt">&nbsp;</span>
+	            <div class="f-boxr norms_panel">
+	           	 	<?php foreach($data['norms'] as $item): ?>
+	                <div class="x-gebox">
+	                	<input type="hidden" name="_id[]" value="<?php echo e($item['id']); ?>" >
+						型号：<input type="text" name="_name[]" value="<?php echo e($item['name']); ?>" class="u-ipttext" />
+						价格：<input type="text" name="_price[]" value="<?php echo e($item['price']); ?>" class="u-ipttext" />
+						折扣价:<input type="text" name="_salePrice[]" class="u-ipttext" value="<?php echo e(isset($item['salePrice']) ? $item['salePrice'] : 0); ?>"/>
+						重量:<input type="text" name="_weight[]" class="u-ipttext" value="<?php echo e(isset($item['weight']) ? $item['weight'] : 0); ?>"/>
+						库存：<input type="text" name="_stock[]" value="<?php echo e($item['stock']); ?>" class="u-ipttext" />
+						<i class="closege"></i>
+	                </div>
+	            	<?php endforeach; ?>
+	            </div>
+	        </div>
+			<div id="-form-item" class="u-fitem clearfix ">
+			<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品图片:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php $images = $data['images']; ?>
+                <ul id="image-list-1" class="m-tpyllst image-list clearfix" data-input-name="images[]">
+                    <?php foreach($images as $image): ?>
+                    <li class="image-box">
+                        <a class="m-tpyllst-img image-item" href="<?php echo e($image); ?>" target="_blank"><img src="<?php echo e($image); ?>" alt=""></a>
+                        <a class="m-tpyllst-btn image-update-btn" href="javascript:;">
+                            <i class="fa fa-plus"></i> 上传图片
+                        </a>
+                        <a href="javascript:;" class="image-delete fa fa-times"></a>
+                        <input type="hidden" name="images[]" value="<?php echo e($image); ?>"/>
+                    </li>
+                    <?php endforeach; ?>
+                    <li class="image-add-box">
+                        <a class="m-tpyllst-btn image-add-btn" href="javascript:;">
+                            <i class="fa fa-plus"></i> 上传图片
+                        </a>
+                    </li>
+                    
+                </ul>
+		            </div>
+		        </div>
+			<div id="buyLimit-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 每人限购:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="buyLimit" id="buyLimit"  class="u-ipttext" value="<?php echo e($data['buyLimit']); ?>" />
+		            </div>
+		        </div>
+			<div id="brief-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品描述:
+		            </span>
+		            <div class="f-boxr">
+		                  <div id="brief-tip"><textarea data-tip-rel="#brief-tip" id="brief_editor" class=" " name="brief"><?php echo e($data['brief']); ?></textarea></div>
+            <script>
+            var brief_editor = KindEditor.create("#brief_editor",{
+                width:'540px',minWidth:'540px',height:'280px',resizeType:1,allowFileManager:false,items: [
+'source', 'undo', 'redo', 'plainpaste', 'plainpaste', 'wordpaste', 'clearhtml', 'quickformat', 'selectall', 'fullscreen', 'fontname', 'fontsize', '|', 'forecolor', 'hilitecolor', 'bold', 'italic', 'underline', 'hr',
+'removeformat', '|', 'justifyleft', 'justifycenter', 'justifyright', 'table', 'insertorderedlist',
+'insertunorderedlist', '|', 'emoticons', 'image', 'link', 'unlink']
+            });
+            </script>
+		            </div>
+		        </div>
+			<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品状态:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php $status = (int)$data['status'] ?>
+				<?php $radio_options = array (
+  0 => '0',
+  1 => '1',
+); ?><?php $default = ''; ?><?php $checked = isset($status) ? $status : $default; ?><?php $radio_texts = array (
+  0 => '下架',
+  1 => '上架',
+); ?><?php  foreach($radio_options as $options_key => $options_val): 
+                    $checked_attr = $options_val == $checked ? " checked" : ""; ?>
+                    <label>
+                        <input type="radio" class="uniform " name="status" value="<?php echo $options_val; ?>" <?php echo $checked_attr; ?>/>
+                        <span><?php echo $radio_texts[$options_key]; ?></span>
+                    </label>
+                    <span>&nbsp;&nbsp;</span>
+                    <?php endforeach; ?>
+		            </div>
+		        </div>
+			<div id="sort-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 排序:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="sort" id="sort"  class="u-ipttext" value="<?php echo e($data['sort']); ?>" />
+		            </div>
+		        </div>
+            <?php if($fx): ?>
+            	<!-- 全国店商品添加分销模式 -->
+            	<!-- <div class="u-rtt"><span class="ml15"></span>分销系统参数</div>
+				<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 分销通道:
+		            </span>
+		            <div class="f-boxr">
+		                  <select  id="passageId" name="passageId" class="sle  " ><?php $select_options = $passageId; ?><?php $selecteds = is_array($data['fanwefx']['passageId']) ? $data['fanwefx']['passageId'] : [$data['fanwefx']['passageId']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+		            </div>
+		        </div>
+				<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 分销方案:
+		            </span>
+		            <div class="f-boxr">
+		                  <select  id="schemeId" name="schemeId" class="sle  " ><?php $select_options = $schemeId; ?><?php $selecteds = is_array($data['fanwefx']['schemeId']) ? $data['fanwefx']['schemeId'] : [$data['fanwefx']['schemeId']]; ?><?php  foreach($select_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $selected = in_array($options_key, $selecteds) ? " selected" : ""; ?>
+	                	<option<?php echo $selected; ?> value="<?php echo $options_key; ?>"><?php echo $options_val; ?></option>
+						<?php endforeach; ?></select>
+		            </div>
+		        </div>
+				<div id="baseMoney-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 分销金额基数:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="baseMoney" id="baseMoney"  class="u-ipttext" value="<?php if(isset($data['baseMoney'])):?><?php echo e($data['baseMoney']); ?><?php else: ?><?php echo e($data['fanwefx']['baseMoney']); ?><?php endif; ?>" /><span class="ml5">元</span>
+					<span class="ml5 red">*用于给用户分成的金额</span>
+		            </div>
+		        </div>
+				<div id="limitMoney-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 分销金额上限:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="limitMoney" id="limitMoney"  class="u-ipttext" value="<?php if(isset($data['limitMoney'])):?><?php echo e($data['limitMoney']); ?><?php else: ?><?php echo e($data['fanwefx']['limitMoney']); ?><?php endif; ?>" /><span class="ml5">元</span>
+					<span class="ml5 red">*获得分销返佣金币的上限，0表示不设置上限</span>
+		            </div>
+		        </div>
+				<input type="hidden" name="fx" value="1"> -->
+			<?php endif; ?>		<div class="u-fitem clearfix">
+                            <span class="f-tt">
+                                &nbsp;
+                            </span>
+                            <div class="f-boxr">
+                                  <button type="submit" class="u-addspbtn">提 交</button>
+                            </div>
+                        </div>		<input type="hidden" value="<?php echo e($data['id']); ?>" name="id" />
+					</form>
+				</div>
+	
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+<script type="text/tpl" id="normsrow"> 
+	<div class="x-gebox" style="margin-top:3px;">
+		型号：<input type="text" name="_name[]" class="u-ipttext" />
+		价格：<input type="text" name="_price[]" class="u-ipttext" />
+		折扣价:<input type="text" name="_salePrice[]" class="u-ipttext" />
+		重量:<input type="text" name="_weight[]" class="u-ipttext" />
+		库存：<input type="text" name="_stock[]" class="u-ipttext" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />
+		<i class="closege"></i>
+    </div>
+</script>
+<script type="text/tpl" id="normsrow1">
+	<div class="x-gebox" style="margin-top:3px;">
+		加工形式：<input type="text" name="_name1[]" class="u-ipttext" />
+		价格：<input type="text" name="_price1[]" class="u-ipttext" />元
+		<?php /*库存：<input type="text" name="_stock[]" class="u-ipttext" onkeyup="this.value=this.value.replace(/\D/g,'')" onafterpaste="this.value=this.value.replace(/\D/g,'')" />*/ ?>
+		<i class="closege"></i>
+    </div>
+</script>
+<script type="text/javascript">
+	var cate = eval( <?php echo json_encode($cate); ?> );
+	var editId = "<?php if(isset($data['seller']['id'])){ echo $data['seller']['id'];} ?>";
+	var cateId = "<?php if(isset($data['cate']['id'])){ echo $data['cate']['id'];} ?>";
+	var priceType = "<?php echo e($priceType); ?>";
+	$(".add_norms").click(function(){  
+		$(".norms_panel").append($("#normsrow").html()); 
+		if($(".x-gebox").length > 0){
+			$(".norms_panel").parent().show();
+		}
+	});
+	$(".add_norms1").click(function(){
+		$(".norms_panel1").append($("#normsrow1").html());
+		if($(".x-gebox").length > 0){
+			$(".norms_panel1").parent().show();
+		}
+	});
+	$(document).on('click','.closege',function(){ 
+		$(this).parent().remove();
+		if($(".x-gebox").length <= 0){
+			$(".norms_panel").parent().hide();
+		}
+	});
+	$(document).on('click','.closege1',function(){
+		$(this).parent().remove();
+		if($(".x-gebox").length <= 0){
+			$(".norms_panel1").parent().hide();
+		}
+	});
+	$(function(){  
+		if( priceType == 1 ) {
+			$("#ci").show();
+		}
+		else if(  priceType == 2 ) {
+			$("#shi").show();
+		}
+
+		$("input[name='priceType']").change(function(){
+			//按次计费
+			if( $(this).val() == 1 ){
+				$("#shi").hide();
+				$("#ci").show();
+			}
+			//按时计费
+			else{
+				$("#ci").hide();
+				$("#shi").show();
+			}
+		});
+
+		$('#setprice_hour').blur(function(){
+			var hour = $(this).val();
+			if( hour > 0 ) {
+				$('.ts4').text( hour );
+			}else{
+				$('.ts4').text( 0 );
+			}
+		});
+
+		$('#setprice_money').blur(function(){
+			var money = $(this).val();
+			if( money > 0 ) {
+				$('.ts5').text( money );
+			}else{
+				$('.ts5').text( 0 );
+			}
+			$('.city_price_box input.price').val(money);
+		});
+
+		$('#setprice_price').blur(function(){
+			$('.city_price_box input.price').val( $(this).val() );
+		});
+
+
+		<?php /*if( editId > 0 ) {*/ ?>
+			<?php /*$("#sellerId").html("<option value='"+editId+"' selected><?php echo e($data['seller']['name']); ?></option>");*/ ?>
+			<?php /*$('.ts1').text( cate[cateId]['levelrel'] );*/ ?>
+		<?php /*}*/ ?>
+
+		<?php /*$('#cateId').change(function(){*/ ?>
+			<?php /*$('.ts1').text( cate[$(this).val()]['levelrel'] );*/ ?>
+		<?php /*});*/ ?>
+
+		$('#searchSeller').click(function(){
+			clearts();
+			var mobileName = $('#mobile').val();
+			$.post("<?php echo e(u('Order/getSellerInfo')); ?>",{"mobileName":mobileName},function(res){
+				res = eval(res);
+				if(res.length>0){
+					var html = "";
+					$.each(res,function(n,value) {
+						if(n<1){
+							$('#mobile').val(value.mobile);
+						}
+						html += "<option value='"+value.id+"' data-mobile='"+value.mobile+"'>"+value.name+"</option>";
+					});
+					$("#sellerId").html(html);
+				}else{
+					$("#sellerId").html("<option value='0'>请输入手机号或昵称</option>");
+					$(".ts2").text('未查询到相关服务人员');
+				}
+				
+
+			});
+		});
+
+		$("#sellerId").change(function(){
+			$('#mobile').val( $("#sellerId option:checked").data('mobile') );
+		});
+	})
+
+	function clearts() {
+		$('.ts').text('');
+	}
+
+	$("#systemTagListPid").change(function(){
+		var tagId = $(this).val();
+		if(tagId == 0)
+		{
+			$("#systemTagListId").html('').addClass('none');
+		}
+		else
+		{
+			$.post("<?php echo e(u('SystemTagList/secondLevel')); ?>", {'pid': tagId}, function(res){
+
+				if(res!='')
+				{
+					var html = '<option value=0>请选择</option>';
+					$.each(res, function(k,v){
+						html += "<option value='"+v.id+"'>"+v.name+"</option>";
+					});
+					$("#systemTagListId").html(html).removeClass('none');
+				}
+				else
+				{
+					$("#systemTagListId").html('').addClass('none');
+					alert("当前分类暂无二级分类，请重新选择！");
+				}
+				
+			});	
+		}
+	});
+</script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

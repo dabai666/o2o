@@ -1,0 +1,922 @@
+<?php namespace YiZan\Http\Controllers\Wap;
+use YiZan\Models\Goods;
+
+use View, Input, Lang, Route, Page ,Session, Redirect, Response;
+/**
+ * 服务
+ */
+class GoodsController extends BaseController {
+
+	//
+	public function __construct() {
+		parent::__construct();
+		View::share('nav','index');
+	}
+
+    /**
+     * 服务列表
+     */
+    public function index(){
+        $option = Input::all();
+        if($option['type'] == 2){
+            $model = 'serviceindex';
+        } else {
+            $model = 'goodsindex';
+        }
+        if($option['showurl'] == 1){
+            $return_url = u('Index/index');
+            View::share('nav_back_url',$return_url);
+        }
+        return $this->indexList($model);
+    }
+
+	public function getGoodsList(){
+
+		$option = Input::all();
+		$option['id'] = $option['id'];
+		$option['name'] = $option['name'];
+		$option['brandId'] = $option['brandId'];
+		$option['classifyId'] = $option['classifyId'];
+//		var_dump($option);die;
+		//获取购物车
+		$result_cart = $this->requestApi('shopping.lists');
+		$cart['totalPrice'] = 0;
+		$cart['totalAmount'] = 0;
+		$cart['sale'] = 0;
+		foreach ($result_cart['data'] as $key1 => $value1) {
+			if($value1['id'] == $option['id'] && $option['type'] == $value1['type']){
+				foreach ($value1['goods'] as $key2 => $value2) {
+					$cart['totalAmount'] += $value2['num'];
+					if($value2['sale'] >= 0){
+						$cart['totalPrice'] += $value2['num'] * ($value2['price'] * $value2['sale']) / 10;
+						$cart['sale'] +=  $value2['num'] *  $value2['price'] * ( 1 - $value2['sale'] / 10);
+					}else{
+						$cart['totalPrice'] += $value2['price'] * $value2['num'];
+					}
+				}
+				$cart['data'] = $value1;
+			}
+		}
+		View::share('cart', $cart);
+
+		$result = $this->requestApi('goods.getLists2', $option);
+		if($result['statas'] == 0){
+			View::share('cate1',$result['data']);
+		}else{
+			View::share('cate1',array());
+		}
+		return $this->display('item');
+	}
+
+	public function getBrand(){
+		$option = Input::all();
+		$res = $this->requestApi('Goods.getBrand',$option);
+		View::share('option',$option);
+		if($res['code'] == 0){
+			view::share('brandList',$res['data']);
+		}else{
+			view::share('brandList',array());
+		}
+		return $this->display('brand');
+	}
+
+	public function getClassify(){
+		$option = Input::all();
+		$res = $this->requestApi('Goods.getGoodsList',$option);
+		View::share('option',$option);
+		$resu = $this->requestApi('Goods.getClassify',$option);
+		if($resu['code'] == 0){
+			view::share('classifyList',$resu['data']);
+		}
+		return $this->display('classify');
+	}
+
+	public function getGoodsCart() {
+		//清空购物车的服务
+//		$this->requestApi('shopping.delete', ['userId'=>$this->userId, 'type'=>2]);
+		$bln = false;
+		$curentAddress = Session::get('defaultAddress');
+
+		if ((int)Input::get('addressId') > 0) {
+			$address = $this->requestApi('user.address.get',['id' => (int)Input::get('addressId')]);
+			$address['data']['realAddress'] = $address['data']['province']['name'].$address['data']['city']['name'].$address['data']['address'];
+		} elseif ($curentAddress['isIndexSetAddress'] != '') {
+			$address['data'] = $curentAddress;
+		} else {
+			$bln = true;
+			$is_address_null = $address = $this->requestApi('user.address.getdefault');
+			if (!empty($address['data'])) {
+				$address['data']['realAddress'] = $address['data']['province']['name'].$address['data']['city']['name'].$address['data']['address'];
+			} elseif($curentAddress['address'] != '') {
+				$address['data']['address'] = $curentAddress['address'];
+			}
+
+		}
+//		$result_cart = $this->requestApi('shopping.lists', ['location'=>$address['data']['mapPointStr'],'cityId'=>$address['data']['cityId']]);
+		if(!$bln){
+			$is_address_null = $this->requestApi('user.address.getdefault');
+		}
+		if(!empty($is_address_null['data'])){
+			$is_address_null = 1;
+		}else{
+			$is_address_null = -1;
+		}
+		$goodsNumber = 0;
+		$goodsTotalPrice = 0;
+		/*if(($result_cart['code'] == 0) && $result_cart['data'] && (is_array($result_cart['data']))){
+			foreach($result_cart['data'] as $k => $v){
+				$goodsNumber += intval(trim($v['goods'][0]['num']));
+				$goodsTotalPrice += intval(trim($v['goods'][0]['price']));
+			}
+		}
+		return array('goodsNumber'=>$goodsNumber,'goodsTotalPrice'=>$goodsTotalPrice);*/
+
+//		View::share('isAddressNull', $is_address_null);
+//		View::share('cart', $result_cart['data']);
+//		View::share('nav', 'goodscart');
+//		View::share('address', $address['data']);
+//		View::share('args', Input::all());
+//		return $this->display();
+	}
+
+	public function indexList($tpl='service_item') {
+		$option = Input::all();
+		//获取购物车
+		$cart = $this->getGoodsCart();
+		View::share('cart',$cart);
+
+		$adv_result = $this->requestApi('config.seller');
+		View::share('adv', $adv_result['data']);
+		//获取商家详情
+		$seller_result = $this->requestApi('seller.detail', $option);
+
+		if($seller_result['data']['storeType']){
+			return Redirect::to(u('Seller/detail', ['id'=>$option['id']]));
+		}
+		View::share('seller', $seller_result['data']);
+
+		if($option['type'] == 2){
+			$cate_result = $this->requestApi('service.lists', $option);
+		} else {
+			$cate_result = $this->requestApi('goods.lists', $option);
+			$conllect_result = $this->requestApi('seller.get_conllect',$option);
+			View::share('is_conllect',$conllect_result['data']);
+		}
+
+		//20170615 保证促销商品分类一直在头部
+		if($cate_result){
+			foreach($cate_result['data'] as $ckey => $item){
+				if($item['name'] == '促销商品'){
+					$cache = $item;
+					unset($cate_result['data'][$ckey]);
+					array_unshift($cate_result['data'],$cache);
+					break;
+				}
+			}
+		}
+		View::share('cate', $cate_result['data']);
+
+		$option['name'] = $cate_result['data'][0]['name'];
+		$result = $this->requestApi('goods.getLists2', $option);
+		if($result['data']){
+			foreach($result['data'] as $ckey => $item){
+				if($item['name'] == '促销商品'){
+					$cache = $item;
+					unset($result['data'][$ckey]);
+					array_unshift($result['data'],$cache);
+					break;
+				}
+			}
+		}
+		View::share('cate1',$result['data']);
+		//获取品牌
+//		$option['firstLevelId'] = $cate_result['data'][0]['id'];
+		$res = $this->requestApi('Goods.getBrand',$option);
+		if($res['code'] == 0){
+			view::share('brandList',$res['data']);
+		}
+		//获取分类
+		$resu = $this->requestApi('Goods.getClassify',$option);
+		if($resu['code'] == 0){
+			view::share('classifyList',$resu['data']);
+		}
+
+
+//		var_dump($resu['data']);die;
+		//清空购物车的服务
+		$this->requestApi('shopping.delete', ['type'=>2]);
+
+		//获取购物车
+		$result_cart = $this->requestApi('shopping.listsTwo');
+		$cart['totalPrice'] = 0;
+		$cart['totalAmount'] = 0;
+		$cart['sale'] = 0;
+		foreach ($result_cart['data'] as $key1 => $value1) {
+			if($value1['id'] == $option['id'] && $option['type'] == $value1['type']){
+				foreach ($value1['goods'] as $key2 => $value2) {
+					$cart['totalAmount'] += $value2['num'];
+					$value2['price'] = $value2['salePrice'] > 0 ? $value2['salePrice'] : $value2['price'];
+					if($value2['sale'] >= 0){
+						$cart['totalPrice'] += $value2['num'] * ($value2['price'] * $value2['sale']) / 10;
+						$cart['sale'] +=  $value2['num'] *  $value2['price'] * ( 1 - $value2['sale'] / 10);
+					}else{
+						$cart['totalPrice'] += $value2['price'] * $value2['num'];
+					}
+					$processingPrice =  floatval($value2['processingPrice']) * $value2['num'];
+					$cart['totalPrice'] = $cart['totalPrice'] + $processingPrice;
+				}
+				$cart['data'] = $value1;
+			}
+		}
+		View::share('cart', $cart);
+		/*foreach($cart['data']['goods'] as $dsyK => $dsyV){
+			var_dump($dsyV['processingPrice']);
+		}
+		die();*/
+//		dd($cart);die;
+		/*foreach($cart["data"]["goods"] as $good)
+		{
+			if($good["normsId"]){
+				$cartgoods[$good["goodsId"]][$good["normsId"]]  = ["num"=>$good["num"], "price"=>$good["price"]];
+			}else{
+				$cartgoods[$good["goodsId"]]  = ["num"=>$good["num"], "price"=>$good["price"]];
+			}
+
+			//$cartgoods[$good["goodsId"]][$good["normsId"]] = $good["num"];
+		}*/
+
+		$article_result = $this->requestApi('article.lists', ['sellerId'=>$option['id']]);
+		View::share('articles', $article_result['data']);
+		View::share('option', $option);
+		View::share('userId',$this->userId);
+		$protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+		$url = $protocol.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+		$weixin_arrs = $this->requestApi('invitation.getweixin',array('url' => $url));
+		if($weixin_arrs['code'] == 0){
+			View::share('weixin',$weixin_arrs['data']);
+		}
+		$share = [
+				'title'		=>	$seller_result['data']['name'],
+				'content'	=>	$seller_result['data']['detail'],
+				'url'		=>	u('Goods/index', $option),
+				'logo'		=> 	$seller_result['data']['logo'],
+		];
+
+		$getWeixinUser = $this->requestApi('Useractive.getWeixinUser',['openid'=>$this->user['openid']]);
+		$newtitle = $getWeixinUser['data']['nickname']."为您推荐了一件商品";
+
+
+
+		$share['title'] = $newtitle;
+		View::share("weiXinData",  $getWeixinUser['data']);
+
+		$weiXinUserData = Session::get("user");
+		View::share('weiXinUserData',$weiXinUserData);
+
+		View::share("share", $share);
+		if( $seller_result['data']['id'] == ONESELF_SELLER_ID){
+			$return_url = u('Oneself/index');// u('Oneself/index')
+			View::share('nav_back_url',$return_url);
+		}
+		View::share('url',u('Goods/index',$option));
+		return $this->display($tpl);
+	}
+	public function getVal(){
+		$args = Input::all();
+		$data = $this->requestApi('goods.getVal',$args);
+		return Response::json($data);
+	}
+	//备份
+    public function indexList1($tpl='service_item') {
+        $option = Input::all();
+
+        $adv_result = $this->requestApi('config.seller');
+
+        View::share('adv', $adv_result['data']);
+        //获取商家详情
+        $seller_result = $this->requestApi('seller.detail', $option);
+        if($seller_result['data']['storeType']){
+            return Redirect::to(u('Seller/detail', ['id'=>$option['id']]));
+        }
+        View::share('seller', $seller_result['data']);
+
+        if($option['type'] == 2){
+            $cate_result = $this->requestApi('service.lists', $option);
+        } else {
+            $cate_result = $this->requestApi('goods.lists', $option);
+        }
+        View::share('cate', $cate_result['data']);
+        //清空购物车的服务
+        $this->requestApi('shopping.delete', ['type'=>2]);
+
+        //获取购物车
+        $result_cart = $this->requestApi('shopping.lists');
+        $cart['totalPrice'] = 0;
+        $cart['totalAmount'] = 0;
+        $cart['sale'] = 0;
+        foreach ($result_cart['data'] as $key1 => $value1) {
+            if($value1['id'] == $option['id'] && $option['type'] == $value1['type']){
+                foreach ($value1['goods'] as $key2 => $value2) {
+                    $cart['totalAmount'] += $value2['num'];
+                    if($value2['sale'] >= 0){
+                        $cart['totalPrice'] += $value2['num'] * ($value2['price'] * $value2['sale']) / 10;
+                        $cart['sale'] +=  $value2['num'] *  $value2['price'] * ( 1 - $value2['sale'] / 10);
+                    }else{
+                        $cart['totalPrice'] += $value2['price'] * $value2['num'];
+                    }
+                }
+                $cart['data'] = $value1;
+            }
+        }
+        View::share('cart', $cart);
+        $article_result = $this->requestApi('article.lists', ['sellerId'=>$option['id']]);
+//        print_r($article_result);die;
+        View::share('articles', $article_result['data']);
+/*        $nav_back_url = u('Seller/detail',['id'=>$option['id']]);
+        View::share('nav_back_url', $nav_back_url);*/
+        View::share('option', $option);
+
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = $protocol.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+        $weixin_arrs = $this->requestApi('invitation.getweixin',array('url' => $url));
+        if($weixin_arrs['code'] == 0){
+            View::share('weixin',$weixin_arrs['data']);
+        }
+
+        $share = [
+        	'title'		=>	$seller_result['data']['name'],
+			'content'	=>	$seller_result['data']['detail'],
+			'url'		=>	u('Goods/index', $option),
+			'logo'		=> 	$seller_result['data']['logo'],
+        ];
+		
+		$getWeixinUser = $this->requestApi('Useractive.getWeixinUser',['openid'=>$this->user['openid']]);
+		$newtitle = $getWeixinUser['data']['nickname']."为您推荐了一件商品";
+		
+
+        
+		$share['title'] = $newtitle;
+        View::share("weiXinData",  $getWeixinUser['data']);
+
+        $weiXinUserData = Session::get("user");
+        View::share('weiXinUserData',$weiXinUserData);
+		
+        View::share("share", $share);
+        if( $seller_result['data']['id'] == ONESELF_SELLER_ID){
+            $return_url = u('Oneself/index');
+            View::share('nav_back_url',$return_url);
+        }
+        View::share('url',u('Goods/index',$option));
+        return $this->display($tpl);
+    }
+
+	public function sellerdetail(){ 
+		$option = Input::all(); 
+		//获取商家详情
+		$seller_result = $this->requestApi('seller.detail', $option); 
+		View::share('seller', $seller_result['data']);
+		//获取公告
+		$article_result = $this->requestApi('article.lists', ['sellerId'=>$option['id']]); 
+		View::share('articles', $article_result['data']); 
+		return $this->display();
+	} 
+
+	/**
+	 * 搜索服务 
+	 */
+	public function search(){
+		//热门标签
+		$hot_tags = $this->requestApi('goods.tag.gethottags');
+		if ($hot_tags['code'] == 0) {
+			View::share('hot_tags',$hot_tags['data']);
+		}
+		$keywords = Input::get('keywords');
+		$searchs = array();
+		if (Session::get('goods_searchs')) {
+			$searchs = Session::get('goods_searchs');
+		}
+		if (!empty($keywords) && !in_array($keywords, $searchs)) {
+			array_push($searchs, $keywords);
+			Session::set('goods_searchs', $searchs);
+			Session::save();
+		}
+		$history_search = Session::get('goods_searchs');
+		View::share('data',$history_search); 
+		if (Input::get('type')) {
+			//return true;
+		} else {
+			return $this->display();
+		}
+	}
+
+	/**
+	 * 清除搜索历史记录
+	 */
+	public function clearsearch(){
+		Session::set('goods_searchs', NULL);
+		Session::save();
+	}
+
+	/**
+	 * 服务列表 汽车、其他
+	 */
+	public function goodsList() {
+		$args = Input::all();
+		$data['id'] = $args['arg'];
+		$data['page'] = $args['page'] > 0 ? $args['page'] : 1;
+
+		//获取服务详细
+		$result = $this->requestApi('service.lists',$data);
+		if($result['code'] == 0){
+			View::share('lists', $result['data']);
+		}
+
+		View::share('args', $args);
+		if(Input::ajax()){
+			return $this->display('goodslist_item');
+		}else{
+			return $this->display();
+		}
+		
+	}
+
+	/**
+	 * 服务明细
+	 */
+	public function detail(){
+		$option = Input::all();
+//		var_dump(1);die;
+//		var_dump($option);die;
+		//获取商品/服务详情数据
+		$goods_result = $this->requestApi('goods.detail',$option);
+//		var_dump($goods_result);die;
+		//获取购物车数据
+		$result_cart = $this->requestApi('shopping.listsTwo');
+		$cart['totalPrice'] = 0;
+		$cart['totalAmount'] = 0;
+        $cartIds = 0;
+
+		foreach ($result_cart['data'] as $key1 => $value1) {
+            if($value1['id'] == $goods_result['data']['sellerId']){
+//				var_dump($value1['goods']);die;
+				foreach ($value1['goods'] as $key3 => $value3) {
+                    if($value3['type'] == $goods_result['data']['type']){
+                        if($goods_result['data']['seller']['storeType'] == 1){
+                            if($value3['goodsId'] == $option['goodsId']) {
+                                $goods_result['data']['num'] = $value3['num'];
+                            }
+                        }else{
+                            if($value3['type'] == $goods_result['data']['type']){
+                                $cart['goods'] = $value1['goods'];
+                            }
+                        }
+                        $cart['totalAmount'] += $value3['num'];
+						$value3['price'] = $value3['salePrice'] > 0 ? $value3['salePrice'] : $value3['price'];
+						if($value3['sale'] <= 0){
+                            $cart['totalPrice'] += $value3['price'] * $value3['num'];
+                        }else{
+                            $cart['totalPrice'] += $value3['num'] * ($value3['price'] * $value3['sale']) / 10;
+                        }
+						$cart['totalPrice'] += $value3['processingPrice'] * $value3['num'];
+                        $cartIds .= $value3['id'].',';
+                    }
+                }
+			}
+		}
+//		var_dump($cart);die;
+        /*var_dump($result_cart['data']);
+        exit;*/
+        $cartIds = rtrim($cartIds,',');
+        View::share('cartIds', $cartIds);
+
+
+		//按规格存放 caiq
+		$main_goods = [];
+        $yes_fu = 0;
+        foreach($cart['goods'] as $key=>$goods){
+            foreach($main_goods as $key2=>$goods2){
+                if($key2 == $goods['goodsId']){
+                    $yes_fu = 1;
+                }
+            }
+            if($yes_fu == 1){
+                array_push($main_goods,$goods);
+            }else{
+                $main_goods[$goods['goodsId']] = $goods;
+            }
+        }
+		$cart['goods'] = $main_goods;
+
+        //规格商品在购物车中的数量 caiq
+		foreach ($goods_result['data']['norms'] as $keyN => $norms) {
+			$goods_result['data']['norms'][$keyN]['inCart'] = 0;
+			foreach ($cart['goods'] as $keyG => $goods) {
+				if($norms['id'] == $goods['normsId']){
+					$goods_result['data']['norms'][$keyN]['inCart'] = $goods['num'];break;
+				}
+			}
+		}
+        $seller_result = $this->requestApi('seller.detail', ['id' => $goods_result['data']['seller']['id']]);
+
+        foreach ($seller_result['data']['activity']['special'] as $key => $value) {
+        	if($key == $option['goodsId'])
+        	{
+        		$seller_result['data']['activity']['special'] = $value;
+        		break;
+        	}
+        	else{
+        		$seller_result['data']['activity']['special'] = null;
+        	}
+        }
+		
+        View::share('shareType','goods');
+        View::share('data', $goods_result['data']);
+        View::share('option', $option);
+        View::share('seller', $seller_result['data']);
+		View::share('cart', $cart);
+		if($option['index_flage']){
+			$return_url = u('Index/index');
+			View::share('nav_back_url',$return_url);
+		}elseif($option['from']){
+			$return_url = u('Brand/detail',['brandId'=>$option['brandId']]);
+			View::share('nav_back_url',$return_url);
+		}else if($goods_result['data']['sellerId'] == ONESELF_SELLER_ID){
+			View::share('hide',1);
+            $return_url = u('Oneself/index');
+            View::share('nav_back_url',$return_url);
+        }
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = $protocol.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+        $weixin_arrs = $this->requestApi('invitation.getweixin',array('url' => $url));
+        if($weixin_arrs['code'] == 0){
+            View::share('weixin',$weixin_arrs['data']);
+        }
+
+        $share = [
+        	'title'		=>	$goods_result['data']['name'],
+			'content'	=>	$goods_result['data']['brief'],
+			'url'		=>	u('Goods/detail', $option),
+			'logo'		=> 	$goods_result['data']['logo'],
+        ];
+		
+		$getWeixinUser = $this->requestApi('Useractive.getWeixinUser',['openid'=>$this->user['openid']]);
+		$newtitle = $getWeixinUser['data']['nickname']."为您推荐了一件商品";
+		$share['title'] = $newtitle;
+		View::share("weiXinData",  $getWeixinUser['data']);
+		View::share("nickname",  $getWeixinUser['data']['nickname']);
+
+        $weiXinUserData = Session::get("user");
+        View::share('weiXinUserData',$weiXinUserData);
+        View::share("share", $share);
+
+        View::share('url',u('Goods/detail',$option));
+
+		if($goods_result['data']['type'] == Goods::SELLER_SERVICE) {
+			return $this->display('servicedetail');
+		} else {
+					//邀请注册
+			if(Input::get('shareUserId') > 0)
+			{
+				Session::put('invitationType', 'user');
+				Session::put('invitationId', Input::get('shareUserId'));
+				Session::save();
+			}
+
+//			var_dump($goods_result['data']['seller']['storeType']);die;
+            if($goods_result['data']['seller']['storeType'] == 1){
+                //平台客服电话
+                $wap_service_tel = $this->getConfig('wap_service_tel');
+                View::share('wap_service_tel', $wap_service_tel);
+                return $this->display('allgoodsdetail');
+            }else{
+                return $this->display('goodsdetail');
+            }
+		}
+        $config = $this->getConfig();
+
+        $staff_settled_image = $config['staff_settled_image'];
+        $site_name = $config['site_name'];
+//		View::share('id',$goods_result['data']['seller']['id']);
+        View::share('site_name',$site_name);
+	}
+
+	/**
+	 * 服务简介
+	 */
+	public function brief(){
+		$id = (int)Input::get('id'); 
+		$goods_data = $this->requestApi('goods.detail',array('goodsId'=>$id));
+		if(empty($goods_data['data'])){
+			return Redirect::to('Goods/index');
+		} else {
+			View::share('top_title',$goods_data['data']['name']);
+			View::share('goods_data',$goods_data['data']); 
+			return $this->display();
+		}
+	} 
+	
+	/**
+	 * 商品服务简介
+	 */
+	public function appbrief()
+    { 
+		$goods_data = $this->requestApi('goods.detail', Input::all()); 
+		if(empty($goods_data['data'])){
+			return Redirect::to('Goods/index');
+		} else {
+			View::share('top_title',$goods_data['data']['name']);
+			View::share('goods_data',$goods_data['data']); 
+			return $this->display();
+		} 
+		// $result = $this->requestApi('goods.detail', Input::all());
+		
+		// if($result['code'] == 0)
+  //       {
+  //           echo "<meta http-equiv='Content-Type' content='text/html; charset=UTF-8'><style>body{padding:0; margin:0;} img{width:100%;}</style>" . $result['data']["brief"];
+  //       }
+	    
+  //       exit;
+	}
+
+	/**
+	 * 服务时间
+	 */
+	public function appointday(){
+		$args = Input::all();
+		$args['duration'] = isset($args['timelen']) ? $args['timelen'] * SERVICE_TIME_LEN : 0;
+		$result = $this->requestApi('goods.appointday', $args);
+		if ($result['code'] > 0) {
+			return $this->error($result['msg']);
+		}
+		$html = Response::view($this->getDisplayPath('goods', 'date_frame'), ['reservation_date' => $result['data']])->getContent();
+
+		
+		return $this->success('', '', $html);
+	}
+
+	/**
+	 * 服务评价
+	 */
+	public function discuss() {
+		$args = Input::all();
+		$result = $this->requestApi('rate.service.lists',$args);
+
+		if($result['code'] == 0)
+			View::share('list',$result['data']);
+
+		View::share('args', $args);
+		if(Input::ajax()){
+			return $this->display('discuss_item');
+		}else{
+			return $this->display();
+		}
+		
+	}
+
+	/**
+	 * 获取购物车
+	 */
+	public function getCart(){
+		if(!Session::get('user')){
+			$cart = ['code'=>-1,'data'=>''];
+		} else {
+			$cart = $this->requestApi('shopping.lists');
+		}
+		return Response::json($cart);
+	}
+
+	/**
+	 * 删除购物车
+	 */
+	public function cartDelete(){
+		$result_cart = $this->requestApi('shopping.delete', Input::all());
+		if($result_cart['code'] > 0){
+			return $this->error('删除失败');
+		} elseif((int)Input::get('id') == 0) {
+			return $this->success('购物车已清空');
+		} else {
+            return $this->success('已删除');
+        }
+	}
+
+	public function getCart1(){
+		$args = Input::all();
+		if(!Session::get('user')){
+			$cart = ['code'=>-1,'data'=>''];
+		} else {
+			$cart = $this->requestApi('shopping.getCart',$args);
+		}
+		return Response::json($cart);
+
+	}
+	/**
+	 * 保存商品至购物车
+	 */
+	public function saveCart(){
+		$args = Input::all();
+
+		if(!Session::get('user')){
+			$result_cart = ['code'=>-1,'data'=>''];
+		} else {
+			$result_cart = $this->requestApi('shopping.save', $args);
+			$list = $result_cart['data'];
+			unset($result_cart['data']);
+			$result_cart['data']['totalPrice'] = 0;
+			$result_cart['data']['totalAmount'] = 0;
+            $result_cart['data']['sale'] = 0;
+			$result_cart['data']['list'] = $list;
+			foreach ($list as $key1 => $value1) {
+                if($value1['id'] == Input::get('sellerId') && $value1['type'] == Input::get('type')){
+                    foreach ($value1['goods'] as $key2 => $value2) {
+                        $result_cart['data']['totalAmount'] += $value2['num'];
+                        if($value2['sale'] >= 0){
+                            $result_cart['data']['totalPrice'] += $value2['num'] * ($value2['price'] * $value2['sale']) / 10;
+                            $result_cart['data']['sale'] +=  $value2['num'] * $value2['price'] * ( 1 - $value2['sale'] / 10) ;
+                        }else{
+                            $result_cart['data']['totalPrice'] += $value2['price'] * $value2['num'];
+                        }
+                    }
+			    }
+            }
+		}
+		
+		//获取当前服务的购物车信息
+		$cartInfo = $this->requestApi('shopping.getInfo', ['goodsId'=>$args['goodsId']]);
+		$result_cart['data']['cartIds'] = $cartInfo['data']['id'];
+		
+		return Response::json($result_cart);
+	}
+
+	/**
+	 * 2017/05/04添加
+	 * @return mixed
+	 */
+	public function saveCartTwo(){
+		$args = Input::all();
+
+		if(!Session::get('user')){
+			$result_cart = ['code'=>-1,'data'=>''];
+		} else {
+			$result_cart = $this->requestApi('shopping.saveTwo', $args);
+			$list = $result_cart['data'];
+			unset($result_cart['data']);
+			$result_cart['data']['totalPrice'] = 0;
+			$result_cart['data']['totalAmount'] = 0;
+			$result_cart['data']['sale'] = 0;
+			$result_cart['data']['list'] = $list;
+			$result_cart['data']['totalAmount'] = 0;
+			$result_cart['data']['totalPrice)'] = 0;
+			foreach($list as $kk => $vv){
+				foreach($vv['goods'] as $k => $v){
+					if($vv['id'] == $args['sellerId']){
+						$result_cart['data']['totalAmount'] += $v['num'];
+						$value2['price'] = $v['salePrice'] > 0 ? $v['salePrice'] : $v['price'];
+						$result_cart['data']['totalPrice'] += $v['num'] * ($v['price'] * $v['sale']) / 10;
+						$processingPrice = $v['processingPrice'] * $v['num'];
+						$result_cart['data']['totalPrice'] = $result_cart['data']['totalPrice'] + $processingPrice;
+					}
+				}
+			}
+		}
+		//获取当前服务的购物车信息
+		$cartInfo = $this->requestApi('shopping.getInfo', ['goodsId'=>$args['goodsId']]);
+		$result_cart['data']['cartIds'] = $cartInfo['data']['id'];
+		return Response::json($result_cart);
+	}
+	public function saveCartOne(){
+		$args = Input::all();
+
+		if(!Session::get('user')){
+			$result_cart = ['code'=>-1,'data'=>''];
+		} else {
+			$result_cart = $this->requestApi('shopping.saveTwo', $args);
+			$list = $result_cart['data'];
+			unset($result_cart['data']);
+			$result_cart['data']['totalPrice'] = 0;
+			$result_cart['data']['totalAmount'] = 0;
+			$result_cart['data']['sale'] = 0;
+			$result_cart['data']['list'] = $list;
+			foreach ($list as $key1 => $value1) {
+//				if($value1['id'] == Input::get('sellerId') && $value1['type'] == Input::get('type')){
+					foreach ($value1['goods'] as $key2 => $value2) {
+						$result_cart['data']['totalAmount'] += $value2['num'];
+						$value2['price'] = $value2['salePrice'] > 0 ? $value2['salePrice'] : $value2['price'];
+						if($value2['sale'] >= 0){
+							$result_cart['data']['totalPrice'] += $value2['num'] * ($value2['price'] * $value2['sale']) / 10;
+							$result_cart['data']['sale'] +=  $value2['num'] * $value2['price'] * ( 1 - $value2['sale'] / 10) ;
+						}else{
+							$result_cart['data']['totalPrice'] += $value2['price'] * $value2['num'];
+						}
+						if((int)$value1['processid'] > 0){
+							$result_cart['data']['totalPrice'] += $value2['processingPrice'] * $value2['num'];
+						}
+					}
+				}
+//			}
+		}
+
+		//获取当前服务的购物车信息
+		$cartInfo = $this->requestApi('shopping.getInfo', ['goodsId'=>$args['goodsId']]);
+		$result_cart['data']['cartIds'] = $cartInfo['data']['id'];
+
+		return Response::json($result_cart);
+	}
+	/**
+	 * 收藏
+	 */
+	public function collect(){
+		$args = Input::all();
+		$args['type'] = 1;
+		$result_collect = $this->requestApi('collect.create',$args); 
+	}
+
+    /**
+     * 周边店评论
+     */
+    public function comment() {
+        $option = Input::get();
+        //获取商家详情
+        $seller_result = $this->requestApi('seller.detail', $option);
+
+        if( $seller_result['data']['id'] == ONESELF_SELLER_ID){
+            $return_url = u('Oneself/index');
+            View::share('nav_back_url',$return_url);
+        }
+        
+        View::share('seller', $seller_result['data']);
+
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = $protocol.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+        $weixin_arrs = $this->requestApi('invitation.getweixin',array('url' => $url));
+        if($weixin_arrs['code'] == 0){
+            View::share('weixin',$weixin_arrs['data']);
+        }
+
+        $share = [
+        	'title'		=>	$seller_result['data']['name'],
+			'content'	=>	$seller_result['data']['detail'],
+			'url'		=>	u('Goods/index', ['id'=>Input::get('id'), 'type'=>1]),
+			'logo'		=> 	$seller_result['data']['logo'],
+        ];
+        View::share("share", $share);
+
+    	return $this->commentList('comment');
+    }
+
+    public function commentList($tpl='comment_item') {
+    	$args = [
+            'sellerId' => (int)Input::get('id'),
+            'type' => (int)Input::get('type'),
+            'page' => max((int)Input::get('page'),1)
+        ];
+        $count = $this->requestApi('rate.order.statistics',['sellerId' => $args['sellerId']]);
+        $list = $this->requestApi('rate.order.lists',$args);
+        $article_result = $this->requestApi('article.lists', ['sellerId'=>$args['sellerId']]);
+        View::share('articles', $article_result['data']);
+        View::share('count', $count['data']);
+        View::share('list', $list['data']);
+        View::share('args', $args);
+
+    	return $this->display($tpl);
+    }
+
+    // 全国店商品评论
+    public function commentall() {
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $url = $protocol.$_SERVER[HTTP_HOST].$_SERVER[REQUEST_URI];
+        $weixin_arrs = $this->requestApi('invitation.getweixin',array('url' => $url));
+        if($weixin_arrs['code'] == 0){
+            View::share('weixin',$weixin_arrs['data']);
+        }
+
+        $share = [
+        	'title'		=>	$seller_result['data']['name'],
+			'content'	=>	$seller_result['data']['detail'],
+			'url'		=>	u('Goods/index', ['id'=>Input::get('id'), 'type'=>1]),
+			'logo'		=> 	$seller_result['data']['logo'],
+        ];
+        View::share("share", $share);
+
+    	return $this->commentAllList('commentall');
+    }
+
+     public function commentAllList($tpl='commentall_item') {
+    	$args = [
+            'goodsId' => (int)Input::get('id'),
+            'type' => (int)Input::get('type'),
+            'page' => max((int)Input::get('page'),1)
+        ];
+
+        $count = $this->requestApi('rate.goods.statistics',['goodsId' => $args['goodsId']]);
+
+        $list = $this->requestApi('rate.goods.lists',$args);
+
+
+        View::share('count', $count['data']);
+        View::share('list', $list['data']);
+        View::share('args', $args);
+
+    	return $this->display($tpl);
+    }
+
+}

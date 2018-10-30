@@ -1,0 +1,73 @@
+<?php namespace YiZan\Services;
+use YiZan\Models\ShopBrand;
+use YiZan\Utils\Time;
+use DB, Lang, Validator, App;
+
+class ShopBrandService extends BaseService{
+    public function getList($status = ''){
+        $model = new ShopBrand();
+        if($status == 1){
+            $model = $model->where('status',1);
+        }
+        $data = $model->get();
+        $data = $data ? $data->toArray() : array();
+        return $data;
+    }
+    public function getListById($id){
+        return ShopBrand::where('id',$id)->get()->toArray();
+    }
+    public function delete($id){
+        $result = [
+            'code'  => 0,
+            'data'  => null,
+            'msg'   => ""
+        ];
+        ShopBrand::whereIn('id',$id)->delete();
+        return $result;
+    }
+
+    public function save($id,$name,$introduce,$status,$img,$url,$honorImg){
+//        var_dump($id);die;
+        $result = array(
+            'code'  => 0,
+            'data'  => null,
+            'msg' => null,
+        );
+//        die($id);
+        if($id && ($id > 0)){
+            $msg = ShopBrand::where('name',$name)->get()->toArray();
+            if(!$msg){
+                $result['code'] = 1;
+                $result['msg'] = '品牌编号不存在';  //添加成功
+                return $result;
+            }
+//            if($msg[0]['name'] == $name){
+//                $result['code'] = 2;
+//                $result['msg'] = '品牌名称已经存在';  //添加成功
+//                return $result;
+//            }
+            $tag = ShopBrand::find($id);
+        }else{
+            if(ShopBrand::where('name',$name)->get()->toArray()){
+                $result['code'] = 12345644;
+                $result['msg'] = '品牌名称已经存在';  //添加成功
+                return $result;
+            }
+            $tag = new ShopBrand();
+        }
+        $tag->name = $name;
+        $tag->introduce = $introduce;
+        $tag->status = $status;
+        $tag->img = $img;
+        $tag->url = $url;
+        $tag->honor_img = implode(',',$honorImg);
+        if($id && ($id > 0)){
+
+        }else{
+            $tag->create_time = Time::toTime(Time::toDate(time()));
+        }
+        $tag->save();
+        return $result;
+    }
+
+}

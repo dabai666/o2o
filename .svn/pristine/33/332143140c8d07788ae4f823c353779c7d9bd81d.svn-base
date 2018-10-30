@@ -1,0 +1,7 @@
+<ul id="brandListIdArr">
+    <?php if($brandList): ?>
+        <?php foreach($brandList as $k => $v): ?>
+            <li><input type="button" value="<?php echo e($v['name']); ?>" data-brand-id="<?php echo e($v['id']); ?>" class="button123 brand <?php if($k == 0): ?> a1 <?php endif; ?>"></li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>

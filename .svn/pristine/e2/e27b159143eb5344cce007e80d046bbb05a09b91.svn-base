@@ -1,0 +1,33 @@
+如域名为 fanwe.net
+
+首先安装配置好PHP的运行环境
+
+在"扩展"中选择对应的PHP扩展加入并开启(已有扩展无需加入)
+
+网站根目录下 
+storage
+public/code
+public/upload
+目录及其子目录请将权限设置为可读写
+
+执行在线安装则需将网站根目录下
+install目录及其子目录
+config/app.php文件
+.env文件
+权限设置为可读写权限,安装完成后即可改回原来权限
+
+
+解析install.fanwe.net 到 网站根目录下 public 目录下
+可实行在线安装
+
+环境配置所有域名网站目录请指向 根目录下的 public 目录下 
+
+admin.fanwe.net 总后台
+wap.fanwe.net 会员端
+seller.fanwe.net 商家端PC
+staff.fanwe.net 商家移动端
+proxy.fanwe.net 代理后台
+callback.fanwe.net 回调地址
+api.fanwe.net 接口地址
+image.fanwe.net 图片访问地址(OSS上传需要配置)
+resource.fanwe.net 资源访问(图片本地上传需要配置)

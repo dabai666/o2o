@@ -1,0 +1,138 @@
+<?php 
+namespace YiZan\Http\Controllers\Api\Buyer;
+
+use YiZan\Models\Goods;
+use YiZan\Models\ShopBrand;
+use YiZan\Models\SystemTag;
+use YiZan\Models\SystemTagList;
+use YiZan\Services\Buyer\GoodsService;
+use YiZan\Services\SystemTagListService;
+use Lang, Validator;
+
+class SystemTagController extends BaseController {
+
+	public function getSystemTag(){
+		$data = SystemTag::where('status',1)->with('systemTagList')->orderBy('sort', 'asc')->get()->toArray();
+		foreach($data as $k =>$v){
+			$pid = array();
+			if($v['systemTagList']){
+				foreach($v['systemTagList'] as $kk => $vv){
+					if(!in_array($vv['pid'],$pid)){
+						$pid[] = $vv['pid'];
+					}
+				}
+				 $secondLevel = SystemTagList::whereIn('id',$pid)->where('status',1)->get()->toArray();
+				$data[$k]['systemTagList'] = $secondLevel;
+			}
+			/*else{
+				unset($data[$k]);
+			}*/
+		}
+		return $this->outputData($data);
+	}
+	/**
+	 * 获取平台商品分类
+	 */
+	public function lists(){  
+		$data = SystemTagListService::lists(
+            $this->request('status')
+        );
+		return $this->outputData($data);
+	}
+
+	public function lists1(){
+		$data = SystemTagListService::lists1(
+				$this->request('status')
+		);
+		return $this->outputData($data);
+	}
+	
+	/**
+	 * 商家选择平台分类
+	 * @return [type] [description]
+	 */
+	public function checktag() {
+		$data = SystemTagListService::checktag(
+            intval($this->request('tagPid')),
+            intval($this->request('tagId'))
+        );
+		return $this->outputData($data);
+	}
+
+	public function getGoodsList(){
+		$list = GoodsService::goodsTagLists(
+				intval($this->request('systemListId')),
+				$this->request('apoint'),
+				intval($this->request('type')),
+				max((int)$this->request('page'), 1),
+				max((int)$this->request('pageSize'), 20),
+				(int)$this->request('secondLevelId'),
+				$this->request('brandId'),
+				$this->request('classifyId')
+		);
+		return $this->outputData($list);
+	}
+
+	public function setBrandAndClassfy(){
+//		$system_tag_list_pid, $apoint, $type=1, $page, $pageSize, $systemListId, $brandId
+		$list = GoodsService::goodsTagLists(
+				intval($this->request('systemListId')),
+				$this->request('apoint'),
+				intval($this->request('type')),
+				max((int)$this->request('page'), 1),
+				max((int)$this->request('pageSize'), 20),
+				(int)$this->request('secondLevelId'),
+				$this->request('brandId'),
+				$this->request('classifyId')
+		);
+		$classifyIdArr = array();
+		$brandIdArr = array();
+		if($list){
+			foreach($list as $k => $v){
+				if(!in_array($v['systemTagListId'],$classifyIdArr)){
+					$classifyIdArr[] = $v['systemTagListId'];
+				}
+				if(!in_array($v['brandId'],$brandIdArr)){
+					$brandIdArr[] = $v['brandId'];
+				}
+			}
+			$classifyIdArr = array_unique($classifyIdArr);
+			$brandIdArr = array_unique($brandIdArr);
+		}
+		if($classifyIdArr){
+			$classifyList = SystemTagList::whereIn('id',$classifyIdArr)->get()->toArray();
+//			$_SESSION['classifyList'] = $classifyList;
+		}
+
+		if($brandIdArr){
+			$brandList = ShopBrand::whereIn('id',$brandIdArr)->get()->toArray();
+			array_unshift($brandList,array('id'=>-1,'name'=>'全部'));
+ 		}
+		return $this->outputData(array('brandList'=>$brandList,'classifyList'=>$classifyList));
+	}
+
+	/*public function start(){
+		$firstLevelId = $_REQUEST['firstLevelId'];
+
+		$list = Goods::where('system_tag_list_pid',3)->get()->toArray();
+//		var_dump($list);die;
+		$classifyIdArr = array();
+//		$brandIdArr = array();
+		if($list){
+			foreach($list as $k => $v){
+				$classifyIdArr[] = $v['systemTagListId'];
+//				$brandIdArr[] = $v['systemTagListId'];
+			}
+			$classifyIdArr = array_unique($classifyIdArr);
+//			$brandIdArr = array_unique($brandIdArr);
+		}
+		if($firstLevelId){
+			$classifyList = SystemTagList::whereIn('id',$classifyIdArr)->get()->toArray();
+			$_SESSION['classifyList'] = $classifyList;
+		}
+		$brandList = ShopBrand::get()->toArray();
+		array_unshift($brandList,array('id'=>-1,'name'=>'全部'));
+		$_SESSION['brandList'] = $brandList;
+	}*/
+
+}

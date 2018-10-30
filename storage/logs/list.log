@@ -1,0 +1,3760 @@
+Array
+(
+    [0] => Array
+        (
+            [id] => 1775
+            [type] => 1
+            [name] => 六和翅根40/50
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/593/2017-05-26/e503205bb3f139b8681b55ed3a821253.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260913459271158.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260913429345295.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260913354683038.jpg
+                )
+
+            [price] => 120
+            [stock] => 100
+            [brief] => 翅根
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1593
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266204
+            [disposeTime] => 1496266204
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 77
+            [isUpdata] => 0
+            [originalPrice] => 120
+            [salePrice] => 
+            [brandId] => 238
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/593/2017-05-26/e503205bb3f139b8681b55ed3a821253.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1775
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/593/2017-05-26/e503205bb3f139b8681b55ed3a821253.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260913459271158.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260913429345295.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260913354683038.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [1] => Array
+        (
+            [id] => 1776
+            [type] => 1
+            [name] => 德鸿大翅根50/60
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/589/2017-05-26/de0eddd75729f5a08def9f1af65b89c0.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260908232308138.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260908191978267.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260908124608360.jpg
+                )
+
+            [price] => 0
+            [stock] => 1000
+            [brief] => 翅根
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1589
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266204
+            [disposeTime] => 1496266204
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 77
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 281
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/589/2017-05-26/de0eddd75729f5a08def9f1af65b89c0.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1776
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/589/2017-05-26/de0eddd75729f5a08def9f1af65b89c0.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260908232308138.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260908191978267.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260908124608360.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [2] => Array
+        (
+            [id] => 1777
+            [type] => 1
+            [name] => 益客翅根30/40
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/409/2017-05-24/c6007250be6a2b5d3a56195b0dcfff68.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051526552027402.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051527456675449.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051527159529907.jpg
+                )
+
+            [price] => 0
+            [stock] => 200
+            [brief] => 益客翅根严选优质鸡种，肉质细嫩、皮富胶质，是整个鸡身最为鲜嫩可口的部位之一。翅根经净处理后全程冷链，以确保新鲜。鸡在自然健康的环境下生长，根据不同生长阶段，调整均衡膳食结构，喂养饲料严格把关，不含激素。
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1409
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266204
+            [disposeTime] => 1496266204
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 77
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 287
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/409/2017-05-24/c6007250be6a2b5d3a56195b0dcfff68.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1777
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/409/2017-05-24/c6007250be6a2b5d3a56195b0dcfff68.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051526552027402.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051527456675449.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051527159529907.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [3] => Array
+        (
+            [id] => 1778
+            [type] => 1
+            [name] => 龙城大翅根
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-24/97ee9d150f54d9291bf409989f7c259c.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-27/7b5c23f6c348192a8f3ffbe1bed4ccbe.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-27/f295bc52fe39196156f57298faef676f.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051517330058632.jpg
+                )
+
+            [price] => 0
+            [stock] => 100
+            [brief] => 肉质鲜滑细嫩，饱满厚实，弹韧紧实，肉香浓郁，唇齿留香。甄选高品质翅根，切工精细整齐，大小适中，做出的菜品在味道、在外观上更胜一筹。精心养殖，自然生长，不添加激素，品质有保证，安全放心。
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1403
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266204
+            [disposeTime] => 1496266204
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 77
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 240
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-24/97ee9d150f54d9291bf409989f7c259c.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1778
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-24/97ee9d150f54d9291bf409989f7c259c.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-27/7b5c23f6c348192a8f3ffbe1bed4ccbe.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/403/2017-05-27/f295bc52fe39196156f57298faef676f.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051517330058632.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [4] => Array
+        (
+            [id] => 1783
+            [type] => 1
+            [name] => 鸿泰单冻翅中
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/370/2017-05-21/b3682581d6a6744b88f2ef0f2d488f5f.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051347243759246.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051347100012352.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051346544389436.jpg
+                    [4] => https://image.caiwel.com/images/2017/04/05/201704051347069608089.jpg
+                    [5] => https://image.caiwel.com/images/2017/04/05/201704051347171539816.jpg
+                )
+
+            [price] => 0
+            [stock] => 100
+            [brief] => 鸿泰单冻翅中甄选优质翅中，完整切割，翅中大小均匀，无任何注水添加。翅中俗称鸡翅膀，是整个鸡身最为鲜嫩可口的部位之一，翅中烧烤后外酥里嫩，鲜嫩多汁。多吃鸡翅膀，健体更美颜，胶原蛋白含量丰富。
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1370
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266471
+            [disposeTime] => 1496266471
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 78
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 182
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/370/2017-05-21/b3682581d6a6744b88f2ef0f2d488f5f.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1783
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/370/2017-05-21/b3682581d6a6744b88f2ef0f2d488f5f.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051347243759246.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051347100012352.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051346544389436.jpg
+                    [4] => https://image.caiwel.com/images/2017/04/05/201704051347069608089.jpg
+                    [5] => https://image.caiwel.com/images/2017/04/05/201704051347171539816.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [5] => Array
+        (
+            [id] => 1786
+            [type] => 1
+            [name] => 德鸿鸡边腿
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-26/1e4a443122368e07d8b746849ee75f0b.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-27/265c12ad3f2df3b94733b22f8328abc7.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-26/e948e780b39658d0e3fef1e41337c0c1.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260911299017436.jpg
+                )
+
+            [price] => 0
+            [stock] => 1000
+            [brief] => 鸡边腿
+            [status] => 1
+            [sort] => 0
+            [weight] => 4
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1591
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266562
+            [disposeTime] => 1496266562
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 11
+            [systemTagListId] => 67
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 281
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-26/1e4a443122368e07d8b746849ee75f0b.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1786
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-26/1e4a443122368e07d8b746849ee75f0b.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-27/265c12ad3f2df3b94733b22f8328abc7.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/591/2017-05-26/e948e780b39658d0e3fef1e41337c0c1.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260911299017436.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [6] => Array
+        (
+            [id] => 1787
+            [type] => 1
+            [name] => 华宇鸡边腿
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/372/2017-06-01/af9d852f2832884037524913c7f65aeb.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/372/2017-05-09/3f821f93811dff286522230a0afdfabb.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051348294296818.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051348408003361.jpg
+                )
+
+            [price] => 0
+            [stock] => 1
+            [brief] => 鸡边腿的蛋白质含量高，肉质颇坚硬，连皮摄取时，脂肪含量较多，鸡腿的铁含量却是整只鸡中最多的一部分。鸡肉肉质细嫩，滋味鲜美，由于其味较淡，因此可使用于各种料理中。
+            [status] => 1
+            [sort] => 0
+            [weight] => 4.3
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1372
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496266562
+            [disposeTime] => 1496266562
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 11
+            [systemTagListId] => 67
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 187
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/372/2017-06-01/af9d852f2832884037524913c7f65aeb.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1787
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/372/2017-06-01/af9d852f2832884037524913c7f65aeb.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/372/2017-05-09/3f821f93811dff286522230a0afdfabb.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051348294296818.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051348408003361.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [7] => Array
+        (
+            [id] => 1788
+            [type] => 1
+            [name] => 博大带骨上腿块
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/362/2017-06-01/3827c4adcb971acd60637c77be616931.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051341480072798.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051341536116232.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051341347352494.jpg
+                    [4] => https://image.caiwel.com/images/2017/04/05/201704051341408088294.jpg
+                )
+
+            [price] => 0
+            [stock] => 100
+            [brief] => 博大带骨上腿肉，精选优质鸡种，体型健硕，肌肉丰满，肉质鲜嫩。带骨上腿肉，鸡腿部位采用现代化分割工艺，精细分割，干净卫生。带骨上腿肉，新鲜鸡肉容易入味，因此可使用于各种料理中，因其肉质细嫩，滋味鲜美，备受鸡公煲、黄焖鸡系列的推崇。
+            [status] => 1
+            [sort] => 0
+            [weight] => 9.3
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1362
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496267848
+            [disposeTime] => 1496267848
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 11
+            [systemTagListId] => 68
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 288
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/362/2017-06-01/3827c4adcb971acd60637c77be616931.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1788
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/362/2017-06-01/3827c4adcb971acd60637c77be616931.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051341480072798.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051341536116232.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051341347352494.jpg
+                    [4] => https://image.caiwel.com/images/2017/04/05/201704051341408088294.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [8] => Array
+        (
+            [id] => 1789
+            [type] => 1
+            [name] => 博大鸡锁骨
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/364/2017-05-24/2bb4d711fae0a63b5d6ad5815eee963c.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051342490086770.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051343055073208.jpg
+                )
+
+            [price] => 0
+            [stock] => 100
+            [brief] => <p>
+	<span style="line-height:1.5;">博大鸡锁骨精细原切，个大饱满，肉层厚实。骨肉相融，滋味鲜美，酱卤随心。精选优质肉鸡品种，采用农家方式养鸡，纯天然的放养环境，绿色无污染，肉质鲜美。</span><span style="line-height:1.5;"></span> 
+</p>
+            [status] => 1
+            [sort] => 0
+            [weight] => 5.7
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1364
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496267920
+            [disposeTime] => 1496267920
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 14
+            [systemTagListId] => 102
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 288
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/364/2017-05-24/2bb4d711fae0a63b5d6ad5815eee963c.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1789
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/364/2017-05-24/2bb4d711fae0a63b5d6ad5815eee963c.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051342490086770.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051343055073208.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [9] => Array
+        (
+            [id] => 1790
+            [type] => 1
+            [name] => 益客袋装鸡大胸
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-24/751a3f40d32dafb1f9d1558597cc8904.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-09/8cafe39a8ec70724b727e830609c928c.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-09/1ed984e4288787447bd1559337225bf5.jpg
+                    [3] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-09/9e8ca6e649986a06efc14e4ed41a7640.jpg
+                )
+
+            [price] => 118
+            [stock] => 1
+            [brief] => 益客大胸，不含激素，纤维细腻，肉质鲜嫩，香味浓郁，口感俱佳，具有皮下脂肪含量少，不饱和脂肪酸含量高等优点。形状完整均匀，解冻速度快，含冰量少，使得制作的菜品更加精美上档次，适用面较广。整箱购买价格更实惠！
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1415
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268006
+            [disposeTime] => 1496268006
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 13
+            [systemTagListId] => 88
+            [isUpdata] => 0
+            [originalPrice] => 118
+            [salePrice] => 
+            [brandId] => 287
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-24/751a3f40d32dafb1f9d1558597cc8904.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1790
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-24/751a3f40d32dafb1f9d1558597cc8904.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-09/8cafe39a8ec70724b727e830609c928c.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-09/1ed984e4288787447bd1559337225bf5.jpg
+                    [3] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/415/2017-05-09/9e8ca6e649986a06efc14e4ed41a7640.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [10] => Array
+        (
+            [id] => 1793
+            [type] => 1
+            [name] => 圣农单冻大胸
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-24/52acdcb860756201887236928f7678e2.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-09/581b81a6547f253c5e59b0387fa2e7a3.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-09/5ddd709034052209a8221e051b6fd920.jpg
+                    [3] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-09/4d5056022f935db3a49ef41d7d0c1c0a.jpg
+                )
+
+            [price] => 0
+            [stock] => 200
+            [brief] => 圣农大胸是鸡身上最为丰厚的肉块，肉质精瘦、毫无脂肪，肉质纤维柔软，口感细腻。经过去皮去骨处理，使用更简单。鸡肉中的磷脂，是中国膳食结构中脂肪和磷脂的重要来源之一。
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1394
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268006
+            [disposeTime] => 1496268006
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 13
+            [systemTagListId] => 88
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 247
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-24/52acdcb860756201887236928f7678e2.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1793
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-24/52acdcb860756201887236928f7678e2.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-09/581b81a6547f253c5e59b0387fa2e7a3.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-09/5ddd709034052209a8221e051b6fd920.jpg
+                    [3] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/394/2017-05-09/4d5056022f935db3a49ef41d7d0c1c0a.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [11] => Array
+        (
+            [id] => 1794
+            [type] => 1
+            [name] => 德鸿翅中30/40
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/588/2017-05-26/4942e7c3b2870dea890e46fa04dc7717.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260907059442243.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260907008273648.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260905542941249.jpg
+                )
+
+            [price] => 0
+            [stock] => 1000
+            [brief] => 翅中
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1588
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268131
+            [disposeTime] => 1496268131
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 78
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 281
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/588/2017-05-26/4942e7c3b2870dea890e46fa04dc7717.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1794
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/588/2017-05-26/4942e7c3b2870dea890e46fa04dc7717.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260907059442243.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260907008273648.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260905542941249.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [12] => Array
+        (
+            [id] => 1795
+            [type] => 1
+            [name] => 华宇鸡全翅
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/493/2017-05-24/e34e17ee4181b1e71ac7e210266ae70a.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/10/201705100915589652915.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/10/201705100916120191245.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/10/201705100916204871227.jpg
+                )
+
+            [price] => 0
+            [stock] => 200
+            [brief] => <span>鸡全翅柔嫩易熟，烹饪后风味十足，鲜嫩、细滑、多汁。煎炸皆可，可烧可烤的香，皮滑柔嫩，饱满细腻，老少皆宜。肉鸡苗品种先进、纯正，标准化养鸡场采用多级隔离的防疫消毒设施，立体防御的生物安全体系，提供优质安全的肉鸡。</span>
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1493
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268154
+            [disposeTime] => 1496268154
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 81
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 187
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/493/2017-05-24/e34e17ee4181b1e71ac7e210266ae70a.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1795
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/493/2017-05-24/e34e17ee4181b1e71ac7e210266ae70a.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/10/201705100915589652915.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/10/201705100916120191245.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/10/201705100916204871227.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [13] => Array
+        (
+            [id] => 1797
+            [type] => 1
+            [name] => 德鸿排翅50/60
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-06-01/8c2632cd077ae4059cedff4db23dbc2d.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-05-09/e78738a9f5de97ca5138cbc15d7b5b3e.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-05-09/a36b0f8db99d59b6c2dac4f22fe51ba5.jpg
+                    [3] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-05-09/4c1e4012cf5fdf99dcb6170cfb4ac737.jpg
+                )
+
+            [price] => 0
+            [stock] => 500
+            [brief] => 德鸿祥大排翅柔嫩易熟，烹饪后风味十足，鲜嫩、细滑、多汁。煎炸皆可，可烧可烤的香，皮滑柔嫩，饱满细腻，老少皆宜。
+            [status] => 1
+            [sort] => 0
+            [weight] => 5.9
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1383
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268357
+            [disposeTime] => 1496268357
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 459
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 1
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-06-01/8c2632cd077ae4059cedff4db23dbc2d.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1797
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-06-01/8c2632cd077ae4059cedff4db23dbc2d.jpg
+                    [1] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-05-09/e78738a9f5de97ca5138cbc15d7b5b3e.jpg
+                    [2] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-05-09/a36b0f8db99d59b6c2dac4f22fe51ba5.jpg
+                    [3] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/383/2017-05-09/4c1e4012cf5fdf99dcb6170cfb4ac737.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [14] => Array
+        (
+            [id] => 1798
+            [type] => 1
+            [name] => 裴顿鸡肫
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/597/2017-05-26/05ee5c80a311e0eccdaf3eae1b4602c3.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260919462282883.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260919495389882.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260919429429624.jpg
+                    [4] => https://image.caiwel.com/images/2017/05/26/201705260919351827662.jpg
+                    [5] => https://image.caiwel.com/images/2017/05/26/201705260919402598402.jpg
+                )
+
+            [price] => 0
+            [stock] => 1000
+            [brief] => 裴顿鸡肫
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1597
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268736
+            [disposeTime] => 1496268736
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 14
+            [systemTagListId] => 116
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 318
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/597/2017-05-26/05ee5c80a311e0eccdaf3eae1b4602c3.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1798
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/597/2017-05-26/05ee5c80a311e0eccdaf3eae1b4602c3.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705260919462282883.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705260919495389882.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705260919429429624.jpg
+                    [4] => https://image.caiwel.com/images/2017/05/26/201705260919351827662.jpg
+                    [5] => https://image.caiwel.com/images/2017/05/26/201705260919402598402.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [15] => Array
+        (
+            [id] => 1799
+            [type] => 1
+            [name] => 板冻圣农鸡肫
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/492/2017-05-24/a5ba2c9d0c32d811294008618d3829ee.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/09/201705090930125782740.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/09/201705090930353103618.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/09/201705090930262315932.jpg
+                )
+
+            [price] => 0
+            [stock] => 300
+            [brief] => 圣农鸡肫
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1492
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496268736
+            [disposeTime] => 1496268736
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 14
+            [systemTagListId] => 116
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 247
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/492/2017-05-24/a5ba2c9d0c32d811294008618d3829ee.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1799
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/492/2017-05-24/a5ba2c9d0c32d811294008618d3829ee.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/09/201705090930125782740.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/09/201705090930353103618.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/09/201705090930262315932.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [16] => Array
+        (
+            [id] => 1801
+            [type] => 1
+            [name] => 益客琵琶腿100/120
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/417/2017-05-19/4fc64aca883330fcf380f4c1c61497e8.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051535049797114.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051535128453655.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051535189971004.jpg
+                )
+
+            [price] => 95
+            [stock] => 500
+            [brief] => <p>
+	益客琵琶腿，选用来自大型养鸡场的优质鸡加工而成，鸡腿来源可靠，安全放心，品质有保障。高品质琵琶腿，严格按照科学加工工艺制作，切工精细整齐，大小适中，肉质细嫩紧实，鲜滑多汁。大小适中，肉质富有弹性，松嫩可口，唇齿留香。
+</p>
+            [status] => 1
+            [sort] => 0
+            [weight] => 0
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1417
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496269167
+            [disposeTime] => 1496269167
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 11
+            [systemTagListId] => 69
+            [isUpdata] => 0
+            [originalPrice] => 95
+            [salePrice] => 
+            [brandId] => 287
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/417/2017-05-19/4fc64aca883330fcf380f4c1c61497e8.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1801
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/417/2017-05-19/4fc64aca883330fcf380f4c1c61497e8.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051535049797114.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051535128453655.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051535189971004.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [17] => Array
+        (
+            [id] => 1802
+            [type] => 1
+            [name] => L圣农琵琶腿
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/396/2017-05-19/491fbaee826eacd9fc55ae897181037e.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051501451271947.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051501298176495.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051500599826176.jpg
+                )
+
+            [price] => 85
+            [stock] => 1000
+            [brief] => 圣农琵琶腿，选用谷物饲养的优质鸡种，饲养周期长达数月，精心养殖，不添加激素，自然生长，保证食品安全。切工精细整齐，大小适中，肉质饱满厚实，富有弹性。单冻包装，随用随取，可烤可炖，又可红烧。
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1396
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496269167
+            [disposeTime] => 1496269167
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 11
+            [systemTagListId] => 69
+            [isUpdata] => 0
+            [originalPrice] => 85
+            [salePrice] => 
+            [brandId] => 247
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/396/2017-05-19/491fbaee826eacd9fc55ae897181037e.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1802
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/396/2017-05-19/491fbaee826eacd9fc55ae897181037e.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051501451271947.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051501298176495.jpg
+                    [3] => https://image.caiwel.com/images/2017/04/05/201704051500599826176.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [18] => Array
+        (
+            [id] => 1803
+            [type] => 1
+            [name] => 8个六和琵琶腿
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/388/2017-05-19/6dba73b69ac18bffa22280f1b1151500.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051411538515955.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051412062264705.jpg
+                )
+
+            [price] => 0
+            [stock] => 1000
+            [brief] => 六和琵琶腿，选用谷物饲养的优质鸡种，饲养周期长达数月，精心养殖，不添加激素，自然生长，保证食品安全。切工精细整齐，大小适中，肉质饱满厚实，富有弹性。单冻包装，随用随取，可烤可炖，又可红烧。
+            [status] => 1
+            [sort] => 0
+            [weight] => 12
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1388
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496269167
+            [disposeTime] => 1496269167
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 11
+            [systemTagListId] => 69
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 238
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/388/2017-05-19/6dba73b69ac18bffa22280f1b1151500.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1803
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/seller/0000/0000/000/goods/0000/0001/388/2017-05-19/6dba73b69ac18bffa22280f1b1151500.jpg
+                    [1] => https://image.caiwel.com/images/2017/04/05/201704051411538515955.jpg
+                    [2] => https://image.caiwel.com/images/2017/04/05/201704051412062264705.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+    [19] => Array
+        (
+            [id] => 1806
+            [type] => 1
+            [name] => 新盛翅尖
+            [unit] => 0
+            [duration] => 0
+            [images] => Array
+                (
+                    [0] => https://image.caiwel.com/images/2017/05/26/201705261020518038715.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705261020279649347.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705261020192729297.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705261019368918079.jpg
+                    [4] => https://image.caiwel.com/images/2017/05/26/201705261019599691671.jpg
+                )
+
+            [price] => 0
+            [stock] => 200
+            [brief] => <p>
+	鸡翅尖，选取新鲜翅尖，肉质鲜嫩爽滑。并采用独有锁鲜工艺，第一时间锁住新鲜营养。翅尖取自养殖基地天然健康鸡，个大饱满。每个翅尖都经过仔细清洗，去除杂质。同时翅尖含有丰富的胶原蛋白。整箱购买价格更实惠！
+</p>
+<p>
+	<br />
+</p>
+            [status] => 1
+            [sort] => 0
+            [weight] => 10
+            [cateId] => 58
+            [goodsSn] => 
+            [systemGoodsId] => 1601
+            [sellerId] => 37
+            [totalStock] => 0
+            [buyLimit] => 0
+            [createTime] => 1496269225
+            [disposeTime] => 1496269225
+            [disposeResult] => 一键导入商品库
+            [disposeStatus] => 1
+            [deductType] => 1
+            [deductVal] => 0
+            [exchangeIntegral] => 
+            [isIntegral] => 0
+            [isVirtual] => 0
+            [systemTagListPid] => 12
+            [systemTagListId] => 79
+            [isUpdata] => 0
+            [originalPrice] => 0
+            [salePrice] => 
+            [brandId] => 316
+            [processMoney] => 
+            [autoType] => 0
+            [logo] => https://image.caiwel.com/images/2017/05/26/201705261020518038715.jpg
+            [url] => http://wap.test.com/Goods/appbrief?id=1806
+            [banner] => Array
+                (
+                    [0] => https://image.caiwel.com/images/2017/05/26/201705261020518038715.jpg
+                    [1] => https://image.caiwel.com/images/2017/05/26/201705261020279649347.jpg
+                    [2] => https://image.caiwel.com/images/2017/05/26/201705261020192729297.jpg
+                    [3] => https://image.caiwel.com/images/2017/05/26/201705261019368918079.jpg
+                    [4] => https://image.caiwel.com/images/2017/05/26/201705261019599691671.jpg
+                )
+
+            [seller] => Array
+                (
+                    [id] => 37
+                    [name] => 龙沃冻肉经营部（请勿下单）
+                    [type] => 1
+                    [logo] => https://image.caiwel.com/seller/0000/0000/037/2017-06-19/0c4eaaa9dcb76b164faeff4ff894138f.jpg
+                    [image] => 
+                    [mobile] => 13388579088
+                    [contacts] => 
+                    [address] => 温州新桥冷库
+                    [sort] => 100
+                    [status] => 1
+                    [brief] => 龙沃冻肉经营部演示店铺，非工作人员请勿下单！
+                    [deduct] => 1
+                    [userId] => 119
+                    [nameMatch] => ux40857 ux27779 ux20923 ux32905 ux32463 ux33829 ux37096 ux35831 ux21247 ux19979 ux21333 ux49 ux51 ux51 ux56 ux56 ux53 ux55 ux57 ux48 ux56 ux56
+                    [serviceTel] => 
+                    [addressDetail] => 
+                    [provinceId] => 929
+                    [cityId] => 956
+                    [areaId] => 957
+                    [businessDesc] => 
+                    [createTime] => 1496011075
+                    [createDay] => 1495958400
+                    [isDel] => 0
+                    [isAuthshow] => 0
+                    [mapPoint] => Array
+                        (
+                            [x] => 30.897216606051
+                            [y] => 121.11053466797
+                        )
+
+                    [mapPointStr] => 30.897216606051,121.11053466797
+                    [mapPos] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [x] => 45.938675186002
+                                    [y] => 104.30394236054
+                                )
+
+                            [1] => Array
+                                (
+                                    [x] => 42.032527117495
+                                    [y] => 116.89178453911
+                                )
+
+                            [2] => Array
+                                (
+                                    [x] => 42.367231455932
+                                    [y] => 120.90428263198
+                                )
+
+                            [3] => Array
+                                (
+                                    [x] => 39.159615641006
+                                    [y] => 127.97123832724
+                                )
+
+                            [4] => Array
+                                (
+                                    [x] => 37.661062614807
+                                    [y] => 129.00875981839
+                                )
+
+                            [5] => Array
+                                (
+                                    [x] => 36.220250228036
+                                    [y] => 134.96746991655
+                                )
+
+                            [6] => Array
+                                (
+                                    [x] => 20.751861231045
+                                    [y] => 127.02229512701
+                                )
+
+                            [7] => Array
+                                (
+                                    [x] => 7.7347224828109
+                                    [y] => 111.49998754011
+                                )
+
+                            [8] => Array
+                                (
+                                    [x] => 9.1759910044878
+                                    [y] => 88.520966338877
+                                )
+
+                            [9] => Array
+                                (
+                                    [x] => 34.844274563008
+                                    [y] => 93.738914234353
+                                )
+
+                        )
+
+                    [mapPosStr] => 45.938675186002,104.30394236054|42.032527117495,116.89178453911|42.367231455932,120.90428263198|39.159615641006,127.97123832724|37.661062614807,129.00875981839|36.220250228036,134.96746991655|20.751861231045,127.02229512701|7.7347224828109,111.49998754011|9.1759910044878,88.520966338877|34.844274563008,93.738914234353
+                    [isCheck] => 1
+                    [checkVal] => 
+                    [isAuthenticate] => 1
+                    [isCashOnDelivery] => 0
+                    [serviceFee] => 0
+                    [deliveryFee] => 0
+                    [deliveryTime] => 
+                    [goodsKeywords] => 六和翅根4050|德鸿大翅根5060|益客翅根3040|龙城大翅根|鸿泰单冻翅中|德鸿鸡边腿|华宇鸡边腿|博大带骨上腿块|博大鸡锁骨|益客袋装鸡大胸|圣农单冻大胸|德鸿翅中3040|华宇鸡全翅|德鸿排翅5060|裴顿鸡肫|板冻圣农鸡肫|益客琵琶腿100120|L圣农琵琶腿|8个六和琵琶腿|新盛翅尖|龙城翅尖|圣农单冻翅尖|龙城鸡脖|德鸿大鸡胗|龙城大鸡胗|圣农大鸡架|益客鸡肠|益客鸡长爪|圣农鸡凤爪|圣农普装鸡心|双阳三黄鸡8只|益客鸡腿4个|益客鸡上腿肉|双阳西装鸡18只|双阳三黄鸡14|天润鸭边腿|德润熟鸭肠|德润鸭舌|六和半片鸭|益客半片鸭|六和鸭锁骨|益客鸭锁骨|六和鸭腿|益客精鸭腿|天润鸭大胸|L天润二节翅|6个天润三节翅|6个天润鸭脖|天润鸭翅跟|益客鸭头9个|9个天润鸭头|天润鸭心|L益客鸭掌|L天润鸭掌|M天润鸭胗|益客鸭肝|10公斤德润鸭子085kg16gk|金锣冷膘油|金锣猪舌|绝霸精品熟大肠|绝霸猪尾|绝霸猪小肚|冷冻猪胸骨|万福冻猪肝|缘源小五花肉|缘源猪肋排|缘源猪小前排|猪背骨|猪耳片|猪前脚|猪后蹄|猪两节后腿骨|猪颈骨|猪肋条|猪脚同|猪五花|天任玉米粒|天任青豆|双阳川香鸡柳|圣农热狗香肠|新天奥尔良大鸡排|双阳骨肉相连|金锣仿墨鱼丸|金锣牛肉风味丸|金锣四喜丸子|金锣猪肉丸|金锣骨肉串香|金锣川香鸡柳|华宇迷你肉串|金锣亲亲肠|金锣千叶豆腐|金锣甜不辣|乌骨鸡|益客鸡全腿|圣农鸡翅尖|龙城大鸡肫|六和鸭边腿|新天创美麟鸡柳|新天创大鸡排|猪后腿骨|猪小肠|
+                    [isAvoidFee] => 0
+                    [avoidFee] => 
+                    [sendWay] => 1
+                    [reserveDays] => 3
+                    [sendLoop] => 90
+                    [firstLevel] => 
+                    [secondLevel] => 
+                    [thirdLevel] => 
+                    [businessScope] => 
+                    [serviceMode] => 1
+                    [serviceWay] => 1
+                    [storeType] => 0
+                    [refundAddress] => 
+                    [sellerCancel] => 0
+                    [userCancel] => 10
+                    [passageId] => 
+                    [schemeId] => 
+                    [limitMoney] => 0
+                    [sendType] => 2
+                    [sendFee] => 0
+                    [sendStaffFee] => 0
+                    [sendSystemFee] => 0
+                    [isCancelCall] => 0
+                )
+
+        )
+
+)

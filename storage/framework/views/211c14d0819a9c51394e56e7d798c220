@@ -1,0 +1,37 @@
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('right_content'); ?>
+	
+		<div class="m-spboxlst " style="">
+					<form id="yz_form" name="yz_form" class="validate-form ajax-form" method="post" action="http://admin.test.com/City/save" enctype="application/x-www-form-urlencoded" target="_self">
+						<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 开通城市:
+		            </span>
+		            <div class="f-boxr">
+		                  <script type="text/javascript" src="http://admin.test.com/js/city.js"></script><select id="provinceId" name="provinceId" data-val="" data-showtip="1" data-city="cityId" class="sle province_city" style="width:auto; display:inline-block;"></select><select id="cityId" name="cityId" data-val="" data-area="areaId" class="sle" style="width:auto; display:inline-block;"></select><select id="areaId" name="areaId" data-val="" class="sle" style="width:auto; display:inline-block;"></select><script type="text/javascript">jQuery(function($){$.RegionBind("provinceId");});</script>
+		            </div>
+		        </div>
+			<div id="sort-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 排序:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="sort" id="sort"  class="u-ipttext" value="<?php if(isset($data['sort'])):?><?php echo e($data['sort']); ?><?php else: ?>100<?php endif; ?>" />
+		            </div>
+		        </div>		<div class="u-fitem clearfix">
+                            <span class="f-tt">
+                                &nbsp;
+                            </span>
+                            <div class="f-boxr">
+                                  <button type="submit" class="u-addspbtn">提 交</button>
+                            </div>
+                        </div>		<input type="hidden" value="<?php echo e($data['id']); ?>" name="id" />
+					</form>
+				</div>
+	
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -1,0 +1,152 @@
+<?php $__env->startSection('title'); ?><?php echo e($title); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_top'); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('show_refresh'); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection('contentcss'); ?>hasbottom <?php $__env->stopSection(); ?>
+<?php $__env->startSection('content'); ?>
+    <div class="pcenter-head">
+        <div class="headimg"><div><img src="<?php echo e($staff['avatar']); ?>" onerror='this.src="<?php echo e(asset('wap/community/client/images/wdtx-wzc.png')); ?>"'></div></div>
+        <a class="gotocenter" href="#" onclick="JumpURL('<?php echo e(u('Mine/account2')); ?>','#mine_account2_view',2)"><?php echo e($staff['name']); ?><i class="iconfont">&#xe64b;</i></a>
+    </div>
+    <div class="blank050"></div>
+    <?php if($role == 2): ?>
+    <?php /*<div class="item">*/ ?>
+        <?php /*<a href="">*/ ?>
+            <?php /*<i class="iconfont left bjff9667">&#xe669;</i>*/ ?>
+            <?php /*<i class="iconfont right">&#xe64b;</i>*/ ?>
+            <?php /*<div class="con">*/ ?>
+                <?php /*我的佣金*/ ?>
+            <?php /*</div>*/ ?>
+        <?php /*</a>*/ ?>
+        <?php /*<a href="">*/ ?>
+            <?php /*<i class="iconfont left bjff7e7e">&#xe66a;</i>*/ ?>
+            <?php /*<i class="iconfont right">&#xe64b;</i>*/ ?>
+            <?php /*<div class="con">*/ ?>
+                <?php /*业务统计*/ ?>
+            <?php /*</div>*/ ?>
+        <?php /*</a>*/ ?>
+        <?php /*<a href="">*/ ?>
+            <?php /*<i class="iconfont left bj52cfe1">&#xe66b;</i>*/ ?>
+            <?php /*<i class="iconfont right">&#xe64b;</i>*/ ?>
+            <?php /*<div class="con">*/ ?>
+                <?php /*请假*/ ?>
+            <?php /*</div>*/ ?>
+        <?php /*</a>*/ ?>
+    <?php /*</div>*/ ?>
+    <?php /*<div class="blank050"></div>*/ ?>
+    <?php endif; ?>
+    <div class="item">
+        <a href="#" onclick="JumpURL('<?php echo e(u('Mine/message')); ?>','#mine_message_view',2)" class=" <?php if($hasNewMsg): ?> newstip <?php endif; ?>" href="">
+            <i class="iconfont left bj7cbbfe">&#xe666;</i>
+            <i class="iconfont right">&#xe64b;</i>
+            <div class="con">
+                消息通知
+                <span class="memo"></span>
+            </div>
+        </a>
+        <?php if($invitation['sellerStatus'] == 1 &&  ($role == 1 || $role == 3|| $role == 5|| $role == 7)): ?>
+        <a href="#" onclick="JumpURL('<?php echo e(u('Invitation/index')); ?>','#invitation_index_view',1)">
+            <i class="iconfont left bj74c9c2">&#xe642;</i>
+            <i class="iconfont right">&#xe64b;</i>
+            <div class="con">
+                邀请返现
+                <span class="memo"></span>
+            </div>
+        </a>
+        <?php endif; ?>
+        <a  href="#" onclick="JumpURL('<?php echo e(u('More/detailAll',['code'=>7])); ?>','#more_detailAll_view',2)">
+            <i class="iconfont left bj87ce4c">&#xe667;</i>
+            <i class="iconfont right">&#xe64b;</i>
+            <div class="con">
+                使用帮助
+                <span class="memo"></span>
+            </div>
+        </a>
+    </div>
+    <div class="blank050"></div>
+    <div class="item">
+        <a onclick="JumpURL('<?php echo e(u('Mine/set')); ?>','#mine_set_view',2)" >
+            <i class="iconfont left bjffa70f">&#xe668;</i>
+            <i class="iconfont right">&#xe64b;</i>
+            <div class="con">
+                设置
+            </div>
+        </a>
+        <?php if($staff['isSystem'] == 1): ?>
+        <a onclick="IsWork('<?php echo e($staff['isWork']); ?>')" >
+            <i class="iconfont left bjff9667">&#xe63d;</i>
+            <i class="iconfont right"><?php if($staff['isWork'] == 1): ?>上班<?php else: ?>下班<?php endif; ?>&#xe64b;</i>
+            <div class="con">
+                当前状态
+            </div>
+        </a>
+        <a onclick="JumpURL('<?php echo e(u('Mine/account')); ?>','#mine_account_view',2)" >
+            <i class="iconfont left b-fb8486">&#xe657;</i>
+            <i class="iconfont right">提现&#xe64b;</i>
+            <div class="con">
+                账户余额:<?php echo e(isset($staff['extend']['withdrawMoney']) ? $staff['extend']['withdrawMoney'] : 0); ?>
+
+            </div>
+        </a>
+        <?php endif; ?>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('preloader'); ?><?php $__env->stopSection(); ?>
+<?php $__env->startSection($js); ?>
+    <script type="text/javascript">
+        function IsWork(status){
+            if(status == 1){ //上班的情况就是提示下班
+                $.modal({
+                    title:  '提示',
+                    text: "上班一天了，好好休息一下！",
+                    buttons: [
+                        {
+                            text: '取消',
+                            bold: true
+                        },{
+                            text: '确定',
+                            onClick: function() {
+                                $.post("<?php echo e(u('Mine/updatework')); ?>",{'is_work':0},function(res){
+                                    if(res.code == 0){
+                                        $.toast('打卡成功');
+                                        setTimeout(function() {
+                                            location.reload();
+                                        }, 1000);
+                                    }else{
+                                        $.toast(res.msg);
+                                    }
+                                })
+                            }
+                        },
+                    ]
+                })
+            }else{
+                $.modal({
+                    title:  '提示',
+                    text: "系统将会分配订单给您配送，请做好准备！",
+                    buttons: [
+                        {
+                            text: '取消',
+                            bold: true
+                        },{
+                            text: '确定',
+                            onClick: function() {
+                                $.post("<?php echo e(u('Mine/updatework')); ?>",{'is_work':1},function(res){
+                                    if(res.code == 0){
+                                        $.toast('打卡成功');
+                                        setTimeout(function() {
+                                            location.reload();
+                                        }, 1000);
+                                    }else{
+                                        $.toast(res.msg);
+                                    }
+                                })
+                            }
+                        },
+                    ]
+                })
+            }
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('staff.default._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

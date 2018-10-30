@@ -1,0 +1,414 @@
+<?php $__env->startSection('show_top'); ?>
+    <header class="bar bar-nav y-zgsytop y-toptransparent">
+        <a class="button button-link button-nav pull-left ml5" id="saosao" onclick="$.sao()" <?php if($weixinliu == 1): ?> style="display: block" <?php else: ?> style="display: none" <?php endif; ?> external>
+            <i class="icon iconfont">&#xe67c;</i>
+        </a>
+        <div class="title tl c-white" onclick="$.href('<?php echo e(u('Seller/search')); ?>')">
+            <i class="icon iconfont f13">&#xe65e;</i>
+            <input type="text" placeholder="搜索商品、店铺">
+        </div>
+        <a class="button button-link button-nav pull-right mr5" external onclick="$.href('<?php echo e(u('UserCenter/systemmessage')); ?>')">
+            <i class="icon iconfont">&#xe660;</i>
+            <?php if(((int)$counts['systemCount'] > 0 || (int)$counts['newMsgCount'])): ?>
+                <span class="y-redc" style="z-index: 999;border: 1px solid #fff;width: 0.5em;height: 0.5em"></span>
+            <?php endif; ?>
+        </a>
+    </header>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection($css); ?>
+    <style type="text/css">
+        .y-backtop{
+            position: fixed;right: .5rem;bottom: 12%;width: 35px;height: 35px;
+            background: url('<?php echo e(asset('/images/ico/top.png')); ?>') no-repeat center center #fff;
+            background-size: 70%;display: block;z-index: 111;border-radius: 100%;
+            border: 1px solid #a9a9a9;
+        }
+        /*头部透明*/
+        .y-toptransparent.bar.bar-nav{background: none;}
+        .y-toptransparent.bar.bar-nav:after{height: 0;}
+        .y-toptransparent.bar.bar-nav~.content{top: 0;}
+        .y-toptransparent.bar.bar-nav .button-nav{line-height: 2.2rem;padding-top: 0;}
+        .y-toptransparent.bar.bar-nav .title{background: rgba(225,225,225,.6);border-radius: .75rem;line-height: 1.5rem;top: .3rem;padding-left: .75rem;}
+    </style>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+
+    <?php echo $__env->make('wap.community._layouts.bottom', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <?php if($cityIsService == 0): ?>
+        <div class="x-null pa w100 tc">
+            <i class="icon iconfont">&#xe645;</i>
+            <p class="f12 c-gray mt10">当前城市未开通服务</p>
+            <a class="f14 c-white x-btn db pageloading" href="<?php echo e(u('Index/addressmap')); ?>">切换地址</a>
+        </div>
+    <?php else: ?>
+        <div class="content infinite-scroll infinite-scroll-bottom"  data-distance="50" id="">
+            <div id="indexAdvSwiper" class="swiper-container my-swiper indexAdvSwiper" data-space-between='0' >
+                <div class="swiper-wrapper">
+                    <?php foreach($data['banner'] as $key => $value): ?>
+                        <div class="swiper-slide pageloading" onclick="$.href('<?php echo e($value['url']); ?>')">
+                            <img _src="<?php echo e(formatImage($value['image'],640)); ?>" src="<?php echo e(formatImage($value['image'],640)); ?>" />
+                        </div>
+                    <?php endforeach; ?>
+                </div>
+                <div class="swiper-pagination swiper-pagination-adv"></div>
+            </div>
+            <div class="tc c-bgfff y-xsyaddr">
+                <div class="y-xsyaddrico"><i class="icon iconfont c-red">&#xe650;</i></div>
+
+                <div class="f12 y-xsyaddrtext"  onclick="$.href('<?php echo e(u('Index/addressmap')); ?>')" >
+                    <?php if($orderData['address']): ?>
+                        <span><?php echo e($orderData['address']); ?></span>
+                    <?php else: ?>
+                        <span id="locationName">定位中请稍候</span>
+                    <?php endif; ?>
+                    <i class="icon iconfont ml5 f14" >&#xe601;</i>
+                </div>
+            </div>
+
+            <div id="indexNavSwiper" class="swiper-container y-swiper" data-space-between='0'  style="background:#fff;">
+                <div class="swiper-wrapper">
+                    <?php for($i = 0; $i < (ceil(count($menu) / 8)); $i++): ?>
+                        <div class="swiper-slide">
+                            <ul class="y-nav clearfix">
+                                <?php foreach(array_slice($menu,($i * 8),8) as  $v): ?>
+                                    <?php
+                                    if (!preg_match("/^(http|https):/", $v['url'])){
+                                        $v['url'] = 'http://'.$v['url'];
+                                    }
+                                    ?>
+                                    <li><a href="<?php echo e($v['url']); ?>" class="db" external><img src="<?php echo e($v['menuIcon']); ?>"><p class="f13"><?php echo e($v['name']); ?></p></a></li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </div>
+                    <?php endfor; ?>
+                </div>
+                <div class="swiper-pagination swiper-pagination-nav"></div>
+            </div>
+
+            <?php if(count($data['notice']) > 0): ?>
+                <ul class="x-advertising clearfix">
+                    <?php foreach($data['notice'] as $k=>$value): ?>
+                        <?php if($k < 2): ?>
+                            <li><a href="<?php echo e($value['url']); ?>" class="br pageloading"><img src="<?php echo e(formatImage($value['icon'],293)); ?>"></a></li>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </ul>
+            <?php endif; ?>
+            <?php if(count($data['notice']) > 2): ?>
+                <div class="c-bgfff p10">
+                    <?php foreach($data['notice'] as $k=>$value): ?>
+                        <?php if($k > 1): ?>
+                            <a href="<?php echo e($value['url']); ?>" class="db pageloading"><img src="<?php echo e(formatImage($value['icon'],586)); ?>" class="w100"></a>
+                        <?php endif; ?>
+                    <?php endforeach; ?>
+                </div>
+                <?php endif; ?>
+                <?php if($type == 1): ?>
+                <!-- 附近推荐商户 -->
+                <div class="content-block-title f14 c-red"><i class="icon iconfont mr5">&#xe652;</i>好货推荐</div>
+                <ul id="wdddmain" class="row no-gutter y-recommend">
+                    <?php if(!empty($orderData)): ?>
+                        <?php echo $__env->make('wap.community.index.lists_item2', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php endif; ?>
+                </ul>
+                <?php else: ?>
+                <!-- 附近推荐商户 -->
+                <div class="content-block-title f14 c-gray"><i class="icon iconfont mr5">&#xe632;</i>附近推荐商户</div>
+                <div class="list-block media-list y-sylist">
+                    <ul id="wdddmain">
+                        <?php if(!empty($orderData)): ?>
+                            <?php echo $__env->make('wap.community.index.lists_item', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                        <?php endif; ?>
+                    </ul>
+                </div>
+                <?php endif; ?>
+
+
+
+                <div class="pa w100 tc allEnd none">
+                    <p class="f12 c-gray mt5 mb5">没有更多了</p>
+                </div>
+
+                <!-- 加载提示符 -->
+                <div class="infinite-scroll-preloader none">
+                    <div class="preloader"></div>
+                </div>
+                <!-- 回到顶部 -->
+                <a href="javascript:$('.content').scrollTop(0)" class="y-backtop none"></a>
+        </div>
+        <?php echo $__env->make('wap.community._layouts.js_share', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endif; ?>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection($js); ?>
+    <script type="text/tpl" id="x-tkmodaltext-udb">
+        <div class="x-tkmodaltext">
+            <p class="f18 x-tktitle mb5"><?php echo e($content); ?></p>
+            <p class="f12 tc">可用于抵扣在线支付金额!</p>
+        </div>
+    </script>
+    <script type="text/tpl" id="x-tkmodaltitle-udb">
+        <img src="<?php echo e(asset('wap/community/newclient/images/couponspic.png')); ?>" class="x-yhqtktop"><i class="icon iconfont c-white x-over">&#xe604;</i>
+    </script>
+
+    <?php echo $__env->make('wap.community._layouts.gps', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <script type="text/javascript" src="<?php echo e(asset('wap/community/newclient/js/jweixin-1.0.0.js')); ?>"></script>
+    <script type="text/javascript">
+        if("<?php echo e($content); ?>"){
+            $.alert($("#x-tkmodaltext-udb").html(),$("#x-tkmodaltitle-udb").html(),function () {
+                $.href("<?php echo e(u("Coupon/index")); ?>");
+            });
+            $(".modal-button,.modal-button-bold").html("立即查看");
+        }
+        $(document).off('click','.x-over');
+        $(document).on('click','.x-over', function () {
+            $(".modal").removeClass("modal-in").addClass("modal-out").remove();
+            $(".modal-overlay").removeClass("modal-overlay-visible");
+        });
+        var BACK_URL = "<?php echo e(u('Index/index')); ?>";
+        window.opendoorpage = true;//当前页可以开门
+
+        //微信分享配置文件
+        wx.config({
+            debug: false, // 调试模式
+            appId: "<?php echo e($weixin['appId']); ?>", // 公众号的唯一标识
+            timestamp: "<?php echo e($weixin['timestamp']); ?>", // 生成签名的时间戳
+            nonceStr: "<?php echo e($weixin['noncestr']); ?>", // 生成签名的随机串
+            signature: "<?php echo e($weixin['signature']); ?>",// 签名
+            jsApiList: ['checkJsApi','scanQRCode'] // 需要使用的JS接口列表
+        });
+        $.sao = function(){
+            if(window.App){
+                window.App.qr_code_scan();
+            }else{
+                wx.ready(function () {
+                    wx.scanQRCode({
+                        needResult: 1, // 默认为0，扫描结果由微信处理，1则直接返回扫描结果，
+                        scanType: ["qrCode","barCode"], // 可以指定扫二维码还是一维码，默认二者都有
+                        success: function (res) {
+                            var result = res.resultStr; // 当needResult 为 1 时，扫码返回的结果
+                            if(result.indexOf('http')!=-1){
+                                $.href(result);
+                            }else{
+                                $.alert(result);
+                            }
+                        }
+                    });
+                })
+            }
+        }
+        function js_qr_code_scan(val){
+            if(val.indexOf('http')!=-1){
+                App.open_type('{"url":"' + val + '", "open_url_type": "1"}');
+            }else{
+                $.alert(val);
+            }
+        }
+
+        //精确定位
+        $(function(){
+            if(window.App){
+                $("#saosao").css('display','block');
+            }
+            $("#indexAdvSwiper").swiper({"pagination":".swiper-pagination-adv", "autoplay":2500});
+            $("#indexNavSwiper").swiper({"pagination":".swiper-pagination-nav"});
+
+            //回到顶部
+            $(".content").scroll(function(){
+                var windowheight =  $(window).height();
+                var topheight = $(".content").scrollTop();
+                if (topheight > windowheight*2) {
+                    $(".y-backtop").removeClass("none");
+                }else{
+                    $(".y-backtop").addClass("none");
+                }
+            })
+
+            var qqcGeocoder = null;
+            var clientLatLng = null;
+            var now_mapPointStr = "<?php echo e($orderData['mapPointStr']); ?>";
+            <?php if(!empty($orderData['mapPointStr'])): ?>
+            <?php if($args['show_prog'] == 1): ?>
+                $.gpsPosition(function(gpsLatLng, city, address, mapPointStr){
+                    var ln = mapPointStr.split(",");
+                    var strln = ln[0].substring(0,5)+","+ln[1].substring(0,6);
+                    var ls = now_mapPointStr.split(",");
+                    var strls = ls[0].substring(0,5)+","+ls[1].substring(0,6);
+                    if(strln != strls){
+                        $.toast('您的定位地址已经发生改变~');
+                    }
+                })
+             <?php else: ?>
+               var clientLatLngs = "<?php echo e($orderData['mapPointStr']); ?>".split(',');
+            clientLatLng = new qq.maps.LatLng(clientLatLngs[0], clientLatLngs[1]);
+            <?php endif; ?>
+        <?php else: ?>
+            $.gpsPosition(function(gpsLatLng, city, address, mapPointStr){
+                        $.router.load("<?php echo e(u('Index/index')); ?>?address="+address+"&mapPointStr="+mapPointStr+"&city="+city, true);
+                    })
+            <?php endif; ?>
+
+            $(document).on("touchend",".data-content ul li",function(){
+                var id = parseInt($(this).data('id'));
+                if (id > 0)
+                {
+                    $.router.load("<?php echo e(u('Seller/detail')); ?>" + "?staffId=" + id, true);
+                }
+            });
+
+            $.computeDistanceBegin = function ()
+            {
+                if (clientLatLng == null) {
+                    return;
+                }
+
+                $(".compute-distance").each(function ()
+                {
+                    var mapPoint = new qq.maps.LatLng($(this).attr('data-map-point-x'), $(this).attr('data-map-point-y'));
+                    $.computeDistanceBetween(this, mapPoint);
+                    $(this).removeClass('compute-distance');
+                })
+            }
+
+            $.computeDistanceBetween = function (obj, mapPoint)
+            {
+                var distance = qq.maps.geometry.spherical.computeDistanceBetween(clientLatLng, mapPoint);
+                if (distance < 1000)
+                {
+                    $(obj).html(Math.round(distance) + 'M');
+                } else
+                {
+                    $(obj).html(Math.round(distance / 1000 * 100) / 100 + 'Km');
+                }
+            }
+
+            $.SwiperInit = function (box, item, url)
+            {
+                $(box).infinitescroll({
+                    itemSelector: item,
+                    debug: false,
+                    dataType: 'html',
+                    nextUrl: url
+                }, function (data)
+                {
+                    $.computeDistanceBegin();
+                });
+            }
+
+           // $.computeDistanceBegin();
+
+            //重新定位
+            $.relocation = function(){
+                //异步Session清空
+                $.post("<?php echo e(u('Index/relocation')); ?>",function(){
+                    $.router.load("<?php echo e(u('Index/index')); ?>", true);
+                })
+            }
+
+
+            //是否有展开箭头
+            $.lieach = function(){
+                $(".list-block ul li.each").each(function(){
+                    var innerh = $(this).find(".y-mjyh li").length;
+                    if (innerh >= 3) {
+                        $(this).find(".y-mjyh .y-i1").removeClass("none");
+                        $(this).find(".y-mjyh li").last().addClass("none");
+                    }
+                })
+            }
+            $.lieach();
+
+            // 促销展开与收起
+            $(document).off('click','.y-mjyh');
+            $(document).on('click','.y-mjyh', function () {
+                if($(this).find("li").length <= 2){
+                    return false;
+                }
+                if($(this).hasClass("active")){
+                    $(this).removeClass("active");
+                    $(this).find(".y-unfold").addClass("none").siblings("i.y-i1").removeClass("none");
+                    $(this).find("li").last().addClass("none");
+                }else{
+                    $(this).addClass("active");
+                    // $(this).css("height",44);
+                    $(this).find(".y-unfold").removeClass("none").siblings("i.y-i1").addClass("none");
+                    $(this).find("li").last().removeClass("none");
+                }
+            });
+
+            //上拉
+            var groupLoading = false;
+            var groupPageIndex = 2;
+            var nopost = 0;
+            $(document).off('infinite', '.infinite-scroll-bottom');
+            $(document).on('infinite', '.infinite-scroll-bottom', function() {
+                if(nopost == 1){
+                    return false;
+                }
+                // 如果正在加载，则退出
+                if (groupLoading) {
+                    return false;
+                }
+                //隐藏加载完毕显示
+                $(".allEnd").addClass('none');
+
+                groupLoading = true;
+
+                $('.infinite-scroll-preloader').removeClass('none');
+                $.pullToRefreshDone('.pull-to-refresh-content');
+
+                var data = new Object;
+                data.page = groupPageIndex;
+                data.status = "<?php echo e($args['status']); ?>";
+
+                $.post("<?php echo e(u('Index/indexList')); ?>", data, function(result){
+                    groupLoading = false;
+                    $('.infinite-scroll-preloader').addClass('none');
+                    result  = $.trim(result);
+                    if (result != '') {
+                        groupPageIndex++;
+                        $('#wdddmain').append(result);
+                        $.computeDistanceBegin();
+                        $.refreshScroller();
+                    }else{
+                        $(".allEnd").removeClass('none');
+                        nopost = 1;
+                    }
+                });
+            });
+
+
+            //ajax加载商家或者商品列表
+            var ajaxData = {page:1, status:"<?php echo e($args['status']); ?>"};
+            var ajaxObj = $("#wdddmain");
+            var ajaxUrl = "<?php echo e(u('Index/indexList')); ?>";
+            $.ajaxListFun(ajaxObj, ajaxUrl, ajaxData, function(result){
+                $.computeDistanceBegin();
+            });
+
+        });
+
+
+        if(window.App && parseInt(<?php echo e($loginUserId); ?>)>0){
+            var result = getDoorKeys();
+            window.App.doorkeys(result.responseText);
+        }
+
+        //滑动时头部的显示
+        $(".content").scroll(function(){
+            var top=$(".content").scrollTop();
+            var opacity=top/100;
+            if (opacity>=0.7) {
+                $(".y-toptransparent").css("background","rgba(255,45,75,.7)");
+                $(".y-toptransparent .title").css("background","rgba(225,225,225,.8)");
+            }else{
+                $(".y-toptransparent").css("background","rgba(255,45,75,"+opacity+")");
+                $(".y-toptransparent .title").css("background","rgba(225,225,225,0.6)");
+            };
+        });
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('wap.community._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

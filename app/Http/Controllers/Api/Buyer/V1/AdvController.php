@@ -1,0 +1,75 @@
+<?php
+namespace YiZan\Http\Controllers\Api\Buyer;
+
+use YiZan\Models\Activity;
+use YiZan\Models\Adv;
+use YiZan\Models\Goods;
+use YiZan\Models\OrderGoods;
+use YiZan\Models\Seller;
+use YiZan\Models\ShareLog;
+use YiZan\Models\ShoppingCart;
+use YiZan\Models\SystemConfig;
+use YiZan\Services\Buyer\ActivityService;
+use Lang, Validator;
+use YiZan\Utils\Time;
+
+class AdvController extends UserAuthController{
+    public function getAdv(){
+        $list = Adv::where('flage','=',1)->where('status','=',1)->where(function($query){
+            $query->where('city_id','=',intval($this->request('cityId')))
+                ->orWhere(function($query){
+                    $query->where('city_id', '0');
+                });
+        })->get()->toArray();
+        foreach ($list as $key => $val) {
+            $url = array();
+            $arr = array(1,2,3,4);
+            foreach($arr as $i){
+                switch ($val['type'.$i]) {
+                    case 1 ://商家分类
+                        if($val['arg'.$i] == -1){
+                            $url[$i] = u('wap#Seller/cates',['index_flage'=>'index']);
+                        }else{
+                            $url[$i] = u('wap#Seller/index',['id'=>$val['arg'.$i],'index_flage'=>'index']);
+                        }
+                        break;
+                    case 3 : $url[$i] = u('wap#Goods/detail',['goodsId'=>$val['arg'.$i],'index_flage'=>'index']); break;//普通商品
+                    case 4 : $url[$i] = u('wap#Seller/detail',['id'=>$val['arg'.$i],'index_flage'=>'index']); break;//商家
+                    case 6 : $url[$i] = u('wap#Goods/detail',['id'=>$val['arg'.$i],'index_flage'=>'index']); break;//服务商品
+                    case 7 : $url[$i] = u('wap#Article/detail',['id'=>$val['arg'.$i],'index_flage'=>'index']); break;//文章
+                    case 8 : $url[$i] = u('wap#UserCenter/signin',['index_flage'=>'index']); break;//
+                    case 9 : $url[$i] = u('wap#Integral/index',['index_flage'=>'index']); break;
+                    case 10 : $url[$i] = u('wap#Oneself/index',['id'=>1,'index_flage'=>'index']); break;
+                    case 11 : $url[$i] = u('wap#Property/index',['index_flage'=>'index']); break;
+                    case 12 : $url[$i] = u('wap#Integral/index',['index_flage'=>'index']); break;
+                    case 13 : $url[$i] = u('wap#Activity/secsale',['activityId'=>$val['arg'.$i],'index_flage'=>'index']);break;
+                    default: $url[$i] = strstr($val['arg'.$i],'http://') ? $val['arg'.$i] : 'http://'.$val['arg'.$i]; break;
+                }
+            }
+            $list[$key]['url1'] = $url[1];
+            $list[$key]['url2'] = $url[2];
+            $list[$key]['url3'] = $url[3];
+            $list[$key]['url4'] = $url[4];
+        }
+        return $this->outputData($list);
+    }
+
+    public function getBrandAdv(){
+        $array = range(0,11);
+        $brandAdv = array();
+        $list = Adv::where('flage','=',2)->where('status','=',1)->where(function($query){
+            $query->where('city_id','=',intval($this->request('cityId')))
+                ->orWhere(function($query){
+                    $query->where('city_id', '0');
+                });
+        })->orderBy('id','DESC')->skip(0)->take(1)->get()->toArray();
+        $brandSerialize = unserialize($list[0]['advSerialize']);
+        if($brandSerialize){
+            foreach($array as $k => $v){
+                $brandAdv[$k]['img'] = $brandSerialize['img'.$k];
+                $brandAdv[$k]['url'] = u('Brand/detail',['brandId'=>$brandSerialize['brandId'.$k]]);
+            }
+        }
+        return $this->outputData($brandAdv);
+    }
+}

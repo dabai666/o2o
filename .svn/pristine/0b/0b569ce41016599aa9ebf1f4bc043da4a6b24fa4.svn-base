@@ -1,0 +1,7 @@
+<ul id="brandListIdArr">
+    @if($brandList)
+        @foreach($brandList as $k => $v)
+            <li><input type="button" value="{{ $v['name'] }}" data-brand-id="{{ $v['id'] }}" class="button123 brand @if(isset($option['brandId']) && ($option['brandId'] == $v['id'])) a1 teshu @endif "></li>
+        @endforeach
+    @endif
+</ul>

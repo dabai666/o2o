@@ -1,0 +1,215 @@
+<?php $__env->startSection('css'); ?>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('right_content'); ?>
+	
+		<div id="checkList" class="">
+                    <div class="u-ssct clearfix">
+                    <?php $search_args = Input::all(); ?>
+                    <form id="yzForm" class="" name="yzForm" method="post" action="http://admin.wai9.fanwe.net/Service/goodslists" target="_self">
+                        <div class="search-row clearfix">
+                      <input type="hidden" name="sellerId" value="<?php echo e($args['sellerId']); ?>" />
+					<div id="name-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 商品名称:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="name" id="name"  class="u-ipttext" value="<?php echo e($search_args['name']); ?>" />
+		            </div>
+		        </div>
+					<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 分类:
+		            </span>
+		            <div class="f-boxr">
+		                  <select name="cateId" class="sle">
+	                        <option value="0">请选择</option>
+	                        <?php foreach($cate as $cate): ?>
+	                            <option value="<?php echo e($cate['id']); ?>"  <?php if((int)Input::get('cateId') == $cate['id']): ?> selected <?php endif; ?>><?php echo e($cate['name']); ?></option>
+	                        <?php endforeach; ?>
+	                    </select>
+		            </div>
+		        </div> 
+					<button type="submit" class="btn mr5">
+                        搜索
+                    </button>
+                </div>
+                    </form>
+                </div>
+			<div class="list-btns">
+                      <a href="<?php echo e(u('service/createGoods', ['sellerId'=>$args['sellerId']])); ?>" target="_self" class="btn mr5 btn-green">
+                        添加商品
+                    </a>
+                <a href="javascript:;" target="_self" class="btn mr5 btn-gray" onclick="$.show_tag()">
+                        选择通用商品库
+                    </a>
+                <a href="javascript:;" target="_self" class="btn mr5" onclick="btnDestroy()">
+                        删除
+                    </a>
+                </div>
+			<div class="m-tab">
+                      <table id="checkListTable" class="" relmodule="SystemGoods">
+                        <thead><td style="width:20px; text-align:center;">
+                            <input type="checkbox" onclick="$.TableCheckHandler(this)">
+                        </td><td class="" width="40" order="id" code="id"><span>编号</span></td>
+					<td class="" order="seller" code="seller"><span>所属商家</span></td>
+					<!-- <td class="" width="60" order="image" code="image"><span>图片</span></td> -->
+					<td class="" order="" code=""><span>商品标签</span></td>
+					<td class="" order="name" code="name"><span>商品信息</span></td>
+					<td class="" order="cate" code="cate"><span>分类</span></td>
+					<td class="" width="100" order="price" code="price"><span>商品原价</span></td>
+                    <td class="" width="100" order="price" code="price"><span>促销价格</span></td>
+                    <td class="" width="100" order="price" code="price"><span>商品重量</span></td>
+					<td class="" width="40" order="status" code="status"><span>状态</span></td>
+					<td style="text-align:center;white-space:nowrap;" width="60"><span>操作</span></td>
+                    </thead><tbody>
+                        <?php foreach($list as $list_index => $list_item): ?>
+                        <?php 
+                            $list_item_css = $list_index % 2 == 0 ? " tr-even" : " tr-odd"; 
+                            $list_item_pk  = $list_item["id"];
+                        ?>
+                        <tr class="tr-<?php echo e($list_item_pk); ?><?php echo e($list_item_css); ?>" key="<?php echo e($list_item_pk); ?>" primary="id"><td style="width:20px; text-align:center;">
+                            <input type="checkbox" name="key" value="<?php echo e($list_item_pk); ?>" <?php if($list_item["checkedDisabled"] == 1): ?> disabled <?php endif; ?> />
+                        </td><td class="" code="id"><p><?php echo e($list_item['id']); ?></p></td>
+					<td class="" code="seller"><p><?php echo e($list_item['seller']['name']); ?></p></td>
+					<!-- <td class="" code="image"><?php echo YiZan\Utils\Format::image($list_item['image'], "image", $list_item, array (
+  'code' => 'image',
+  'label' => '图片',
+  'type' => 'image',
+  'width' => '60',
+  'iscut' => '1',
+  'attr' => '',
+  'css' => '',
+  'style' => '',
+)); ?></td> -->
+					<td class="" style="text-align:left;" code=""><p><?php echo e(isset($list_item['systemTagListPid']['name']) ? $list_item['systemTagListPid']['name'] : '无'); ?>|<?php echo e(isset($list_item['systemTagListId']['name']) ? $list_item['systemTagListId']['name'] : '无'); ?></p></td>
+					<td class="" style="text-align:left;" code="name"><p><?php echo e($list_item['name']); ?></p></td>
+					<td class="" code="cate"><?php echo e($list_item['cate']['name']); ?></td>
+					<td class="" style="text-align:left;" code="price"><p>￥<?php echo e($list_item['originalPrice']); ?></p></td>
+                    <td class="" style="text-align:left;" code="price"><p>￥<?php echo e($list_item['salePrice']); ?></p></td>
+                    <td class="" style="text-align:left;" code="price"><p>￥<?php echo e($list_item['weight']); ?></p></td>
+					<td class="" code="status"><?php echo YiZan\Utils\Format::status($list_item['status'], "status", $list_item, array (
+  'code' => 'status',
+  'type' => 'status',
+  'label' => '状态',
+  'width' => '40',
+  'attr' => '',
+  'css' => '',
+  'style' => '',
+)); ?></td>
+					<td class=""><a href="<?php echo e(u('Service/goodsEdit',['id'=>$list_item['id'], 'sellerId'=>$list_item['sellerId']])); ?>" class=" blu"  data-pk="<?php echo e($list_item["id"]); ?>" target="_self">编辑</a>
+						<!-- <a href="<?php echo e(u(CONTROLLER_NAME."/edit",["id" => $list_item["id"]])); ?>" class=" blu"  data-pk="<?php echo e($list_item["id"]); ?>" target="_self">编辑</a> -->
+						<a href="javascript:;" class=" red"  onclick="$.RemoveItem(this, '<?php echo e(u('Service/goodsDestroy',['id'=>$list_item['id'], 'sellerId'=>$list_item['sellerId'], 'type'=>$list_item['type']])); ?>', '你确定要删除该数据吗？',<?php echo e($list_item["id"]); ?>)" data-pk="<?php echo e($list_item["id"]); ?>" target="_self">删除</a></td>
+                    </tr>
+                    <?php endforeach; ?>
+                </tbody>
+                    </table>
+                </div><?php echo $__env->make('admin._layouts.pager', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+	
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('js'); ?>
+    <script type="text/tpl" id="SellerGoodsTag">
+        <div id="-form-item" class="u-fitem " style="padding:10px;">
+            <div class="f-boxr">
+                一级分类： <select name="systemTagListPid" class="sle" id="systemTagListPid" style="width:180px">
+                    <?php foreach($systemTagListPid as $val): ?>
+                        <option value="<?php echo e($val['id']); ?>"><?php echo e($val['name']); ?></option>
+                    <?php endforeach; ?>
+        </select>
+        <br>
+        二级分类： <select name="systemTagListId" class="sle" id="systemTagListId"  style="width:180px">
+                <option value="0">请选择</option>
+        </select>
+</div>
+</div>
+</script>
+    <script type="text/javascript">
+        $.show_tag = function(){
+            var dialog = $.zydialogs.open($("#SellerGoodsTag").html(), {
+                boxid:'SET_GROUP_WEEBOX',
+                width:300,
+                title:'请选择分类',
+                showClose:true,
+                showButton:true,
+                showOk:true,
+                showCancel:true,
+                okBtnName: '进入商品库',
+                cancelBtnName: '取消',
+                contentType:'content',
+                onOk: function(){
+                    var  systemTagListPid = $("select[name=systemTagListPid]  option:selected").val();
+                    var  systemTagListId = $("select[name=systemTagListId]  option:selected").val();
+                    if(systemTagListPid <= 0){
+                        $.ShowAlert("请选择一级分类");
+                        return false;
+                    }
+                    if(systemTagListId <= 0){
+                        $.ShowAlert("请选择二级分类");
+                        return false;
+                    }
+                    if(systemTagListPid > 0&& systemTagListId > 0){
+                        var  url = "<?php echo e(u('Service/systemGoods')); ?>?systemTagListPid="+systemTagListPid+"&systemTagListId="+systemTagListId+"&sellerId=<?php echo e($args['sellerId']); ?>";
+                        window.location.href = url;
+                    }
+                },
+                onCancel:function(){
+                    $.zydialogs.close("SET_GROUP_WEEBOX");
+                }
+            });
+            //标签
+            $("#systemTagListPid").change(function(){
+                var tagId = $(this).val();
+                if(tagId == 0)
+                {
+                    var html = '<option value=0>请选择</option>';
+                    $("#systemTagListId").html(html);
+                }
+                else
+                {
+                    $.post("<?php echo e(u('SystemTagList/secondLevel')); ?>", {'pid': tagId}, function(res){
+
+                        if(res!='')
+                        {
+                            var html = '<option value=0>请选择</option>';
+                            $.each(res, function(k,v){
+                                html += "<option value='"+v.id+"'>"+v.name+"</option>";
+                            });
+                            $("#systemTagListId").html(html).removeClass('none');
+                        }
+                        else
+                        {
+                            var html = '<option value=0>请选择</option>';
+                            $("#systemTagListId").html(html);
+                        }
+
+                    });
+                }
+            });
+        }
+
+        function btnDestroy() {
+            var id = new Array();
+            var sellerId = "<?php echo e($list[0]['sellerId'] ?  $list[0]['sellerId'] : 0); ?>";
+            $("div.checker span.checked").each(function(k, v){
+                id[k] = $(this).find("input[name='key']").val();
+            });
+
+            if(id.length < 1)
+            {
+                $.ShowAlert('请选择要删除的项');
+                return false;
+            }
+            $.ShowConfirm('确认删除吗？', function(){
+                $.post("<?php echo e(u('Service/goodsDestroy')); ?>", {'id':id, 'sellerId':sellerId, 'type':1}, function(res){
+                    if(res.status)
+                    {
+                        window.location.reload();
+                    }
+                });
+            });        
+        }
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

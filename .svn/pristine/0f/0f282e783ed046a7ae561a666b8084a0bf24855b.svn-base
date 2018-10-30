@@ -1,0 +1,36 @@
+
+<?php if($args['type'] == 2): ?>
+    <?php foreach($goods as $v): ?>
+        <?php if($v['type'] == 2): ?>
+            <li class="fine-bor w_b del_data<?php echo e($v['id']); ?>" data-id="<?php echo e($v['id']); ?>">
+                <input name="goodsId" value="<?php echo e($v['id']); ?>" type="checkbox" <?php if($args['goodsEdieIsCK'] == 1): ?>checked <?php endif; ?> class="mt" style="<?php if($args['goodsEdieType'] == 1): ?>display: inline-block; <?php endif; ?>"/>
+                <div class="img_box" style="<?php if($args['goodsEdieType'] == 1): ?>display: none; <?php endif; ?>" >
+					<img src="<?php echo e(formatImage($v['image'],70,50)); ?>"/>
+				</div>
+                <div class="text" style="width:50%;">
+                    <p style="word-break:keep-all; white-space:nowrap; overflow: hidden; text-overflow:ellipsis; width: 100%;"><?php echo e($v['name']); ?></p>
+                    <span>￥<?php echo e($v['price']); ?></span>
+                </div>
+                <div class="w_b_f_1"></div>
+                <div class="sales <?php if($args['goodsEdieType'] == 1): ?>y-liwai  <?php endif; ?>">销量：<?php echo e($v['saleCount']); ?></div>
+                <a href="#" onclick="JumpURL('<?php echo e(u('Seller/editnew',['type'=>2,'tradeId'=>$id,'id'=>$v['id']])); ?>','#seller_editnew_view',1)" style="<?php if($args['goodsEdieType'] == 1): ?>display: inline; <?php endif; ?>" class="icon iconfont  big">&#xe61f;</a>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php else: ?>
+    <?php foreach($goods as $v): ?>
+        <?php if($v['type'] == 1): ?>
+            <li class="fine-bor w_b del_data<?php echo e($v['id']); ?>" data-id="<?php echo e($v['id']); ?>">
+                <input name="goodsId" value="<?php echo e($v['id']); ?>"  <?php if($args['goodsEdieIsCK'] == 1): ?>checked <?php endif; ?> type="checkbox" class="mt" style="<?php if($args['goodsEdieType'] == 1): ?>display: inline-block; <?php endif; ?>"/>
+                <div class="img_box" style="<?php if($args['goodsEdieType'] == 1): ?>display: none; <?php endif; ?>"><img src="<?php echo e(formatImage($v['image'],70,50)); ?>"/></div>
+                <div class="text" style="width:50%;">
+                    <p style="word-break:keep-all; white-space:nowrap; overflow: hidden; text-overflow:ellipsis; width: 100%;"><?php echo e($v['name']); ?></p>
+                    <span>￥<?php echo e($v['price']); ?></span>
+                </div>
+                <div class="w_b_f_1"></div>
+                <div class="sales <?php if($args['goodsEdieType'] == 1): ?>y-liwai <?php endif; ?>">销量：<?php echo e($v['saleCount']); ?></div>
+                <a href="#" onclick="JumpURL('<?php echo e(u('Seller/editnew',['type'=>1,'tradeId'=>$id,'id'=>$v['id']])); ?>','#seller_editnew_view',1)" style="<?php if($args['goodsEdieType'] == 1): ?>display: inline; <?php endif; ?>" class="icon iconfont  big">&#xe61f;</a>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+<?php endif; ?>

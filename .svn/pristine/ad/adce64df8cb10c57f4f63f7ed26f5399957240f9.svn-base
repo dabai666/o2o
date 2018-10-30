@@ -1,0 +1,116 @@
+<?php namespace YiZan\Http\Controllers\Wap;
+
+use View, Input, Lang, Route, Page,Session,Response;
+use YiZan\Utils\Time;
+
+/**
+ * 地址
+ */
+class ActivityController extends BaseController {
+    /**
+     * @return mixed
+     * 限时秒杀
+     */
+    public function seckill(){
+        $args = Input::all();
+        $banner = $this->requestApi('Activity.getSeckillBanner');
+        View::share('banner',$banner['data']);
+        $result = $this->requestApi('Activity.getSeckill');
+        if($result['code'] == 0){
+            $timeStatus = array();
+            $flage = true;
+            $activityId = 0;
+            if($result['data']){
+                foreach($result['data'] as $k => $v) {
+//                    var_dump($k);var_dump($v);die;
+                    if($flage && $v['timeStatus'] == 0){
+                        $activityId = $k + 1;
+                        $flage = false;
+                    }
+                    $timeStatus[] = $v['timeStatus'];
+                    $result['data'][$k]['startTime'] = Time::toDate($v['startTime'], 'Y/m/d,H:i:s');
+                    $result['data'][$k]['maxTime'] = ($v['endTime'] - $v['startTime']) * 1000;
+                    if($v['timeStatus'] == 1){
+                        $result['data'][$k]['flage'] = true;
+                    }
+                }
+                if(!in_array(1,$timeStatus)){
+                    if(!$activityId){
+                        $count = count($result['data']);
+                        $result['data'][$count - 1]['flage'] = true;
+                    }else{
+                        $result['data'][$activityId - 1]['flage'] = true;
+                    }
+                }
+            }
+            View::share('data',$result['data']);
+        }
+        if($args['index_flage']){
+            View::share('nav_back_url', u('Index/index'));
+        }
+        return $this->display();
+    }
+    function checkStatus($mapStatus){
+        foreach($mapStatus as $k => $v){
+            if($v['timeStatus'] == 1){
+                return true;
+                break;
+            }
+        }
+        return false;
+    }
+    public function seckill_detail(){
+        $arg = Input::all();
+        $banner = $this->requestApi('Activity.getSeckillBanner');
+        View::share('banner',$banner['data']);
+
+        $cart = $this->requestApi('Activity.getCart',$arg);
+        View::share('cart',$cart['data']);
+//        dd($cart['data']);
+        /*$cart = $this->getGoodsCart();
+        var_dump($cart);die;
+        View::share('cart',$cart);*/
+        View::share('arg',$arg);
+        $result = $this->requestApi('Activity.getSeckill',$arg);
+        if($result['code'] == 0){
+            foreach($result['data'] as $k => $v){
+                $result['data'][$k]['startTime'] = Time::toDate($v['startTime'],'Y/m/d,H:i:s');
+                $result['data'][$k]['maxTime'] = ($v['endTime']-$v['startTime']) * 1000;
+            }
+            View::share('data',$result['data']);
+        }
+        return $this->display();
+    }
+    public function checkGoodStock(){
+        $arg = Input::all();
+        if(!Session::get('user')){
+            $result_cart = ['code'=>-1,'data'=>''];
+        } else {
+            $result = $this->requestApi('activity.checkGoodStock',$arg);
+            $result_cart = $result['data'][0];
+        }
+        return Response::json($result_cart);
+    }
+    public function secsale(){
+        $args = Input::all();
+        $result = $this->requestApi('Activity.getSecsale',$args);
+        var_dump($result['data']);die;
+//        var_dump($result);die;
+        if($result['code'] == 0){
+            View::share('data',$result['data']);
+        }
+        if($args['index_flage']){
+            View::share('url',u('Index/index'));
+        }
+        View::share('args',$args);
+        return $this->display();
+    }
+    public function killnav(){
+        $result = $this->requestApi('Activity.getSecsale');
+        if($result['code'] == 0){
+            View::share('data',$result['data']);
+        }
+//        var_dump($result['data']);die;
+        return $this->display('killnav');
+    }
+}

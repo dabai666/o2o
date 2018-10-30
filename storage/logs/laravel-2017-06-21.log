@@ -1,0 +1,243 @@
+[2017-06-21 09:48:45] local.ERROR: exception 'BadMethodCallException' with message 'Method [detaile] does not exist.' in D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Controller.php:273
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->__call('detaile', Array)
+#1 [internal function]: YiZan\Http\Controllers\Wap\UserCenterController->detaile()
+#2 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(246): call_user_func_array(Array, Array)
+#3 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(162): Illuminate\Routing\Controller->callAction('detaile', Array)
+#4 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(107): Illuminate\Routing\ControllerDispatcher->call(Object(YiZan\Http\Controllers\Wap\UserCenterController), Object(Illuminate\Routing\Route), 'detaile')
+#5 [internal function]: Illuminate\Routing\ControllerDispatcher->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#6 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(141): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#8 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(101): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(108): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#10 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(67): Illuminate\Routing\ControllerDispatcher->callWithinStack(Object(YiZan\Http\Controllers\Wap\UserCenterController), Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'detaile')
+#11 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'YiZan\\Http\\Cont...', 'detaile')
+#12 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Route.php(134): Illuminate\Routing\Route->runWithCustomDispatcher(Object(Illuminate\Http\Request))
+#13 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(701): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(141): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(101): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#18 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(703): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#19 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(670): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#20 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(628): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#21 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(214): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#22 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#23 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(141): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#24 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(55): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(61): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(36): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(40): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(42): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(101): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#36 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(115): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#37 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(84): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#38 D:\phpStudy\WWW\o2o\public\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#39 {main}  
+[2017-06-21 15:57:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 15:57:33] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 15:58:18] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:00:37] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:00:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:00:46] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:01:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:01:22] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:02:23] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:03:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:05:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:06:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:49
+Stack trace:
+#0 {main}  
+[2017-06-21 16:07:01] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:49
+Stack trace:
+#0 {main}  
+[2017-06-21 16:07:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:49
+Stack trace:
+#0 {main}  
+[2017-06-21 16:07:59] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:07:59] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:08:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:08:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:08:06] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:08:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:08:24] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:09:05] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:49
+Stack trace:
+#0 {main}  
+[2017-06-21 16:10:03] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:10:40] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:11:30] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:11:31] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:11:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:12:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:12:59] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:13:22] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:46
+Stack trace:
+#0 {main}  
+[2017-06-21 16:13:56] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:15:04] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:15:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\InfoController.php:50
+Stack trace:
+#0 {main}  
+[2017-06-21 16:16:11] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:16:13] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:16:14] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:16:19] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:17:00] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:17:50] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:35
+Stack trace:
+#0 {main}  
+[2017-06-21 16:21:45] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:21:51] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:35] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:38] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:39] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:24:41] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:25:10] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:26:15] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:36
+Stack trace:
+#0 {main}  
+[2017-06-21 16:27:12] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in D:\phpStudy\WWW\o2o\app\Http\Controllers\Api\Buyer\V1\User\AddressController.php:35
+Stack trace:
+#0 {main}  
+[2017-06-21 16:29:01] local.ERROR: exception 'BadMethodCallException' with message 'Method [detailreg] does not exist.' in D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Controller.php:273
+Stack trace:
+#0 [internal function]: Illuminate\Routing\Controller->__call('detailreg', Array)
+#1 [internal function]: YiZan\Http\Controllers\Wap\UserCenterController->detailreg()
+#2 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Controller.php(246): call_user_func_array(Array, Array)
+#3 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(162): Illuminate\Routing\Controller->callAction('detailreg', Array)
+#4 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(107): Illuminate\Routing\ControllerDispatcher->call(Object(YiZan\Http\Controllers\Wap\UserCenterController), Object(Illuminate\Routing\Route), 'detailreg')
+#5 [internal function]: Illuminate\Routing\ControllerDispatcher->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#6 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(141): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#7 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#8 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(101): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#9 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(108): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#10 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\ControllerDispatcher.php(67): Illuminate\Routing\ControllerDispatcher->callWithinStack(Object(YiZan\Http\Controllers\Wap\UserCenterController), Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'detailreg')
+#11 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Route.php(204): Illuminate\Routing\ControllerDispatcher->dispatch(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request), 'YiZan\\Http\\Cont...', 'detailreg')
+#12 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Route.php(134): Illuminate\Routing\Route->runWithCustomDispatcher(Object(Illuminate\Http\Request))
+#13 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(701): Illuminate\Routing\Route->run(Object(Illuminate\Http\Request))
+#14 [internal function]: Illuminate\Routing\Router->Illuminate\Routing\{closure}(Object(Illuminate\Http\Request))
+#15 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(141): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#16 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#17 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(101): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#18 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(703): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#19 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(670): Illuminate\Routing\Router->runRouteWithinStack(Object(Illuminate\Routing\Route), Object(Illuminate\Http\Request))
+#20 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Routing\Router.php(628): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#21 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(214): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#22 [internal function]: Illuminate\Foundation\Http\Kernel->Illuminate\Foundation\Http\{closure}(Object(Illuminate\Http\Request))
+#23 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(141): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#24 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\View\Middleware\ShareErrorsFromSession.php(55): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#25 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\View\Middleware\ShareErrorsFromSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#26 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Session\Middleware\StartSession.php(61): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#27 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Session\Middleware\StartSession->handle(Object(Illuminate\Http\Request), Object(Closure))
+#28 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse.php(36): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#29 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse->handle(Object(Illuminate\Http\Request), Object(Closure))
+#30 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Cookie\Middleware\EncryptCookies.php(40): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#31 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Cookie\Middleware\EncryptCookies->handle(Object(Illuminate\Http\Request), Object(Closure))
+#32 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode.php(42): Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#33 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(125): Illuminate\Foundation\Http\Middleware\CheckForMaintenanceMode->handle(Object(Illuminate\Http\Request), Object(Closure))
+#34 [internal function]: Illuminate\Pipeline\Pipeline->Illuminate\Pipeline\{closure}(Object(Illuminate\Http\Request))
+#35 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Pipeline\Pipeline.php(101): call_user_func(Object(Closure), Object(Illuminate\Http\Request))
+#36 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(115): Illuminate\Pipeline\Pipeline->then(Object(Closure))
+#37 D:\phpStudy\WWW\o2o\vendor\laravel\framework\src\Illuminate\Foundation\Http\Kernel.php(84): Illuminate\Foundation\Http\Kernel->sendRequestThroughRouter(Object(Illuminate\Http\Request))
+#38 D:\phpStudy\WWW\o2o\public\index.php(53): Illuminate\Foundation\Http\Kernel->handle(Object(Illuminate\Http\Request))
+#39 {main}  
+[2017-06-21 16:40:32] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ']'' in D:\phpStudy\WWW\o2o\storage\framework\views\5e79a3ebd9c499f83535643030ce0e42:88
+Stack trace:
+#0 {main}  
+[2017-06-21 16:40:34] local.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ']'' in D:\phpStudy\WWW\o2o\storage\framework\views\5e79a3ebd9c499f83535643030ce0e42:88
+Stack trace:
+#0 {main}  

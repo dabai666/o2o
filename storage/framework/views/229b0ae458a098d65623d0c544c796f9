@@ -1,0 +1,378 @@
+<?php
+    $options = [1];//1,2
+    $texts = ['上门服务'];//,'到店服务'
+?>
+<?php $__env->startSection('css'); ?>
+<style type="text/css">
+	.m-spboxlst .f-tt{width: 165px;}
+    .x-gebox .u-ipttext{width: 100px; margin-right: 10px;}
+    .p-avoidFee{width: 87px;}
+</style>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('right_content'); ?>
+	
+	    <div class="m-spboxlst " style="">
+					<form id="yz_form" name="yz_form" class="validate-form ajax-form" method="post" action="http://admin.test.com/OneselfConfig/save" enctype="application/x-www-form-urlencoded" target="_self">
+						<dl class="m-ddl">
+                <dt>基本信息</dt>
+                <dd>
+                    <div id="name-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 自营门店:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="name" id="name"  class="u-ipttext" value="<?php echo e($data['name']); ?>" />
+		            </div>
+		        </div>
+                    <div id="logo-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 LOGO:
+		            </span>
+		            <div class="f-boxr">
+		                  <ul class="m-tpyllst clearfix">
+	            				<li id="logo-box" class="">
+	            				<?php if( !empty($data['logo']) ): ?>
+	            					<a id="img-preview-logo" class="m-tpyllst-img" href="<?php echo e($data['logo']); ?>" target="_blank"><img src="<?php echo e($data['logo']); ?>" alt=""></a>
+	            				<?php else: ?>
+                                    <a id="img-preview-logo" class="m-tpyllst-img" href="javascript:;" target="_self"><img src="" alt="" style="display:none;"></a>
+	            				<?php endif; ?>
+                                <a class="m-tpyllst-btn img-update-btn" href="javascript:;" data-rel="logo">
+                                    <i class="fa fa-plus"></i> 上传图片
+                                </a>
+	            				<input type="hidden" data-tip-rel="#logo-box" name="logo" id="logo" value="<?php echo e($data['logo']); ?>"/>
+	            				</li>
+							</ul><div><small class='cred pl10 gray'>建议尺寸：750px*750px，支持JPG/PNG格式</small></div>
+		            </div>
+		        </div>
+                </dd>
+            </dl>
+            <dl class="m-ddl">
+                <dt>基本配置</dt>
+                <dd>
+                    <!-- <div id="businessScope-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 经营范围:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php $checkbox_options = $citys; ?><?php $checkeds = is_array($data['businessScope']) ? $data['businessScope'] : [$data['businessScope']]; ?><?php  foreach($checkbox_options as $options_key => $options_val): ?><?php $options_key = $options_val['id']; ?><?php $options_val = $options_val['name']; ?><?php $checked = in_array($options_key, $checkeds) ? " checked" : ""; ?>
+                        <label>
+                            <input type="checkbox" class="uniform " name="businessScope[]" value="<?php echo $options_key; ?>" <?php echo $checked; ?>/>
+                            <span><?php echo $options_val; ?></span>
+                        </label>
+                        <span>&nbsp;&nbsp;</span>
+                        <?php endforeach; ?>
+		            </div>
+		        </div> -->
+                    <div id="-form-item" class="u-fitem clearfix  send-user-type send-user-group hidden">
+		            <span class="f-tt">
+		                 经营范围:
+		            </span>
+		            <div class="f-boxr">
+		                  <div class="input-group">
+                            <table border="0">
+                                 <tbody>
+                                    <tr>
+                                        <td rowspan="2">
+                                            <select id="user_1" name="user_1" class="form-control" multiple="multiple" style="min-width:200px; height:260px;">
+                                                <?php foreach($citys as $key => $value): ?>
+                                                    <?php if(in_array($value['id'], $data['businessScope'])): ?>
+                                                        <option value="<?php echo e($value['id']); ?>"><?php echo e($value['name']); ?></option>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </td>
+                                        <td width="60" align="center" rowspan="2">
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="$.optionMove('user_2', 'user_1', 1);">
+                                                <span class="fa fa-2x fa-angle-double-left"> </span>
+                                            </button>
+                                            <br><br>
+                                            <button type="button" class="btn btn-info btn-sm" onclick="$.optionMove('user_2', 'user_1');">
+                                                <span class="fa fa-2x fa-angle-left"> </span>
+                                            </button>
+                                            <br><br>
+                                            <button type="button" class="btn btn-info btn-sm" onclick="$.optionMove('user_1', 'user_2');">
+                                                <span class="fa fa-2x fa-angle-right"> </span>
+                                            </button>
+                                            <br><br>
+                                            <button type="button" class="btn btn-primary btn-sm" onclick="$.optionMove('user_1', 'user_2', 1);">
+                                                <span class="fa fa-2x fa-angle-double-right"> </span>
+                                            </button>
+                                            <input type="hidden" name="cityLists" id="cityLists">
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                           <select id="user_2" class="form-control" multiple="multiple" style="min-width:200px; height:260px;"> 
+                                                <?php foreach($citys as $key => $value): ?>
+                                                    <?php if(!in_array($value['id'], $data['businessScope'])): ?>
+                                                        <option value="<?php echo e($value['id']); ?>"><?php echo e($value['name']); ?></option>
+                                                    <?php endif; ?>
+                                                <?php endforeach; ?>
+                                            </select>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <div class="blank3"></div>
+                        </div>
+		            </div>
+		        </div> 
+					<div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 配送方式:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php $radio_options = array (
+  0 => '1',
+); ?><?php $default = ''; ?><?php $checked = isset($data['sendWay']) ? $data['sendWay'] : $default; ?><?php $radio_texts = array (
+  0 => '员工配送',
+); ?><?php  foreach($radio_options as $options_key => $options_val): 
+                    $checked_attr = $options_val == $checked ? " checked" : ""; ?>
+                    <label>
+                        <input type="radio" class="uniform " name="sendWay" value="<?php echo $options_val; ?>" <?php echo $checked_attr; ?>/>
+                        <span><?php echo $radio_texts[$options_key]; ?></span>
+                    </label>
+                    <span>&nbsp;&nbsp;</span>
+                    <?php endforeach; ?>
+		            </div>
+		        </div>
+                    <div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 起送费:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="serviceFee" class="u-ipttext" value="<?php echo e($data['serviceFee']); ?>" onKeyUp="amount(this)" onBlur="overFormat(this)">
+		            </div>
+		        </div>
+                    <div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 配送费:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="deliveryFee" class="u-ipttext" value="<?php echo e($data['deliveryFee']); ?>" onKeyUp="amount(this)" onBlur="overFormat(this)">
+                        <p class="mt10">
+                            <?php $checkbox_options = array (
+  0 => '1',
+); ?><?php $checkeds = is_array($data['isAvoidFee']) ? $data['isAvoidFee'] : [$data['isAvoidFee']]; ?><?php $checkbox_texts = array (
+  0 => '设置满免',
+); ?><?php  foreach($checkbox_options as $options_key => $options_val):
+                    $checked = in_array($options_val, $checkeds) ? " checked" : ""; ?>
+                    <label>
+                        <input type="checkbox" class="uniform " name="isAvoidFee" value="<?php echo $options_val; ?>" <?php echo $checked; ?>/>
+                        <span><?php echo $checkbox_texts[$options_key]; ?></span>
+                    </label>
+                    <span>&nbsp;&nbsp;</span>
+                    <?php endforeach; ?>
+                            满<input type="text" name="avoidFee" class="u-ipttext ml5 mr5 p-avoidFee p-disabled" value="<?php echo e($data['avoidFee']); ?>" onKeyUp="amount(this)" onBlur="overFormat(this)">免配送费
+                        </p>
+		            </div>
+		        </div>
+                    <div id="serviceMode-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 服务方式:
+		            </span>
+		            <div class="f-boxr">
+		                  <?php $val =  $data['serviceMode'] ? $data['serviceMode'] : 1; ?>
+                        <?php $radio_options = $options; ?><?php $default = ''; ?><?php $checked = isset($val) ? $val : $default; ?><?php $radio_texts = $texts; ?><?php  foreach($radio_options as $options_key => $options_val): 
+                    $checked_attr = $options_val == $checked ? " checked" : ""; ?>
+                    <label>
+                        <input type="radio" class="uniform " name="serviceMode" value="<?php echo $options_val; ?>" <?php echo $checked_attr; ?>/>
+                        <span><?php echo $radio_texts[$options_key]; ?></span>
+                    </label>
+                    <span>&nbsp;&nbsp;</span>
+                    <?php endforeach; ?>
+		            </div>
+		        </div>
+                    <!-- <div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 可预约天数:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="reserveDays" class="u-ipttext" value="<?php echo e(isset($data['reserveDays']) ? $data['reserveDays'] : 1); ?>">
+                        <span>天</span>
+                        <span style="color:#ccc" class="ml10">预约天数不包含当天，最大可预约30天</span>
+		            </div>
+		        </div> -->
+                    <div id="-form-item" class="u-fitem clearfix ">
+                        <span class="f-tt">
+                             可预约天数:
+                        </span>
+                        <div class="f-boxr">
+                              <input type="text" name="reserveDays" class="u-ipttext" value="<?php echo e(isset($data['reserveDays']) ? $data['reserveDays'] : 1); ?>" onKeyUp="amounts(this)" onBlur="overFormats(this)" maxlength="3">
+                            <span>天</span>
+                            <span style="color:#ccc" class="ml10">预约天数不包含当天，最大可预约30天</span>
+                        </div>
+                    </div>
+                    <!-- <div id="-form-item" class="u-fitem clearfix ">
+		            <span class="f-tt">
+		                 配送时间周期:
+		            </span>
+		            <div class="f-boxr">
+		                  <input type="text" name="sendLoop" class="u-ipttext" value="<?php echo e(isset($data['sendLoop']) ? $data['sendLoop'] : 30); ?>">
+                        <span>分钟</span>
+		            </div>
+		        </div> -->
+                    <div id="-form-item" class="u-fitem clearfix ">
+                        <span class="f-tt">
+                             配送时间周期:
+                        </span>
+                        <div class="f-boxr">
+                              <input type="text" name="sendLoop" class="u-ipttext" value="<?php echo e(isset($data['sendLoop']) ? $data['sendLoop'] : 30); ?>" onKeyUp="amounts(this)" onBlur="overFormats(this)" maxlength="7">
+                            <span>分钟</span>
+                        </div>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="m-ddl">
+                <dt>营业设置</dt>
+                <dd class="clearfix" style="padding:15px;">
+                    <?php echo $__env->make('admin.common.oneselfconfig.showtime', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                    <?php echo $__env->make('admin.common.oneselfconfig.sztime', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </dd>
+            </dl>		<div class="u-fitem clearfix">
+                            <span class="f-tt">
+                                &nbsp;
+                            </span>
+                            <div class="f-boxr">
+                                  <button type="submit" class="u-addspbtn">提 交</button>
+                            </div>
+                        </div>		<input type="hidden" value="<?php echo e($data['id']); ?>" name="id" />
+					</form>
+				</div>
+	
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection('js'); ?>
+    <script type="text/javascript">
+    $("#yz_form").submit(function(){
+        var ids = new Array(); 
+        $("#user_1 option").each(function(){
+            ids.push(this.value);
+        })
+        $("#cityLists").val(ids);
+    })
+    $.optionMove = function(from, to, isAll){
+        var from = $("#" + from);
+        var to = $("#" + to);
+        var list;
+        if(isAll){
+            list = $('option', from);
+        }else{
+            list = $('option:selected', from);
+        }
+        list.each(function(){
+            if($('option[value="' + this.value + '"]', to).length > 0){
+                $(this).remove();
+            } else {
+                $('option', to).attr('selected',false);
+                to.append(this);
+            }
+        });
+    }
+    function amounts(th){
+        var regStrs = [
+            ['^0(\\d+)$', '$1'], //禁止录入整数部分两位以上，但首位为0
+            ['[^\\d\\.]+$', ''], //禁止录入任何非数字和点
+            ['\\.(\\d?)+', '$1'], //禁止录入两个以上的点
+            ['^(\\d+\\.\\d{0}).+', '$1'] //禁止录入小数点后两位以上
+        ];
+        for(i=0; i<regStrs.length; i++){
+            var reg = new RegExp(regStrs[i][0]);
+            th.value = th.value.replace(reg, regStrs[i][1]);
+        }
+    }
+
+    function overFormats(th){
+        var v = th.value;
+        if(v === ''){
+            v = '0';
+        }else if(v === '0.'){
+            v = '0';
+        }else if(/^0+\d+\.?\d*.*$/.test(v)){
+            v = v.replace(/^0+(\d+\.?\d*).*$/, '$1');
+            v = inp.getRightPriceFormat(v).val;
+        }else if(/^0\.\d$/.test(v)){
+             v = v + '0';
+        }else if(!/^\d+\.\d{2}$/.test(v)){
+            if(/^\d+\.\d{2}.+/.test(v)){
+                v = v.replace(/^(\d+\.\d{2}).*$/, '$1');
+            }else if(/^\d+\.$/.test(v)){
+                v = v.substring(0, v.length-1);
+            }else if(/^\d+\.\d$/.test(v)){
+                v = v + '0';
+            }else if(/^[^\d]+\d+\.?\d*$/.test(v)){
+                v = v.replace(/^[^\d]+(\d+\.?\d*)$/, '$1');
+            }else if(/\d+/.test(v)){
+                v = v.replace(/^[^\d]*(\d+\.?\d*).*$/, '$1');
+                ty = false;
+            }else if(/^0+\d+\.?\d*$/.test(v)){
+                v = v.replace(/^0+(\d+\.?\d*)$/, '$1');
+                ty = false;
+            }else{
+                v = '0';
+            }
+        }
+        th.value = v;
+    }
+    /**
+     * 实时动态强制更改用户录入
+     * arg1 inputObject
+     **/
+    function amount(th){
+        var regStrs = [
+            ['^0(\\d+)$', '$1'], //禁止录入整数部分两位以上，但首位为0
+            ['[^\\d\\.]+$', ''], //禁止录入任何非数字和点
+            ['\\.(\\d?)\\.+', '.$1'], //禁止录入两个以上的点
+            ['^(\\d+\\.\\d{2}).+', '$1'] //禁止录入小数点后两位以上
+        ];
+        for(i=0; i<regStrs.length; i++){
+            var reg = new RegExp(regStrs[i][0]);
+            th.value = th.value.replace(reg, regStrs[i][1]);
+        }
+    }
+    /**
+    * 录入完成后，输入模式失去焦点后对录入进行判断并强制更改，并对小数点进行0补全
+    * arg1 inputObject
+    * 这个函数写得很傻，是我很早以前写的了，没有进行优化，但功能十分齐全，你尝试着使用
+    * 其实有一种可以更快速的JavaScript内置函数可以提取杂乱数据中的数字：
+    * parseFloat('10');
+    **/
+    function overFormat(th){
+        var v = th.value;
+            if(v === ''){
+                v = '0.00';
+            }else if(v === '0'){
+                v = '0.00';
+            }else if(v === '0.'){
+                v = '0.00';
+            }else if(/^0+\d+\.?\d*.*$/.test(v)){
+                v = v.replace(/^0+(\d+\.?\d*).*$/, '$1');
+                v = inp.getRightPriceFormat(v).val;
+            }else if(/^0\.\d$/.test(v)){
+                 v = v + '0';
+            }else if(!/^\d+\.\d{2}$/.test(v)){
+                if(/^\d+\.\d{2}.+/.test(v)){
+                    v = v.replace(/^(\d+\.\d{2}).*$/, '$1');
+                }else if(/^\d+$/.test(v)){
+                    v = v + '.00';
+                }else if(/^\d+\.$/.test(v)){
+                    v = v + '00';
+                }else if(/^\d+\.\d$/.test(v)){
+                    v = v + '0';
+                }else if(/^[^\d]+\d+\.?\d*$/.test(v)){
+                    v = v.replace(/^[^\d]+(\d+\.?\d*)$/, '$1');
+                }else if(/\d+/.test(v)){
+                    v = v.replace(/^[^\d]*(\d+\.?\d*).*$/, '$1');
+                    ty = false;
+                }else if(/^0+\d+\.?\d*$/.test(v)){
+                    v = v.replace(/^0+(\d+\.?\d*)$/, '$1');
+                    ty = false;
+                }else{
+                    v = '0.00';
+                }
+            }
+        th.value = v;
+    }
+    </script>
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

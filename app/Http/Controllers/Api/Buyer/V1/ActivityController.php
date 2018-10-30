@@ -1,0 +1,303 @@
+<?php 
+namespace YiZan\Http\Controllers\Api\Buyer;
+
+use YiZan\Models\Activity;
+use YiZan\Models\ActivityGoods;
+use YiZan\Models\Goods;
+use YiZan\Models\OrderGoods;
+use YiZan\Models\Seller;
+use YiZan\Models\ShareLog;
+use YiZan\Models\ShoppingCart;
+use YiZan\Models\SystemConfig;
+use YiZan\Services\Buyer\ActivityService;
+use Lang, Validator;
+use YiZan\Services\Buyer\ShoppingService;
+use YiZan\Utils\Time;
+use Session;
+/**
+ * 活动
+ */
+class ActivityController extends UserAuthController 
+{
+    /**
+     * 活动列表
+     */
+    public function lists()
+    {
+        $article = ActivityService::getList(
+        	$this->request('type'),
+        	$this->request('name'),
+        	max((int)$this->request('page'), 1), 
+            max((int)$this->request('pageSize'), 50)
+        	);
+        return $this->outputData($article['list']);
+    }
+    public function checkGoodStock(){
+        $data = Goods::where('id','=',$this->request('goodsId'))->get()->toArray();
+        return $this->outputData($data);
+    }
+    public function getCart(){
+        $totalAmount = 0;
+        $totalPrice = 0;
+        $goodsAmount = 0;
+        $cart = ShoppingService::listsTwo($this->userId);
+//        var_dump($_REQUEST['goodsId']);
+//        dd($cart);
+        if($cart){
+            foreach($cart as $k => $v){
+                if($v['goods']){
+                    foreach($v['goods']  as $kk => $vv){
+                        $totalAmount += $vv['num'];
+                        $totalPrice += ($vv['price'] / $vv['sale']) * 10 * $vv['num'] + $vv['processingPrice']*$vv['num'];
+                        if($vv['goodsId'] == $_REQUEST['goodsId']){
+                            $goodsAmount = $vv['num'];
+                        }
+                    }
+                }
+            }
+        }
+        $data['totalAmount'] = $totalAmount;
+        $data['totalPrice'] = $totalPrice;
+        $data['goodsAmount'] =  $goodsAmount;
+        /*$cart = ShoppingCart::where('user_id','=',$this->userId)->get()->toArray();
+        $data = array();
+        if($cart){
+            $totalAmount = 0;
+            $totalPrice = 0;
+            $goodsAmount = 0;
+            foreach($cart as $v){
+                $activityGoods = ActivityGoods::where('seller_id',$v['sellerId'])->where('goods_id',$v['goodsId'])->get();
+                if($activityGoods){
+                    $activityGoods = $activityGoods->toArray();
+                    $v['price'] = ($v['price'] / $activityGoods[0]['sale']) * 10;
+                }
+                $totalAmount += $v['num'];
+                $totalPrice += $v['num'] * $v['price'];
+                if($v['goodsId'] == $_REQUEST['goodsId']){
+                    $goodsAmount = $v['num'];
+                }
+            }
+            $data['totalAmount'] = $totalAmount;
+            $data['totalPrice'] = $totalPrice;
+            $data['goodsAmount'] =  $goodsAmount;
+        }*/
+        return $this->outputData($data);
+    }
+    public function getSecsale(){
+        $defaultAddress = Session::get("defaultAddress");
+        $apoint = $defaultAddress['mapPointStr'];
+        $apoint = $apoint == '' ? '0 0' : str_replace(',', ' ', $apoint);
+        $activity = new \YiZan\Services\ActivityService();
+        $activity->refreshActicity();
+        $page = 1;
+        $pageSize = 4;
+        $list = Activity::where('type','=',8);
+        if($this->request('activityId') && (intval($this->request('activityId')) > 0)){
+            $list = $list->where('id','=',intval(trim($this->request('activityId'))));
+        }
+        $list = $list->with('activitySeller')
+//               ->where('start_time','<=',UTC_TIME)
+//               ->where('end_time','>',UTC_TIME)
+                ->skip(($page - 1) * $pageSize)
+                ->take($pageSize)
+                ->get();
+        $list = $list ? $list->toArray() : array();
+        foreach($list as $k => $v){
+            $goodsId = array();
+            if($v['activitySeller']){
+                if($this->request('goodsId') && (intval($this->request('goodsId')) > 0)){
+                    $goodsId[] = intval($this->request('goodsId'));
+                }else{
+                    foreach($v['activitySeller'] as $kk => $vv){
+                        $goodsId[] = $vv['goodsId'];
+                    }
+                }
+                $goodsId = array_unique($goodsId);
+                $goodsList = Goods::where('auto_type','=',1)
+//                    ->where('status','=',1)
+                    ->whereIn('id',$goodsId)
+                    ->whereIn('seller_id', function($query) use ($apoint){
+                        $query->select('id')
+                            ->from('seller')
+                            ->whereRaw(" ST_Contains(map_pos,GeomFromText('Point({$apoint})'))")
+                            ->where('status', 1)
+                            ->where('is_check', 1)
+                            ->where('store_type',0);
+//                            ->orWhere("seller_id",ONESELF_SELLER_ID)
+//                            ->orWhere("store_type",1);
+                    })
+                    ->with('seller')
+                    ->get()
+                    ->toArray();
+                $list[$k]['goodsList'] = $goodsList;
+            }
+        }
+        if($list){
+            foreach($list as $k => $v){
+                if($v['goodsList']){
+                    foreach($v['goodsList'] as $kk => $vv){
+                        $list[$k]['goodsList'][$kk]['useStock'] = OrderGoods::where('goods_id','=',$vv['id'])->count();
+                        $list[$k]['goodsList'][$kk]['totalShare'] = ShareLog::where('goods_id','=',$vv['id'])->count();
+                    }
+                }
+            }
+        }
+        return $this->outputData($list);
+    }
+    public function getSeckillBanner(){
+        $ban = SystemConfig::where('code','=','seckill_banner')->first()->toArray();
+        return $this->outputData($ban);
+    }
+    public function getSeckill(){
+        $defaultAddress = Session::get("defaultAddress");
+        $apoint = $defaultAddress['mapPointStr'];
+        $apoint = $apoint == '' ? '0 0' : str_replace(',', ' ', $apoint);
+        $activity = new \YiZan\Services\ActivityService();
+        $activity->refreshActicity();
+        $page = 1;
+        $pageSize = 4;
+        $list = Activity::where('type','=',7);
+        if($this->request('activityId') && (intval($this->request('activityId')) > 0)){
+            $list = $list->where('id','=',$this->request('activityId'));
+        }
+        $time = Time::toTime(Time::toDate(UTC_TIME,'Y-m-d'));
+//        var_dump($time);die;
+        $list = $list->with('activitySeller')
+            ->where('curren_time','=',$time)
+            ->orderBy('start_time','asc')
+//            ->where('end_time','>',$time)
+//            ->skip(($page - 1) * $pageSize)
+//            ->take($pageSize)
+            ->get();
+//        var_dump($list);die;
+        $list = $list ? $list->toArray() : array();
+        if($list){
+            $list = $this->mergeActivity($list);
+        }
+//        dd($list);
+        foreach($list as $k => $v){
+            $goodsId = array();
+//            $sellerId = array();
+            if($v['activitySeller']){
+                if($this->request('goodsId') && (intval($this->request('goodsId')) > 0)){
+//                    $goodsMsg = Goods::where('id',$this->request('goodsId'))->get()->toArray();
+//                    $sellerId[] = $goodsMsg['sellerId'];
+                    $goodsId[] = intval($this->request('goodsId'));
+                }else{
+                    foreach($v['activitySeller'] as $kk => $vv){
+//                        $sellerId[] = $vv['sellerId'];
+                        $goodsId[] = $vv['goodsId'];
+                    }
+                }
+//                $sellerId = array_unique($sellerId);
+//                Seller::whereIn('id',$sellerId)->where();
+                $goodsId = array_unique($goodsId);
+//                var_dump($goodsId);
+                $goodsList = Goods::where('auto_type','<>',0)
+//                    ->where('status','=',1)
+                    ->whereIn('id',$goodsId)
+                    ->whereIn('seller_id', function($query) use ($apoint){
+                        $query->select('id')
+                            ->from('seller')
+                            ->whereRaw(" ST_Contains(map_pos,GeomFromText('Point({$apoint})'))")
+                            ->where('status', 1)
+                            ->where('is_check', 1)
+                            ->where('store_type',0);
+//                            ->orWhere("seller_id",ONESELF_SELLER_ID)
+//                            ->orWhere("store_type",1);
+                    })
+                    ->with('seller')
+                    ->get()
+                    ->toArray();
+                $list[$k]['goodsList'] = $goodsList;
+//                var_dump($goodsList);
+            }
+        }
+//        die();
+        if($list){
+            foreach($list as $k => $v){
+                if($v['goodsList']){
+                    foreach($v['goodsList'] as $kk => $vv){
+                        $list[$k]['goodsList'][$kk]['useStock'] = OrderGoods::where('goods_id','=',$vv['id'])->sum('num');
+                    }
+                }
+            }
+        }
+        ksort($list);
+        $list = array_values($list);
+        return $this->outputData($list);
+    }
+
+    private function mergeActivity($list){
+        $lists = array();
+        $time = array();
+        foreach($list as $k => $v){
+            if(!in_array(($v['startTime'] + $v['endTime']),$time)){
+                $time[] = ($v['startTime'] + $v['endTime']);
+                $lists[$v['startTime'] + $v['endTime']] = $list[$k];
+            }else{
+                foreach($list[$k]['activitySeller'] as $kk => $vv){
+                    $lists[$v['startTime'] + $v['endTime']]['activitySeller'][] = $list[$k]['activitySeller'][$kk];
+//                array_push($lists[$v['startTime'] + $v['endTime']]['activitySeller'],$list[$k]['activitySeller']);
+                }
+            }
+        }
+        return $lists;
+    }
+    /**
+     * 创建支付日志
+     */
+    public function pay(){
+        $result = ActivityService::payOrder(
+            $this->userId,
+            $this->request('activityId'), 
+            $this->request('payment')
+        );
+        return $this->output($result);
+    }
+
+    /**
+     * 获取一张优惠券
+     */
+    public function getPromotion(){
+        $result = ActivityService::getPromotion(
+            (int)$this->request('userId'),
+            (int)$this->request('activityId')
+        );
+        return $this->output($result);
+    }
+
+    /**
+     * 检测用户是否注册
+     */
+    public function checkuser(){
+        $data = ActivityService::checkUser(
+            $this->request('mobile')
+        );
+        return $this->outputData($data);
+    }
+
+    /**
+     * 获取活动
+     */
+    public function getshare(){
+        $Activity = ActivityService::getshare((int)$this->request('orderId'),(int)$this->request('activityId'));
+        return $this->output($Activity);
+    }
+
+    /**
+     * 获取活动
+     */
+    public function get(){
+        $Activity = ActivityService::getById((int)$this->request('activityId'));
+        return $this->outputData($Activity == false ? [] : $Activity->toArray());
+    }
+    /**
+     * 获取活动
+     */
+    public function logs(){
+        $logs = ActivityService::logs((int)$this->request('userId'),(int)$this->request('activityId'));
+        return $this->output($logs);
+    }
+
+}

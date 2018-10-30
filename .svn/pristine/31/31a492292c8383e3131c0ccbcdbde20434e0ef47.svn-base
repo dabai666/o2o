@@ -1,0 +1,69 @@
+@extends('staff.default._layouts.base')
+@section('title'){{$title}}@stop
+
+@section('css')
+
+@stop
+
+@section('show_top')
+    <header class="bar bar-nav">
+         <a class="button button-link button-nav pull-left" href="#" onclick="JumpURL('{!! $nav_back_url !!}','#getTagLists',1)" data-transition='slide-out'>
+            <span class="icon iconfont">&#xe64c;</span>
+        </a>
+        <h1 class="title">选择品牌</h1>
+    </header>
+@stop
+
+
+@section('distance')id="service-add" @stop
+@if($data)
+@section('preview')
+   
+@stop
+@endif
+
+@section('content')
+<?php 
+    $one = $two = true;
+ ?>
+<!-- 菜单列表 -->
+<div class="list-block" style="overflow-y: auto;">
+    <ul>
+        @foreach($list as $k => $v)
+        <li>
+            <a onclick="JumpURL('{!! $nav_back_url !!}&brandId={{$v['id']}}&brandName={{$v['name']}}')">
+                <div class="item-content">
+                    <div class="item-inner">
+                        <div style="display: flex;margin-left: 10px;">
+                            <div>
+                                <img style="width: 30px;height: 30px;" src="{!! $v['img'] !!}">
+                            </div>
+                            <div style="text-align: center;margin-left: 30px;margin-top: 3px;">
+                                <span>{{ $v['name'] }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </li>
+        @endforeach
+    </ul>
+</div>
+
+@stop
+
+@section($js)
+<script>
+    $(function(){
+        // var height = $(".bar-nav").height();
+        // height += $(".bar-tab").height();
+        // height -= 5;
+        $(".x-goodstab .tab").css("height",$(window).height()-44);
+        $(".x-goodstab .buttons-tab").css("height",$(window).height()-44);
+
+    })
+    $(".content").css({"bottom":0,"overflow": "hidden"});
+</script>
+@stop
+
+@section('show_nav')@stop

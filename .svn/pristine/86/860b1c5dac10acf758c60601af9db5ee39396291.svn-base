@@ -1,0 +1,276 @@
+@extends('wap.community._layouts.base')
+
+@section('css')
+    <style>
+        .swiper-container-horizontal > .swiper-pagination{bottom: 15px;}
+    </style>
+    <style type="text/css">
+        .y-backtop{
+            position: fixed;right: .5rem;bottom: 12%;width: 35px;height: 35px;
+            background: url('{{asset('/images/ico/top.png')}}') no-repeat center center #fff;
+            background-size: 70%;display: block;z-index: 111;border-radius: 100%;
+            border: 1px solid #a9a9a9;
+        }
+        /*头部透明*/
+        .y-toptransparent.bar.bar-nav{background: none;}
+        .y-toptransparent.bar.bar-nav:after{height: 0;}
+        .y-toptransparent.bar.bar-nav~.content{top: 0;}
+        .y-toptransparent.bar.bar-nav .button-nav{line-height: 2.2rem;padding-top: 0;}
+        .y-toptransparent.bar.bar-nav .title{background: rgba(225,225,225,.6);border-radius: .75rem;line-height: 1.5rem;top: .3rem;padding-left: .75rem;}
+        /*时间样式*/
+        .time{
+            width:100%;
+            text-align:center;
+            background-color:#3A3A3A;
+            color:#fff;
+        }
+        .flex{
+            display:flex;
+        }
+        .align-item{
+            align-items:flex-end;
+        }
+        .justify-content{
+            justify-content: space-between;
+        }
+        .width{
+            width:25%;
+            padding:10px 0;
+        }
+        .width50{
+            width:50%;
+        }
+        .timestart{
+            background-color:#FF2D4B;
+            color:orange;
+        }
+        .food{
+            width:100%;
+            background-color:#fff;
+        }
+        .img,.img>img{
+            width:80px;
+            height:80px;
+            border-radius:5px;
+            vertical-align:top;
+            position:relative;
+            top:2px;
+            margin-right:5px;
+            /*border:1px solid #ccc;*/
+        }
+        .pd{
+            padding:10px;
+        }
+        .border-bottom{
+            border-bottom: 1px solid #f3f3f3;
+        }
+        .btnred{
+            padding:5px 8px;
+            background-color:#F82243;
+            color:#fff;
+            border-radius:3px;
+        }
+        .font12{
+            font-size:.6rem;
+            color:#999;
+        }
+        .font14{
+            font-size:1rem;
+        }
+        .orange{
+            color:#fca300;
+        }
+        .colorred{
+            color:#F82243;
+        }
+        .borderred{
+            border:1px solid #f82243;
+            border-radius:2px;
+            color:#f82243;
+            font-weight:normal;
+            margin-right:5px;
+            padding:2px;
+        }
+        .calbtn{
+            width:30px;
+            height:30px;
+            line-height:30px;
+            text-align:center;
+            background-color:#F5F5F5;
+            margin-right:1px;
+        }
+        .goodsdetail{
+            margin-top:5px;
+        }
+        .goodsdetail>dl>dt{
+            padding:0 8px;
+        }
+        .flex-wrap{
+            flex-wrap: wrap;
+        }
+        .lh{
+            line-height:1.5rem;
+        }
+        .titleborder-left,.titleborder-right{
+            border-bottom-left-radius: 4px;
+            border-top-left-radius: 4px;
+            text-align:center;
+            padding:5px 0;
+        }
+        .titleborder-right{
+            border-bottom-right-radius: 4px;
+            border-top-right-radius: 4px;
+        }
+        .curbg{
+            background-color:#FF2D4B;
+            color:#fff;
+        }
+        .bgff{
+            background-color:#fff;
+        }
+    </style>
+@stop
+@section('show_top')
+    <header class="bar bar-nav" style="background: rgb(253,44,73);">
+        <a class="button button-link button-nav pull-left back" href="#" data-transition='slide-out' style="color: #ffffff;">
+            <span class="icon iconfont">&#xe600;</span>
+        </a>
+        <h1 class="title f16" style="color: #ffffff;">物流/仓储</h1>
+    </header>
+@stop
+@section('content')
+    <script type="text/javascript">
+        //BACK_URL = @if(!@empty($nav_back_url)) {{ $nav_back_url }} @else "{!! Request::server('HTTP_REFERER') !!}" @endif;
+        //BACK_URL = "{!! Request::server('HTTP_REFERER') !!}";
+    </script>
+    @include('wap.community._layouts.bottom')
+            <!--物流仓库页面 start-->
+    <div class="content infinite-scroll infinite-scroll-bottom"  data-distance="50" id="" style="display:block;background: #ffffff;">
+        <section style="background-color:#fff;">
+            <div class="flex justify-content pd" style="flex-wrap: wrap;justify-content: space-between;padding:10px;">
+                <p class="width50 titleborder-left type" style="width:50%;border-bottom-left-radius: 4px;border-top-left-radius: 4px;text-align:center;padding:5px 0;background-color:#FF2D4B;color:#fff;">物流服务</p>
+                <p class="width50 titleborder-right type" style="width:50%;border-bottom-right-radius: 4px;border-top-right-radius: 4px;text-align: center;">仓储服务</p>
+            </div>
+            <div class="" id="flage">
+                @if($data)
+                    <ul>
+                        @foreach($data as $k => $v)
+                            <a href="{{ u('Logistic/index',['id'=>$v['id']]) }}">
+                                <li class="flex justify-content pd" style="flex-wrap: wrap;justify-content: space-between;padding:10px;">
+                                    <div class="flex justify-content lh" style="flex-wrap: wrap;justify-content: space-between;line-height:1.5rem;">
+                                        <p class="img"><img src="{{ $v['logo'] }}" style="width:80px;height:80px;border-radius:5px;vertical-align:top;position:relative;top:2px;margin-right:5px;"/></p>
+                                        <div>
+                                            <h3 style="font-weight:normal;">{{ $v['name'] }}</h3>
+                                            <p class="font12" style="font-size:.6rem;color:#999;">时效：{{ $v['aging'] }}</p>
+                                            <p class="font12" style="font-size:.6rem;color:#999;">服务以及促销</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex font12 lh" style="align-items: flex-start;font-size:.6rem;color:#999;line-height:1.5rem;flex-wrap: wrap;">{{ date('Y-m-d H:i:s',$v['createTime']) }}</div>
+                                </li>
+                            </a>
+                        @endforeach
+                    </ul>
+                @else
+                    <div style="margin-top: 20%;">
+                        <p style="text-align: center">敬请期待~~~</p>
+                    </div>
+                @endif
+            </div>
+            @if($storageService)
+                <div id="flage2" class="none">
+                    <div class="list-block media-list y-sylist">
+                        <ul id="wdddmain">
+                            @if(!empty($storageService))
+                                @include('wap.community.logistic.lists_item')
+                            @endif
+                        </ul>
+                    </div>
+                    <div class="pa w100 tc allEnd none">
+                        <p class="f12 c-gray mt5 mb5">没有更多了</p>
+                    </div>
+
+                    <!-- 加载提示符 -->
+                    <div class="infinite-scroll-preloader none">
+                        <div class="preloader"></div>
+                    </div>
+                </div>
+            @else
+                <div id="flage2" class="none" style="margin-top: 20%;">
+                    <p style="text-align: center">敬请期待~~~</p>
+                </div>
+            @endif
+        </section>
+    </div>
+    <!--物流仓库页面 end-->
+@stop
+
+@section($js)
+    <script type="text/javascript">
+        $(".type").unbind('click');
+        $(".type").bind('click',function(){
+            if($(this).hasClass('titleborder-left')){
+                $("#flage").removeClass('none');
+                $("#flage2").addClass('none');
+                //background-color:#FF2D4B;color:#fff;
+                $(".titleborder-left").css('background-color','#FF2D4B');
+                $(".titleborder-left").css('color','#fff');
+                $(".titleborder-right").css('background-color','');
+                $(".titleborder-right").css('color','');
+            }else{
+                $("#flage2").removeClass('none');
+                $("#flage").addClass('none');
+                $(".titleborder-right").css('background-color','#FF2D4B');
+                $(".titleborder-right").css('color','#fff');
+                $(".titleborder-left").css('background-color','');
+                $(".titleborder-left").css('color','');
+            }
+        });
+        //上拉
+        var groupLoading = false;
+        var groupPageIndex = 2;
+        var nopost = 0;
+        $(document).off('infinite', '.infinite-scroll-bottom');
+        $(document).on('infinite', '.infinite-scroll-bottom', function() {
+            if(nopost == 1){
+                return false;
+            }
+            // 如果正在加载，则退出
+            if (groupLoading) {
+                return false;
+            }
+            //隐藏加载完毕显示
+            $(".allEnd").addClass('none');
+
+            groupLoading = true;
+
+            $('.infinite-scroll-preloader').removeClass('none');
+            $.pullToRefreshDone('.pull-to-refresh-content');
+
+            var data = new Object;
+            data.page = groupPageIndex;
+            $.post("{{ u('Logistic/indexList') }}", data, function(result){
+                groupLoading = false;
+                $('.infinite-scroll-preloader').addClass('none');
+                result  = $.trim(result);
+                if (result != '') {
+                    groupPageIndex++;
+                    $('#wdddmain').append(result);
+                    $.computeDistanceBegin();
+                    $.refreshScroller();
+                }else{
+                    $(".allEnd").removeClass('none');
+                    nopost = 1;
+                }
+            });
+        });
+    </script>
+    <script type="text/javascript">
+        $(function() {
+
+            //切换
+            $(document).on("touchend",".back",function(){
+                $.router.load(@if(!empty($nav_back_url)) {{$nav_back_url}} @else {!! Request::server('HTTP_REFERER') !!} @endif,true);
+            })
+        })
+    </script>
+@stop

@@ -1,0 +1,7 @@
+<ul>
+    <?php if($classifyList): ?>
+        <?php foreach($classifyList as $k => $v): ?>
+            <li ><input type="button" value="<?php echo e($v['name']); ?>" data-classify-id="<?php echo e($v['id']); ?>" class="button123 classify <?php if(isset($args['classifyId']) && ($args['classifyId'] == $v['id'])): ?> a1 <?php endif; ?>" ></li>
+        <?php endforeach; ?>
+    <?php endif; ?>
+</ul>

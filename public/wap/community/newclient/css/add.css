@@ -1,0 +1,31 @@
+.div-ul-li ul li{
+    /*以上三行实现自适应start*/
+    min-width: 25%;/*设置宽度*/
+    text-align: center;/*设置对齐方式*/
+    float:left;/*设置浮动未left*/
+    /*以上三行实现自适应end*/
+    list-style-type:none;/*去掉li的消圆点*/
+    display: inline;/*设置成横向排列*/
+    margin-top: 10px;
+}
+.button123 {
+    /*border: solid 2px #ddd;*/
+    /*border: solid 1px #0bbe06;*/
+    background: #f3efee;
+    /*border-radius: 9px;*/
+    font-size: 14px;
+    padding: 2px 8px;
+    margin: 0;
+    display: inline-block;
+    line-height: 20px;
+    transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1) 0s
+}
+.a{
+    background: rgb(224,223,221);
+}
+.b{
+    background: rgb(243,239,238);
+}
+.a1{
+    color: red;
+}

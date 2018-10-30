@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title><?php $__env->startSection('title'); ?>首页<?php echo $__env->yieldSection(); ?><?php echo e($site_config['site_title']); ?></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="stylesheet" href="<?php echo e(asset('seller/js/suimobile/sm-extend.min.css')); ?>?<?php echo e(TPL_VERSION); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('seller/js/suimobile/sm.min.css')); ?>?<?php echo e(TPL_VERSION); ?>">
+    <link rel="stylesheet" href="<?php echo e(asset('seller/css/public.css')); ?>?<?php echo e(TPL_VERSION); ?>">
+    <script src="<?php echo e(asset('seller/js/suimobile/zepto.min.js')); ?>" charset='utf-8'></script>
+    <?php echo $__env->yieldContent('css'); ?>
+    <?php echo $__env->yieldContent('top_js'); ?>
+</head>
+<body>
+<div class="page page-current" id="<?php echo e($id_action.$ajaxurl_page); ?>" data-ajaxurl="<?php echo u(CONTROLLER_NAME.'/'.ACTION_NAME,$args); ?>">
+    <?php $__env->startSection('show_top'); ?>
+        <header class="bar bar-nav">
+            <a class="button button-link button-nav pull-left back" data-transition='slide-out'>
+                <span class="icon iconfont">&#xe64c;</span>
+            </a>
+            <h1 class="title"><?php echo e($title); ?></h1>
+        </header>
+    <?php echo $__env->yieldSection(); ?>
+    <div class="content <?php echo $__env->yieldContent('contentcss'); ?>" <?php echo $__env->yieldContent('distance'); ?>>
+        <?php echo $__env->yieldContent('content'); ?>
+        <?php echo $__env->yieldContent('page_js'); ?>
+    </div>
+</div>
+<script src="<?php echo e(asset('seller/js/suimobile/sm.min.js')); ?>" charset='utf-8'></script>
+<script src="<?php echo e(asset('seller/js/public.js')); ?>" charset='utf-8'></script>
+<script src="<?php echo e(asset('wap/community/newbase.js')); ?>" charset='utf-8'></script>
+<?php echo $__env->yieldContent('js'); ?>
+
+<?php echo $__env->yieldContent('bnt_js'); ?>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<?php $__env->startSection('show_top'); ?>
+    <header class="bar bar-nav c-bg">
+        <a class="button button-link button-nav pull-left c-white" href="#" data-transition='slide-out'>
+            消息
+        </a>
+        <a class="button button-link button-nav pull-right  c-white" href="<?php echo e(u('UserCenter/config')); ?>" data-popup=".popup-about" external>
+            <span class="icon iconfont va-2 mr5">&#xe64a;</span>设置
+        </a>
+    </header>
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php echo $__env->make('wap.community._layouts.bottom', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <div class="content" id=''>
+        <div class="list-block media-list nobor y-information">
+            <ul>
+                <li>
+                    <a href="<?php echo e(u('Forum/index')); ?>" class="item-link item-content mb10">
+                        <div class="item-media"><img src="<?php echo e(asset('wap/community/newclient/images/xx1.png')); ?>" width="50"></div>
+                        <div class="item-inner f12 pr10">
+                            <div class="item-title-row mt10">
+                                <div class="item-title f16">生活圈</div>
+                                <div class="item-after">
+                                    <?php if($list['messageNum'] > 0): ?>  <span class="y-noreadtips"> <?php echo e($list['messageNum']); ?></span> <?php endif; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo e(u('UserCenter/orderchange')); ?>" class="item-link item-content">
+                        <div class="item-media pr"><img src="<?php echo e(asset('wap/community/newclient/images/xx2.png')); ?>" width="50">
+                            <?php if($list['orderCount'] > 0): ?>
+                                <span class="y-prompt c-bg c-white"><?php echo e($list['orderCount']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <div class="item-inner f12 pr10">
+                            <div class="item-title-row <?php if(empty($list['orderInfo'])): ?> mt10 <?php endif; ?>">
+                                <div class="item-title f16">订单状态变更消息</div>
+                                <div class="item-after c-gray"><?php echo e(Time::toDate($list['orderInfo']['sendTime'],'Y-m-d')); ?></div>
+                            </div>
+                            <div class="item-title f14 c-gray mt5"><?php echo e($list['orderInfo']['title']); ?></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo e(u('UserCenter/msgshow',['sellerId'=>0])); ?>" class="item-link item-content">
+                        <div class="item-media pr"><img src="<?php echo e(asset('wap/community/newclient/images/xx3.png')); ?>" width="50">
+                            <?php if($list['systemCount'] > 0): ?>
+                                <span class="y-prompt c-bg c-white"><?php echo e($list['systemCount']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <div class="item-inner f12 pr10">
+                            <div class="item-title-row  <?php if(empty($list['systemInfo'])): ?> mt10 <?php endif; ?>">
+                                <div class="item-title f16">系统消息</div>
+                                <div class="item-after c-gray"><?php echo e(Time::toDate($list['systemInfo']['sendTime'],'Y-m-d')); ?></div>
+                            </div>
+                            <div class="item-title f14 c-gray mt5"><?php echo e($list['systemInfo']['title']); ?></div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo e(u('UserCenter/wealth',['sellerId'=>0])); ?>" class="item-link item-content">
+                        <div class="item-media pr">
+							<img src="<?php echo e(asset('wap/community/newclient/images/xx5.png')); ?>" width="50">
+                            <?php if($list['financeCount'] > 0): ?>
+                                <span class="y-prompt c-bg c-white"><?php echo e($list['financeCount']); ?></span>
+                            <?php endif; ?>
+						</div>
+                        <div class="item-inner f12 pr10">
+                            <div class="item-title-row">
+                                <div class="item-title f16">财富消息</div>
+                                <?php if($list['financeInfo']['updateTime']): ?>
+                                    <div class="item-after c-gray"><?php echo e(Time::toDate($list['financeInfo']['updateTime'],'Y-m-d')); ?></div>
+                                <?php else: ?>
+                                    <div class="item-after c-gray"><?php echo e(Time::toDate($list['financeInfo']['createTime'],'Y-m-d')); ?></div>
+                                <?php endif; ?>
+                            </div>
+                            <div class="item-title f14 c-gray mt5">
+                                <?php if($list['financeInfo']): ?>
+                                    <?php if($list['financeInfo']['level'] == 1): ?>
+                                        您的I级合伙人：“<?php echo e($list['financeInfo']['user']['name']); ?>”一笔订单
+                                    <?php elseif($list['financeInfo']['level'] == 2): ?>
+                                        您的II级合伙人：“<?php echo e($list['financeInfo']['user']['name']); ?>”一笔订单
+                                    <?php elseif($list['financeInfo']['level'] == 3): ?>
+                                        您的III级合伙人：“<?php echo e($list['financeInfo']['user']['name']); ?>”一笔订单
+                                    <?php elseif($list['financeInfo']['level'] == 4): ?>
+                                        您的IIII级合伙人：“<?php echo e($list['financeInfo']['user']['name']); ?>”一笔订单
+                                    <?php else: ?>
+                                        “<?php echo e($list['financeInfo']['user']['name']); ?>”一笔订单
+                                    <?php endif; ?>
+
+                                    <?php if($list['financeInfo']['status'] == 1): ?>
+                                        交易完成，获得
+                                    <?php else: ?>
+                                        <?php if($list['financeInfo']['isRefund'] == 0): ?>
+                                            正在进行，您将得
+                                        <?php else: ?>
+                                            交易已取消，您已经失去了
+                                        <?php endif; ?>
+                                    <?php endif; ?>
+                                    <?php echo e($list['financeInfo']['returnFee']); ?>元佣金奖励！
+                                <?php else: ?>
+                                    赶紧推荐你的小伙伴，获取佣金吧！
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="<?php echo e(u('UserCenter/team',['sellerId'=>0])); ?>" class="item-link item-content">
+                        <div class="item-media pr"><img src="<?php echo e(asset('wap/community/newclient/images/xx6.png')); ?>" width="50">
+                            <?php if($list['teamCount'] > 0): ?>
+                                <span class="y-prompt c-bg c-white"><?php echo e($list['teamCount']); ?></span>
+                            <?php endif; ?>
+                        </div>
+                        <div class="item-inner f12 pr10">
+                            <div class="item-title-row">
+                                <div class="item-title f16">团队消息</div>
+                                <div class="item-after c-gray"><?php echo e(Time::toDate($list['teamInfo']['sendTime'],'Y-m-d')); ?></div>
+                            </div>
+                            <div class="item-title f14 c-gray mt5"><?php echo e(isset($list['teamInfo']['content']) ? $list['teamInfo']['content'] : "赶紧邀请小伙伴加入团队!"); ?></div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+<?php $__env->stopSection(); ?>
+<?php $__env->startSection($js); ?>
+    <script type="text/javascript">
+        var BACK_URL = "<?php echo e(u('Index/index')); ?>";
+        $(function(){
+            $(".showmore").click(function(){
+                if($(".x-ltmore").hasClass("none")){
+                    $(".x-ltmore").removeClass("none");
+                }else{
+                    $(".x-ltmore").addClass("none");
+                }
+            });
+        });
+    </script>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('wap.community._layouts.base', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
